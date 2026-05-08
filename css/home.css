@@ -1,0 +1,575 @@
+/*
+=======================================================
+  home.css — Basira Eye Center Homepage
+=======================================================
+
+  TEACHER NOTE:
+  This file only styles the HOME page.
+  Each page gets its own CSS file like this one.
+  It always works TOGETHER with global.css.
+  global.css = shared styles (navbar, footer, colors)
+  home.css   = styles specific to the home page only
+
+  The order in index.html matters:
+    1. global.css loads first (shared)
+    2. home.css loads second (page-specific)
+=======================================================
+*/
+
+
+/* ======================================================
+   HERO SECTION
+====================================================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* Two equal columns */
+  min-height: calc(100vh - 70px);   /* Full viewport height minus navbar */
+  max-height: 620px;
+  overflow: hidden;
+}
+
+/* LEFT SIDE — text content */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-2xl) var(--space-2xl) var(--space-xl);
+  background: var(--color-bg);
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-md);
+  width: fit-content;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+}
+
+/*
+  TEACHER NOTE:
+  .accent-text targets the <span> inside the h1.
+  This is how you color just ONE word in a heading
+  without coloring the whole thing.
+*/
+.accent-text {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 440px;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+/* Shared button styles for this page */
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 13px 30px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition);
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-mid);
+  border-color: var(--color-primary-mid);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  padding: 13px 30px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition);
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Trust badges row */
+.trust-row {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.trust-item i {
+  font-size: 16px;
+  color: var(--color-primary-mid);
+}
+
+/* RIGHT SIDE — decorative visual */
+.hero-right {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Decorative circles in background */
+.hero-right::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  top: -100px;
+  right: -100px;
+}
+
+.hero-right::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  bottom: -80px;
+  left: -80px;
+}
+
+/* EYE ILLUSTRATION — pure CSS art */
+.eye-illustration {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/*
+  TEACHER NOTE:
+  We use CSS animations here. The @keyframes below define
+  what the animation looks like. The animation property
+  on each element says: use that animation, how long, repeat forever.
+*/
+.eye-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.ring-1 {
+  width: 220px;
+  height: 220px;
+  animation-delay: 0s;
+}
+
+.ring-2 {
+  width: 160px;
+  height: 160px;
+  animation-delay: 0.5s;
+}
+
+.ring-3 {
+  width: 100px;
+  height: 100px;
+  border-color: rgba(255, 255, 255, 0.3);
+  animation-delay: 1s;
+}
+
+.eye-pupil {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.eye-shine {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+/* CSS Animation definition */
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 0.6; }
+  50%       { transform: scale(1.05); opacity: 1; }
+}
+
+/* Floating badge */
+.floating-badge {
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+.badge-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-content strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.badge-content span {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+
+/* ======================================================
+   STATS BAR
+====================================================== */
+.stats-bar {
+  background: var(--color-primary);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: var(--space-lg) var(--space-2xl);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: var(--space-sm);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-num sup {
+  font-size: 18px;
+  color: var(--color-sage);
+}
+
+.stat-label {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+
+/* ======================================================
+   EYE TEST SECTION
+====================================================== */
+.eye-test-section {
+  padding: var(--space-2xl) var(--space-2xl);
+  background: var(--color-bg);
+}
+
+.eye-test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Individual test card */
+.test-card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.test-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Preview area inside the card */
+.test-card-preview {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.snellen-preview { background: #e6f4f3; }
+.color-preview   { background: #f0f8f0; }
+.astig-preview   { background: #fff3ec; }
+
+/* Snellen chart text */
+.snellen-chart {
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1.3;
+  letter-spacing: 2px;
+}
+
+/* Download overlay — appears on hover */
+.download-hover {
+  position: absolute;
+  inset: 0;                  /* shorthand for top/right/bottom/left all 0 */
+  background: rgba(13, 92, 99, 0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.download-hover i {
+  font-size: 28px;
+}
+
+/* Show overlay on card hover */
+.test-card:hover .download-hover {
+  opacity: 1;
+}
+
+/* Ishihara dots container */
+.ishihara-dots {
+  display: grid;
+  grid-template-columns: repeat(5, 24px);
+  gap: 4px;
+}
+
+/* Astigmatism wheel container */
+.astig-wheel {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+/* Card text body */
+.test-card-body {
+  padding: var(--space-sm) var(--space-sm) var(--space-md);
+}
+
+.test-card-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.test-card-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-xs);
+}
+
+.test-card-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.test-card-badge.teal-badge {
+  background: #e6f4f3;
+  color: var(--color-primary-mid);
+}
+
+.test-card-badge.orange-badge {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+
+/* ======================================================
+   QUICK LINKS STRIP
+====================================================== */
+.quick-links-strip {
+  background: var(--color-bg-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-2xl);
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.quick-link:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.quick-link.orange {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.quick-link.orange:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+.quick-link i {
+  font-size: 15px;
+}
+
+
+/* ======================================================
+   RESPONSIVE — HOME PAGE
+====================================================== */
+@media (max-width: 992px) {
+  .hero {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .hero-right {
+    height: 280px;
+  }
+
+  .hero-left {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--space-md);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .eye-test-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title       { font-size: 30px; }
+  .eye-test-grid    { grid-template-columns: 1fr; }
+  .stats-bar        { grid-template-columns: repeat(2, 1fr); }
+  .hero-buttons     { flex-direction: column; }
+  .btn-primary,
+  .btn-outline      { text-align: center; }
+  .quick-links-strip { padding: var(--space-md) var(--space-sm); }
+}

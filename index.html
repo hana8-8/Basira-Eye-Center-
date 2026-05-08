@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basira Eye Center</title>
+
+  <!-- Google Fonts: Playfair Display for headings, DM Sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <!-- Our CSS files -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <!--
+    TEACHER NOTE:
+    The <nav> tag is a semantic HTML element — it tells the browser
+    and screen readers "this is navigation". Always use it for navbars.
+    Inside we have three parts: logo | links | buttons
+  -->
+  <nav class="navbar" id="navbar">
+
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <!--
+        We use an inline SVG here as a placeholder for your real logo image.
+        When you have the actual logo file, replace this entire <svg> block with:
+        <img src="assets/images/logo.png" alt="Basira Eye Center Logo" />
+      -->
+      <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+        <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+        <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+        <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+        <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </div>
+
+    <!-- NAVIGATION LINKS -->
+    <!--
+      Each <a> tag is a link. The href="#" is a placeholder — it means
+      "go nowhere for now". Your team will replace each # with the actual
+      page like href="about.html" or href="services.html"
+    -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="eye-diseases.html">Eye Diseases</a></li>
+      <li><a href="doctors.html">Our Doctors</a></li>
+      <li><a href="insurance.html">Insurance</a></li>
+      <li><a href="news.html">News &amp; Devices</a></li>
+      <li><a href="complaints.html">Complaints</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="patient-portal.html">Patient Portal</a></li>
+    </ul>
+
+    <!-- CTA BUTTONS -->
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+
+      <!-- Hamburger for mobile — JavaScript will toggle this -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </nav>
+  <!-- ===================== END NAVBAR ===================== -->
+
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <!--
+    TEACHER NOTE:
+    <section> is a semantic tag — use it to divide your page into logical parts.
+    The hero is always the first big section the user sees.
+  -->
+  <section class="hero" id="hero">
+
+    <div class="hero-left">
+      <span class="hero-tag">Cairo's Premier Eye Care</span>
+
+      <h1 class="hero-title">
+        See the World<br />
+        with <span class="accent-text">Clarity</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        At Basira Eye Center, we combine cutting-edge technology with
+        compassionate care to protect and restore your vision — from routine
+        exams to advanced treatments.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="booking.html" class="btn-primary">Book an Appointment</a>
+        <a href="#eye-test" class="btn-outline">Take Eye Test</a>
+      </div>
+
+      <!-- Trust badges row -->
+      <div class="trust-row">
+        <div class="trust-item">
+          <i class="ti ti-shield-check"></i>
+          <span>Insurance Accepted</span>
+        </div>
+        <div class="trust-item">
+          <i class="ti ti-clock"></i>
+          <span>6 Days a Week</span>
+        </div>
+        <div class="trust-item">
+          <i class="ti ti-award"></i>
+          <span>Certified Specialists</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Decorative eye illustration -->
+      <div class="eye-illustration">
+        <div class="eye-ring ring-1"></div>
+        <div class="eye-ring ring-2"></div>
+        <div class="eye-ring ring-3"></div>
+        <div class="eye-pupil">
+          <div class="eye-shine"></div>
+        </div>
+      </div>
+
+      <!-- Floating badge -->
+      <div class="floating-badge">
+        <div class="badge-pulse"></div>
+        <div class="badge-content">
+          <strong>Now Open</strong>
+          <span>9am – 6pm Daily</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- ===================== END HERO ===================== -->
+
+
+  <!-- ===================== STATS BAR ===================== -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">10<sup>+</sup></span>
+      <span class="stat-label">Years of Excellence</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5K<sup>+</sup></span>
+      <span class="stat-label">Patients Served</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">20<sup>+</sup></span>
+      <span class="stat-label">Eye Specialists</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">15<sup>+</sup></span>
+      <span class="stat-label">Insurance Partners</span>
+    </div>
+  </div>
+  <!-- ===================== END STATS BAR ===================== -->
+
+
+  <!-- ===================== EYE TEST SECTION ===================== -->
+  <!--
+    TEACHER NOTE:
+    The id="eye-test" on this section is what makes the
+    "Take Eye Test" button in the hero scroll down to here.
+    That's what href="#eye-test" does — it anchors to an id.
+  -->
+  <section class="eye-test-section" id="eye-test">
+
+    <div class="section-header">
+      <span class="section-tag">Free At Home</span>
+      <h2 class="section-title">Printable Eye Tests</h2>
+      <p class="section-sub">
+        Download and print our professional eye test charts at home.
+        Hover over any card and click to download.
+      </p>
+    </div>
+
+    <div class="eye-test-grid">
+
+      <!-- CARD 1: Snellen Chart -->
+      <!--
+        TEACHER NOTE:
+        The data-file attribute is a custom HTML attribute.
+        JavaScript will read it to know which file to download.
+        Right now it points to placeholder PDFs — your team will
+        add the real PDF files to assets/pdfs/ folder.
+      -->
+      <div class="test-card" data-file="assets/pdfs/snellen-chart.pdf" data-name="Snellen Chart">
+        <div class="test-card-preview snellen-preview">
+          <div class="snellen-chart">
+            <div style="font-size:36px;">E</div>
+            <div style="font-size:26px;">F P</div>
+            <div style="font-size:20px;">T O Z</div>
+            <div style="font-size:15px;">L P E D</div>
+            <div style="font-size:12px;">P E C F D</div>
+            <div style="font-size:9px;">E D F C Z P</div>
+          </div>
+          <div class="download-hover">
+            <i class="ti ti-download"></i>
+            <span>Download PDF</span>
+          </div>
+        </div>
+        <div class="test-card-body">
+          <h3 class="test-card-title">Snellen Chart</h3>
+          <p class="test-card-desc">Classic visual acuity test. Measures the sharpness of your distance vision.</p>
+          <span class="test-card-badge">Print at home</span>
+        </div>
+      </div>
+
+      <!-- CARD 2: Color Vision -->
+      <div class="test-card" data-file="assets/pdfs/color-vision.pdf" data-name="Color Vision Test">
+        <div class="test-card-preview color-preview">
+          <div class="ishihara-dots" id="ishiharaDots"></div>
+          <div class="download-hover">
+            <i class="ti ti-download"></i>
+            <span>Download PDF</span>
+          </div>
+        </div>
+        <div class="test-card-body">
+          <h3 class="test-card-title">Color Vision Test</h3>
+          <p class="test-card-desc">Ishihara-style screening for color blindness. Suitable for all ages.</p>
+          <span class="test-card-badge teal-badge">Print at home</span>
+        </div>
+      </div>
+
+      <!-- CARD 3: Astigmatism -->
+      <div class="test-card" data-file="assets/pdfs/astigmatism.pdf" data-name="Astigmatism Test">
+        <div class="test-card-preview astig-preview">
+          <div class="astig-wheel" id="astigWheel"></div>
+          <div class="download-hover">
+            <i class="ti ti-download"></i>
+            <span>Download PDF</span>
+          </div>
+        </div>
+        <div class="test-card-body">
+          <h3 class="test-card-title">Astigmatism Test</h3>
+          <p class="test-card-desc">Fan and block chart to detect irregular corneal curvature.</p>
+          <span class="test-card-badge orange-badge">Print at home</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== END EYE TEST ===================== -->
+
+
+  <!-- ===================== QUICK LINKS STRIP ===================== -->
+  <div class="quick-links-strip">
+    <a href="services.html" class="quick-link"><i class="ti ti-eye-check"></i> Our Services</a>
+    <a href="doctors.html" class="quick-link"><i class="ti ti-stethoscope"></i> Meet Our Doctors</a>
+    <a href="shop.html" class="quick-link orange"><i class="ti ti-eyeglass"></i> Shop Glasses &amp; Lenses</a>
+    <a href="insurance.html" class="quick-link"><i class="ti ti-shield-check"></i> Insurance</a>
+    <a href="news.html" class="quick-link"><i class="ti ti-news"></i> Latest News</a>
+    <a href="contact.html" class="quick-link orange"><i class="ti ti-phone"></i> Contact Us</a>
+  </div>
+  <!-- ===================== END QUICK LINKS ===================== -->
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>© 2026 Basira Eye Center · All rights reserved ·
+      <a href="policies.html">Privacy Policy</a> ·
+      Made with care in Cairo
+    </p>
+  </footer>
+  <!-- ===================== END FOOTER ===================== -->
+
+
+  <!-- JavaScript file — always load at the bottom of the page -->
+  <!--
+    TEACHER NOTE:
+    We put <script> at the BOTTOM of the body, not the top.
+    This is because HTML loads top to bottom — if JS runs before
+    the elements exist, it can't find them. Loading at the bottom
+    ensures everything is on the page before JS tries to touch it.
+  -->
+  <script src="js/global.js"></script>
+  <script src="js/home.js"></script>
+
+</body>
+</html>
