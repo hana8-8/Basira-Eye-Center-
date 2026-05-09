@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+<nav class="navbar" id="navbar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul>
+
+    <!-- CTA BUTTONS -->
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+
+      <!-- Hamburger for mobile — JavaScript will toggle this -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </nav>
+
+
+<header class="contact-header">
+  <h1>Contact Us</h1>
+  <p>We are here to help you reach Basira Eye Center easily.</p>
+</header>
+
+<main class="contact-page">
+
+  <section class="contact-info fade-item">
+    <h2>Our Contact Information</h2>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:info@basiraeyecenter.com">info@basiraeyecenter.com</a>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      +1 (555) 123-4567
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      Cairo, Egypt
+    </p>
+  </section>
+
+  <section class="contact-form-section fade-item">
+    <h2>Send Us a Message</h2>
+
+    <form id="contactForm" action="contact_success.html" method="POST">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer">
+
+   
+    <div class="footer-partners">
+      <p class="partners-label">Our Trusted Partners</p>
+      <div class="partners-row">
+
+        <!-- INSURANCE COMPANIES -->
+        <div class="partner-group">
+          <span class="partner-group-title">Insurance</span>
+          <div class="partner-logos">
+
+            <div class="partner-slot">
+              <!--
+                Replace this div with:
+                <img src="assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
+              -->
+              <img src="assets/images/axa.png" alt="Axa" />
+            </div>
+
+            <div class="partner-slot">
+              <img src="assets/images/metlife.jpg" alt="MetLife" />
+            </div>
+
+            <div class="partner-slot">
+              <img src="assets/images/globemed.jpg" alt="Global Med" />
+            </div>
+
+          </div>
+        </div>
+
+        <div class="partner-divider"></div>
+
+        <!-- GLASSES & LENSES STORES -->
+        <div class="partner-group">
+          <span class="partner-group-title">Glasses &amp; Lenses</span>
+          <div class="partner-logos">
+
+            <div class="partner-slot">
+              <img src="assets/images/rayban.png" alt="Ray-Ban" />
+            </div>
+
+            <div class="partner-slot">
+              <img src="assets/images/maghrabi.jpg" alt="Maghrabi" />
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- END PARTNERS STRIP -->
+
+
+    <!-- ROW 2: MAIN FOOTER COLUMNS -->
+    <div class="footer-main">
+
+      <!-- COLUMN 1: Brand -->
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#A8C5A0" stroke-width="2"/>
+            <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="rgba(168,197,160,0.6)" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+            <circle cx="23" cy="23" r="9" fill="#A8C5A0"/>
+            <circle cx="23" cy="23" r="4.5" fill="#0D5C63"/>
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+          </svg>
+          <div>
+            <span class="footer-logo-name">BASIRA</span>
+            <span class="footer-logo-sub">EYE CENTER</span>
+          </div>
+        </div>
+        <p class="footer-tagline">
+          Delivering the highest standards of eye care with compassion and cutting-edge technology.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="ti ti-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="ti ti-chevron-right"></i> Our Services</a></li>
+          <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="eye-diseases.html"><i class="ti ti-chevron-right"></i> Eye Diseases</a></li>
+          <li><a href="shop.html"><i class="ti ti-chevron-right"></i> Shop Glasses</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
+          <li><a href="news.html"><i class="ti ti-chevron-right"></i> News &amp; Devices</a></li>
+          <li><a href="complaints.html"><i class="ti ti-chevron-right"></i> Complaints</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: Opening Hours -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">
+          <i class="ti ti-clock"></i> Opening Hours
+        </h4>
+        <ul class="footer-hours">
+          <!--
+            Update these days and times to match your real schedule.
+            To mark a day as closed, add class="closed" to the <li>.
+          -->
+          <li>
+            <span class="day">Sat – Wed</span>
+            <span class="time">09:00 am – 06:00 pm</span>
+          </li>
+          <li>
+            <span class="day">Thursday</span>
+            <span class="time">09:00 am – 04:00 pm</span>
+          </li>
+          <li class="closed">
+            <span class="day">Friday</span>
+            <span class="time">Closed</span>
+          </li>
+        </ul>
+        <div class="footer-open-now">
+          <span class="open-dot"></span>
+          <span>Open Now</span>
+        </div>
+      </div>
+
+      <!-- COLUMN 4: Contact -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li>
+            <i class="ti ti-map-pin"></i>
+            <!--
+              Replace this with your real address
+            -->
+            <span>123 Example Street,<br/>Giza, Egypt</span>
+          </li>
+          <li>
+            <i class="ti ti-phone"></i>
+            <a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a>
+          </li>
+          <li>
+            <i class="ti ti-mail"></i>
+            <a href="mailto:info@basira.com">info@basira.com</a>
+          </li>
+          <li>
+            <i class="ti ti-brand-whatsapp"></i>
+            <a href="https://wa.me/20XXXXXXXXXX">WhatsApp Us</a>
+          </li>
+        </ul>
+        <!-- Payment Methods -->
+        <div class="footer-payment">
+          <span class="payment-label">We Accept</span>
+          <div class="payment-icons">
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">Mastercard</span>
+            <span class="payment-badge">Cash</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END MAIN FOOTER -->
+
+
+    <!-- ROW 3: BOTTOM BAR -->
+    <div class="footer-bottom">
+      <p>© 2026 Basira Eye Center · All rights reserved</p>
+      <div class="footer-bottom-links">
+        <a href="policies.html">Privacy Policy</a>
+        <span>·</span>
+        <a href="policies.html">Terms of Use</a>
+        <span>·</span>
+        <a href="complaints.html">Complaints</a>
+      </div>
+    </div>
+    <!-- END BOTTOM BAR -->
+
+  </footer>
+
+<script src="js/contact.js"></script>
+<script src="js/global.js"></script>
+</body>
+</html>
