@@ -1,0 +1,599 @@
+/*
+=======================================================
+  doctors.css — Basira Eye Center
+=======================================================
+  Styles only for the Our Doctors page.
+  Works together with global.css.
+=======================================================
+*/
+
+/* ---- PAGE HEADER ---- */
+.page-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
+  padding: var(--space-xl) var(--space-2xl);
+  text-align: center;
+  color: white;
+}
+
+.page-header-content .section-tag {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  margin-bottom: var(--space-sm);
+}
+
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: var(--space-xs);
+}
+
+.page-header p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+
+/* ---- DOCTORS PAGE WRAPPER ---- */
+.doctors-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+
+/* ---- DOCTOR CARD ---- */
+/*
+  TEACHER NOTE:
+  Each card has two states:
+  1. Collapsed — only .doctor-summary is visible
+  2. Expanded — .doctor-details also shows (max-height animates open)
+
+  JavaScript toggles the class "expanded" on the card.
+  CSS uses max-height transition to animate the reveal smoothly.
+  You can't animate height: auto in CSS, so max-height is the trick.
+*/
+.doctor-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+
+.doctor-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.doctor-card.expanded {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-mid);
+}
+
+
+/* ---- SUMMARY ROW (always visible) ---- */
+.doctor-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl);
+  cursor: pointer;
+  gap: var(--space-lg);
+  transition: background var(--transition);
+}
+
+.doctor-summary:hover {
+  background: var(--color-primary-light);
+}
+
+.doctor-left {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  flex: 1;
+}
+
+
+/* ---- DOCTOR PHOTO ---- */
+.doctor-photo-wrap {
+  flex-shrink: 0;
+}
+
+/*
+  The photo is a circle — border-radius: 50% makes any square a circle.
+  When you add a real image, it fills this circle perfectly.
+*/
+.doctor-photo-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  border: 3px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-mid);
+  font-size: 52px;
+  overflow: hidden;
+}
+
+/* When you add a real <img> inside .doctor-photo-wrap: */
+.doctor-photo-wrap img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;        /* crops to circle without stretching */
+  object-position: top;     /* shows face, not feet */
+  border: 3px solid var(--color-border);
+  display: block;
+}
+
+
+/* ---- DOCTOR INFO (name, rating, tags) ---- */
+.doctor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.doctor-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.doctor-title-label {
+  font-size: 13px;
+  color: var(--color-primary-mid);
+  font-weight: 500;
+}
+
+.doctor-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.doctor-position {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* STAR RATING */
+.doctor-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #f5a623;           /* gold star color */
+  font-size: 15px;
+}
+
+.rating-count {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* PERSONALITY TAGS */
+.doctor-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+}
+
+.tag i { font-size: 12px; }
+
+/* QUICK INFO ROW */
+.doctor-quick-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.doctor-quick-info span {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.doctor-quick-info i {
+  color: var(--color-primary-mid);
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* EXPAND HINT (right side arrow) */
+.doctor-right {
+  flex-shrink: 0;
+}
+
+.expand-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.expand-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when card is expanded */
+.doctor-card.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+
+/* ---- EXPANDED DETAILS ---- */
+/*
+  TEACHER NOTE — max-height animation trick:
+  We can't animate "height: auto" in CSS.
+  The workaround: set max-height: 0 (collapsed) and
+  max-height: 2000px (expanded). The browser animates
+  between these two values smoothly.
+  The content clips at 0 when collapsed, and
+  has plenty of room at 2000px when open.
+*/
+.doctor-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  border-top: 0px solid var(--color-border);
+}
+
+.doctor-card.expanded .doctor-details {
+  max-height: 2000px;
+  border-top: 1px solid var(--color-border);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background: #fafcfc;
+}
+
+/* DETAIL SECTIONS */
+.details-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.detail-section h3 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+.detail-section h3 i {
+  font-size: 16px;
+  color: var(--color-primary-mid);
+}
+
+.detail-section p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* DEGREES LIST */
+.degrees-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.degrees-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--color-text);
+}
+
+.degrees-list i {
+  color: var(--color-accent);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* SERVICE TAGS */
+.services-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.services-tags span {
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: white;
+}
+
+/* REVIEW CARD */
+.review-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.review-stars {
+  color: #f5a623;
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: flex;
+  gap: 2px;
+}
+
+.review-text {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.review-meta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+
+/* ---- BOOKING PANEL (right column) ---- */
+.details-right {
+  flex-shrink: 0;
+}
+
+.booking-panel {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  position: sticky;
+  top: 90px;          /* stays in view as you scroll the left column */
+}
+
+.booking-panel h3 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+/* THREE DAY COLUMNS */
+.day-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: var(--space-sm);
+}
+
+.day-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.day-header {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--color-primary);
+  color: white;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+}
+
+.active-day {
+  background: var(--color-primary);
+}
+
+.muted-day {
+  background: #cbd5e1;
+  color: #64748b;
+}
+
+/* TIME SLOT BUTTONS */
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 120px;
+}
+
+.time-slot {
+  background: white;
+  border: 1.5px solid var(--color-primary-mid);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 4px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.time-slot:hover {
+  background: var(--color-primary-mid);
+  color: white;
+}
+
+.time-slot.selected {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* BOOK BUTTON */
+.book-btn {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background var(--transition);
+  font-family: var(--font-body);
+  width: 100%;
+}
+
+.book-btn:hover {
+  background: #d4731e;
+}
+
+.book-btn.disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* NO SLOTS MESSAGE */
+.no-slots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 120px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.4;
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--color-border);
+}
+
+.no-slots i {
+  font-size: 22px;
+  opacity: 0.4;
+}
+
+/* BOOKING NOTE */
+.booking-note {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: var(--space-sm);
+  line-height: 1.5;
+}
+
+.booking-note i {
+  font-size: 14px;
+  color: var(--color-primary-mid);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.booking-note a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.booking-note a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-panel {
+    position: static;
+  }
+
+  .doctor-summary {
+    padding: var(--space-md);
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .doctors-page {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .doctor-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-name-row {
+    justify-content: center;
+  }
+
+  .doctor-tags { justify-content: center; }
+  .doctor-quick-info { align-items: center; }
+
+  .day-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .day-col.unavailable { display: none; }
+}
