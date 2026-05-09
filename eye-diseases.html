@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eye Diseases — Basira Eye Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/eye-diseases.css" />
+  </head>
+  <body>
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-img-wrap">
+          <svg
+            class="logo-svg"
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="23"
+              cy="23"
+              r="21"
+              fill="none"
+              stroke="#0D5C63"
+              stroke-width="2"
+            />
+            <ellipse
+              cx="23"
+              cy="23"
+              rx="13"
+              ry="16"
+              fill="none"
+              stroke="#3B9EA6"
+              stroke-width="1.5"
+              transform="rotate(-20 23 23)"
+            />
+            <circle cx="23" cy="23" r="9" fill="#0D5C63" />
+            <circle cx="23" cy="23" r="4.5" fill="#1a1a2e" />
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">BASIRA</span>
+          <span class="logo-sub">EYE CENTER</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="about.html"
+            ><span class="link-text">About Us</span><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="services.html"
+            ><span class="link-text">Our Services</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="eye-diseases.html"
+            ><span class="link-text">Eye Diseases</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="doctors.html"
+            ><span class="link-text">Our Doctors</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="insurance.html"
+            ><span class="link-text">Insurance</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="news.html"
+            ><span class="link-text">News &amp; Devices</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="complaints.html"
+            ><span class="link-text">Complaints</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="contact.html"
+            ><span class="link-text">Contact Us</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+        <li>
+          <a href="patient-portal.html"
+            ><span class="link-text">Patient Portal</span
+            ><span class="eye-dot"></span
+          ></a>
+        </li>
+      </ul>
+      <div class="nav-cta">
+        <a href="login.html" class="btn-login">Login / Register</a>
+        <a href="booking.html" class="btn-book">Book Appointment</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <!-- ===================== END NAVBAR ===================== -->
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ti ti-chevron-right"></i>
+          <span>Eye Diseases</span>
+        </nav>
+        <h1 class="page-hero-title">Eye Diseases &amp; Conditions</h1>
+        <p class="page-hero-sub">
+          Early detection saves vision. Learn about the most common eye
+          conditions, their symptoms, and how our specialists can help.
+        </p>
+        <a href="booking.html" class="btn-hero-cta"
+          >Book a Consultation <i class="ti ti-arrow-right"></i
+        ></a>
+      </div>
+      <div class="page-hero-shape shape-1"></div>
+      <div class="page-hero-shape shape-2"></div>
+
+      <!-- Floating warning stat -->
+      <div class="hero-stat-badge">
+        <i class="ti ti-eye" aria i class="ti ti-eye" aria-hidden="true"></i>
+        <div>
+          <strong>2.2 Billion</strong>
+          <span>people affected by vision impairment globally</span>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== END PAGE HERO ===================== -->
+
+    <!-- ===================== SEARCH & FILTER BAR ===================== -->
+    <section class="filter-bar">
+      <div class="filter-inner">
+        <!-- Search input -->
+        <div class="search-wrap">
+          <i class="ti ti-search"></i>
+          <input
+            type="text"
+            id="disease-search"
+            placeholder="Search eye conditions..."
+          />
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="filter-btns" id="filter-btns">
+          <button class="filter-btn active" data-filter="all">
+            All Conditions
+          </button>
+          <button class="filter-btn" data-filter="common">Common</button>
+          <button class="filter-btn" data-filter="serious">Serious</button>
+          <button class="filter-btn" data-filter="children">In Children</button>
+          <button class="filter-btn" data-filter="aging">Age-Related</button>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== END FILTER BAR ===================== -->
+
+    <!-- ===================== DISEASES GRID ===================== -->
+    <section class="diseases-section" id="diseases">
+      <div class="diseases-grid" id="diseases-grid">
+        <!-- ── CARD 1: Myopia ── -->
+        <div class="disease-card" data-category="common">
+          <div class="disease-card-top">
+            <div class="disease-icon teal-icon">
+              <i class="ti ti-eye"></i>
+            </div>
+            <span class="severity-badge low">Common</span>
+          </div>
+          <h3 class="disease-name">Myopia (Nearsightedness)</h3>
+          <p class="disease-desc">
+            A condition where close objects appear clearly but distant objects
+            are blurry. One of the most prevalent eye conditions worldwide.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Blurry distant vision</li>
+              <li>Squinting to see far</li>
+              <li>Eye strain &amp; headaches</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="myopia">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 2: Glaucoma ── -->
+        <div class="disease-card highlight-card" data-category="serious">
+          <div class="disease-card-top">
+            <div class="disease-icon orange-icon">
+              <i class="ti ti-alert-circle"></i>
+            </div>
+            <span class="severity-badge high">Serious</span>
+          </div>
+          <span class="featured-badge"
+            ><i class="ti ti-star"></i> Early Detection Critical</span
+          >
+          <h3 class="disease-name">Glaucoma</h3>
+          <p class="disease-desc">
+            Often called the "silent thief of sight" — glaucoma damages the
+            optic nerve gradually, usually with no pain or early symptoms.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Gradual peripheral vision loss</li>
+              <li>Eye pain &amp; redness</li>
+              <li>Halos around lights</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="glaucoma">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 3: Cataracts ── -->
+        <div class="disease-card" data-category="aging">
+          <div class="disease-card-top">
+            <div class="disease-icon teal-icon">
+              <i class="ti ti-sun"></i>
+            </div>
+            <span class="severity-badge medium">Age-Related</span>
+          </div>
+          <h3 class="disease-name">Cataracts</h3>
+          <p class="disease-desc">
+            A clouding of the eye's natural lens, leading to blurred vision.
+            Cataracts are the leading cause of blindness worldwide but are
+            highly treatable.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Cloudy or foggy vision</li>
+              <li>Faded colors</li>
+              <li>Poor night vision</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="cataracts">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 4: Diabetic Retinopathy ── -->
+        <div class="disease-card" data-category="serious">
+          <div class="disease-card-top">
+            <div class="disease-icon orange-icon">
+              <i class="ti ti-heart-rate-monitor"></i>
+            </div>
+            <span class="severity-badge high">Serious</span>
+          </div>
+          <h3 class="disease-name">Diabetic Retinopathy</h3>
+          <p class="disease-desc">
+            A diabetes complication that affects the eyes by damaging blood
+            vessels in the retina. Can lead to blindness if untreated.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Spots or floaters</li>
+              <li>Blurred vision</li>
+              <li>Dark areas in vision</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="diabetic-retinopathy">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 5: Conjunctivitis ── -->
+        <div class="disease-card" data-category="common">
+          <div class="disease-card-top">
+            <div class="disease-icon teal-icon">
+              <i class="ti ti-droplet"></i>
+            </div>
+            <span class="severity-badge low">Common</span>
+          </div>
+          <h3 class="disease-name">Conjunctivitis (Pink Eye)</h3>
+          <p class="disease-desc">
+            Inflammation of the conjunctiva — the thin clear tissue that lines
+            the eyelid. Usually caused by infection or allergies.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Red or pink eyes</li>
+              <li>Discharge &amp; crusting</li>
+              <li>Itching &amp; irritation</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="conjunctivitis">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 6: Amblyopia ── -->
+        <div class="disease-card" data-category="children">
+          <div class="disease-card-top">
+            <div class="disease-icon teal-icon">
+              <i class="ti ti-mood-kid"></i>
+            </div>
+            <span class="severity-badge medium">In Children</span>
+          </div>
+          <h3 class="disease-name">Amblyopia (Lazy Eye)</h3>
+          <p class="disease-desc">
+            A condition where vision in one eye doesn't develop properly during
+            childhood. Early treatment is essential for best outcomes.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>One eye wandering</li>
+              <li>Poor depth perception</li>
+              <li>Squinting or closing one eye</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="amblyopia">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 7: Macular Degeneration ── -->
+        <div class="disease-card" data-category="aging">
+          <div class="disease-card-top">
+            <div class="disease-icon orange-icon">
+              <i class="ti ti-ripple"></i>
+            </div>
+            <span class="severity-badge medium">Age-Related</span>
+          </div>
+          <h3 class="disease-name">Macular Degeneration</h3>
+          <p class="disease-desc">
+            Age-related macular degeneration (AMD) affects the central part of
+            the retina (macula), causing loss of central vision.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Blurry central vision</li>
+              <li>Distorted straight lines</li>
+              <li>Dark spot in center of vision</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="macular-degeneration">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 8: Strabismus ── -->
+        <div class="disease-card" data-category="children">
+          <div class="disease-card-top">
+            <div class="disease-icon teal-icon">
+              <i class="ti ti-arrows-diff"></i>
+            </div>
+            <span class="severity-badge medium">In Children</span>
+          </div>
+          <h3 class="disease-name">Strabismus (Crossed Eyes)</h3>
+          <p class="disease-desc">
+            A condition where the eyes don't look in the same direction at the
+            same time. Common in children and highly treatable.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Eyes pointing in different directions</li>
+              <li>Double vision</li>
+              <li>Tilting head to see clearly</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="strabismus">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── CARD 9: Dry Eye ── -->
+        <div class="disease-card" data-category="common">
+          <div class="disease-card-top">
+            <div class="disease-icon teal-icon">
+              <i class="ti ti-droplet-off"></i>
+            </div>
+            <span class="severity-badge low">Common</span>
+          </div>
+          <h3 class="disease-name">Dry Eye Syndrome</h3>
+          <p class="disease-desc">
+            Occurs when tears don't adequately lubricate the eyes. Increasingly
+            common due to screen time and environmental factors.
+          </p>
+          <div class="disease-symptoms">
+            <p class="symptoms-label">
+              <i class="ti ti-alert-triangle"></i> Key Symptoms
+            </p>
+            <ul>
+              <li>Stinging or burning eyes</li>
+              <li>Sensitivity to light</li>
+              <li>Blurred vision</li>
+            </ul>
+          </div>
+          <div class="disease-card-footer">
+            <a href="booking.html" class="btn-consult">Book Consultation</a>
+            <button class="btn-learn" data-disease="dry-eye">
+              Learn More <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- No results message (shown by JS when search finds nothing) -->
+      <div class="no-results" id="no-results">
+        <i class="ti ti-search-off"></i>
+        <p>No conditions found matching your search.</p>
+        <button
+          onclick="
+            document.getElementById('disease-search').value = '';
+            filterDiseases();
+          "
+        >
+          Clear Search
+        </button>
+      </div>
+    </section>
+    <!-- ===================== END DISEASES GRID ===================== -->
+
+    <!-- ===================== MODAL (Learn More popup) ===================== -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal" id="modal">
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+        <div class="modal-body" id="modal-body">
+          <!-- JS fills this -->
+        </div>
+      </div>
+    </div>
+    <!-- ===================== END MODAL ===================== -->
+
+    <!-- ===================== WARNING BANNER ===================== -->
+    <section class="warning-banner">
+      <div class="warning-inner">
+        <div class="warning-icon">
+          <i class="ti ti-urgent"></i>
+        </div>
+        <div class="warning-text">
+          <h3>Experiencing sudden vision changes?</h3>
+          <p>
+            Sudden vision loss, flashes of light, or floaters can be signs of a
+            serious emergency. Don't wait — contact us immediately.
+          </p>
+        </div>
+        <a href="contact.html" class="btn-warning"
+          >Contact Us Now <i class="ti ti-arrow-right"></i
+        ></a>
+      </div>
+    </section>
+    <!-- ===================== END WARNING BANNER ===================== -->
+
+    <!-- ===================== CTA SECTION ===================== -->
+    <section class="diseases-cta">
+      <div class="cta-inner">
+        <span class="section-tag teal">Your Vision Matters</span>
+        <h2 class="section-title">Don't wait for symptoms to worsen</h2>
+        <p class="section-sub">
+          Many eye diseases have no early symptoms. Regular checkups are the
+          best way to protect your vision. Our specialists are ready to help.
+        </p>
+        <div class="cta-buttons">
+          <a href="booking.html" class="btn-primary">Book an Eye Exam</a>
+          <a href="services.html" class="btn-outline-dark">View Our Services</a>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== END CTA ===================== -->
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="footer-partners">
+        <p class="partners-label">Our Trusted Partners</p>
+        <div class="partners-row">
+          <div class="partner-group">
+            <span class="partner-group-title">Insurance</span>
+            <div class="partner-logos">
+              <div class="partner-slot">
+                <img src="assets/images/axa.png" alt="Axa" />
+              </div>
+              <div class="partner-slot">
+                <img src="assets/images/metlife.jpg" alt="MetLife" />
+              </div>
+              <div class="partner-slot">
+                <img src="assets/images/globemed.jpg" alt="Global Med" />
+              </div>
+            </div>
+          </div>
+          <div class="partner-divider"></div>
+          <div class="partner-group">
+            <span class="partner-group-title">Glasses &amp; Lenses</span>
+            <div class="partner-logos">
+              <div class="partner-slot">
+                <img src="assets/images/rayban.png" alt="Ray-Ban" />
+              </div>
+              <div class="partner-slot">
+                <img src="assets/images/maghrabi.jpg" alt="Maghrabi" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-main">
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 46 46"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="23"
+                cy="23"
+                r="21"
+                fill="none"
+                stroke="#A8C5A0"
+                stroke-width="2"
+              />
+              <ellipse
+                cx="23"
+                cy="23"
+                rx="13"
+                ry="16"
+                fill="none"
+                stroke="rgba(168,197,160,0.6)"
+                stroke-width="1.5"
+                transform="rotate(-20 23 23)"
+              />
+              <circle cx="23" cy="23" r="9" fill="#A8C5A0" />
+              <circle cx="23" cy="23" r="4.5" fill="#0D5C63" />
+              <circle cx="25.5" cy="20.5" r="1.8" fill="white" />
+            </svg>
+            <div>
+              <span class="footer-logo-name">BASIRA</span>
+              <span class="footer-logo-sub">EYE CENTER</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            Delivering the highest standards of eye care with compassion and
+            cutting-edge technology.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Facebook"
+              ><i class="ti ti-brand-facebook"></i
+            ></a>
+            <a href="#" class="social-btn" aria-label="Instagram"
+              ><i class="ti ti-brand-instagram"></i
+            ></a>
+            <a href="#" class="social-btn" aria-label="WhatsApp"
+              ><i class="ti ti-brand-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="about.html"
+                ><i class="ti ti-chevron-right"></i> About Us</a
+              >
+            </li>
+            <li>
+              <a href="services.html"
+                ><i class="ti ti-chevron-right"></i> Our Services</a
+              >
+            </li>
+            <li>
+              <a href="doctors.html"
+                ><i class="ti ti-chevron-right"></i> Our Doctors</a
+              >
+            </li>
+            <li>
+              <a href="eye-diseases.html"
+                ><i class="ti ti-chevron-right"></i> Eye Diseases</a
+              >
+            </li>
+            <li>
+              <a href="insurance.html"
+                ><i class="ti ti-chevron-right"></i> Insurance</a
+              >
+            </li>
+            <li>
+              <a href="news.html"
+                ><i class="ti ti-chevron-right"></i> News &amp; Devices</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">
+            <i class="ti ti-clock"></i> Opening Hours
+          </h4>
+          <ul class="footer-hours">
+            <li>
+              <span class="day">Sat – Wed</span
+              ><span class="time">09:00 am – 06:00 pm</span>
+            </li>
+            <li>
+              <span class="day">Thursday</span
+              ><span class="time">09:00 am – 04:00 pm</span>
+            </li>
+            <li class="closed">
+              <span class="day">Friday</span><span class="time">Closed</span>
+            </li>
+          </ul>
+          <div class="footer-open-now">
+            <span class="open-dot"></span><span>Open Now</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="ti ti-map-pin"></i
+              ><span>123 Example Street,<br />Giza, Egypt</span>
+            </li>
+            <li>
+              <i class="ti ti-phone"></i
+              ><a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a>
+            </li>
+            <li>
+              <i class="ti ti-mail"></i
+              ><a href="mailto:info@basira.com">info@basira.com</a>
+            </li>
+            <li>
+              <i class="ti ti-brand-whatsapp"></i
+              ><a href="https://wa.me/20XXXXXXXXXX">WhatsApp Us</a>
+            </li>
+          </ul>
+          <div class="footer-payment">
+            <span class="payment-label">We Accept</span>
+            <div class="payment-icons">
+              <span class="payment-badge">Visa</span>
+              <span class="payment-badge">Mastercard</span>
+              <span class="payment-badge">Cash</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Basira Eye Center · All rights reserved</p>
+        <div class="footer-bottom-links">
+          <a href="policies.html">Privacy Policy</a>
+          <span>·</span>
+          <a href="policies.html">Terms of Use</a>
+          <span>·</span>
+          <a href="complaints.html">Complaints</a>
+        </div>
+      </div>
+    </footer>
+    <!-- ===================== END FOOTER ===================== -->
+
+    <script src="js/global.js"></script>
+    <script src="js/eye-diseases.js"></script>
+  </body>
+</html>

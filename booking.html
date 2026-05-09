@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book an Appointment — Basira Eye Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/booking.css" />
+    <!-- your page CSS -->
+  </head>
+  <body>
+    <!-- COPY NAVBAR FROM index.html EXACTLY -->
+    <nav class="navbar" id="navbar">
+      <!-- LOGO -->
+      <div class="nav-logo">
+        <!--
+        We use an inline SVG here as a placeholder for your real logo image.
+        When you have the actual logo file, replace this entire <svg> block with:
+        <img src="assets/images/logo.png" alt="Basira Eye Center Logo" />
+      -->
+        <svg
+          class="logo-svg"
+          width="46"
+          height="46"
+          viewBox="0 0 46 46"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="23"
+            cy="23"
+            r="21"
+            fill="none"
+            stroke="#0D5C63"
+            stroke-width="2"
+          />
+          <ellipse
+            cx="23"
+            cy="23"
+            rx="13"
+            ry="16"
+            fill="none"
+            stroke="#3B9EA6"
+            stroke-width="1.5"
+            transform="rotate(-20 23 23)"
+          />
+          <circle cx="23" cy="23" r="9" fill="#0D5C63" />
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e" />
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white" />
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">BASIRA</span>
+          <span class="logo-sub">EYE CENTER</span>
+        </div>
+      </div>
+
+      <!-- NAVIGATION LINKS -->
+      <!--
+      Each <a> tag is a link. The href="#" is a placeholder — it means
+      "go nowhere for now". Your team will replace each # with the actual
+      page like href="about.html" or href="services.html"
+    -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="eye-diseases.html">Eye Diseases</a></li>
+        <li><a href="doctors.html">Our Doctors</a></li>
+        <li><a href="insurance.html">Insurance</a></li>
+        <li><a href="news.html">News &amp; Devices</a></li>
+        <li><a href="complaints.html">Complaints</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="patient-portal.html">Patient Portal</a></li>
+      </ul>
+
+      <!-- CTA BUTTONS -->
+      <div class="nav-cta">
+        <a href="login.html" class="btn-login">Login / Register</a>
+        <a href="booking.html" class="btn-book">Book Appointment</a>
+
+        <!-- Hamburger for mobile — JavaScript will toggle this -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- YOUR PAGE CONTENT HERE -->
+    <main>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="services.html">Our Services</a>
+        <span>/</span>
+        <span class="breadcrumb-current">Book Online</span>
+      </div>
+
+      <section class="booking-hero">
+        <h1>Request an Appointment</h1>
+        <p>How can we help you today?</p>
+      </section>
+
+      <!------------- TRACKER ------------->
+      <section class="booking-stepper">
+        <div class="stepper-track">
+          <div class="step-circle active">1</div>
+          <div class="step-line done"></div>
+
+          <div class="step-circle active">2</div>
+          <div class="step-line"></div>
+
+          <div class="step-circle">3</div>
+        </div>
+
+        <div class="stepper-labels">
+          <span class="step-label active">Patient Info</span>
+          <span class="step-label">Visit Details</span>
+          <span class="step-label">Submit</span>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="booking-form">
+        <!-- STEP 1 -->
+        <div class="form-step" id="step-1">
+          <!------------- PATIENT TYPE ------------->
+          <p>This appointment is for:</p>
+          <div class="patient-type-btns">
+            <button class="patient-btn active" type="button">
+              <i class="ti ti-circle"></i>
+              New Patient
+            </button>
+
+            <button class="patient-btn" type="button">
+              <i class="ti ti-circle"></i>
+              Returning Patient
+            </button>
+          </div>
+
+          <!------------- LOCATION CARD ------------->
+          <p>Location:</p>
+          <div class="location-card">
+            <div class="location-icon">
+              <i class="ti ti-map-pin"></i>
+            </div>
+            <div class="location-info">
+              <p>Basira Eye Center</p>
+              <p>123 Vision St, Cairo, Egypt</p>
+            </div>
+          </div>
+
+          <!------------- CONTINUE BUTTON ------------->
+          <button class="btn-outline" type="button" id="next-btn-1">
+            Continue
+            <i class="ti ti-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" id="step-2">
+          <div class="step2-grid">
+            <!------------- LEFT SIDE ------------->
+            <div class="step2-left">
+              <p>Reason for your visit:</p>
+              <select>
+                <option>New Patient Exam</option>
+                <option>Follow-up Visit</option>
+                <option>Eye Glasses Consultation</option>
+              </select>
+
+              <p>Choose your doctor:</p>
+              <select>
+                <option>Any Available Doctor</option>
+                <option>Dr. Ahmed Salah</option>
+                <option>Dr. Gamila Hatem</option>
+              </select>
+            </div>
+
+            <!------------- RIGHT SIDE ------------->
+            <div class="step2-right">
+              <p>Pick a date & time:</p>
+              <!------------- CALENDAR ------------->
+              <div class="calendar">
+                <!-- Header -->
+                <div class="calendar-header">
+                  <button type="button" id="prev-month">
+                    <i class="ti ti-chevron-left"></i>
+                  </button>
+                  <span id="month-label">May 2026</span>
+                  <button type="button" id="next-month">
+                    <i class="ti ti-chevron-right"></i>
+                  </button>
+                </div>
+
+                <!-- Day names -->
+                <div class="calendar-day-names">
+                  <span>Su</span>
+                  <span>Mo</span>
+                  <span>Tu</span>
+                  <span>We</span>
+                  <span>Th</span>
+                  <span>Fr</span>
+                  <span>Sa</span>
+                </div>
+
+                <!--- Day numbers — JavaScript will fill this! --->
+                <div class="calendar-grid" id="calendar-grid"></div>
+
+                <!--- Time slots — JavaScript will fill this too! --->
+                <div class="time-slots" id="time-slots"></div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button type="button" class="btn-back" id="back-btn-2">
+              <i class="ti ti-arrow-left"></i> Back
+            </button>
+            <button class="btn-outline" type="button" id="next-btn-2">
+              Continue
+              <i class="ti ti-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="form-step" id="step-3">
+          <div class="step3-grid">
+            <!------------- LEFT SIDE — Summary ------------->
+            <div class="step3-left">
+              <h3>Appointment Summary</h3>
+
+              <div class="summary-item">
+                <i class="ti ti-map-pin"></i>
+                <div>
+                  <p class="summary-label">Location</p>
+                  <p class="summary-value">Basira Eye Center</p>
+                  <span class="edit-link">← edit</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <i class="ti ti-stethoscope"></i>
+                <div>
+                  <p class="summary-label">Reason for Visit</p>
+                  <p class="summary-value">New Patient Exam</p>
+                  <span class="edit-link">← edit</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <i class="ti ti-user"></i>
+                <div>
+                  <p class="summary-label">Doctor</p>
+                  <p class="summary-value">Any Available Doctor</p>
+                  <span class="edit-link">← edit</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <i class="ti ti-calendar"></i>
+                <div>
+                  <p class="summary-label">Date & Time</p>
+                  <p class="summary-value">Not selected yet</p>
+                  <span class="edit-link">← edit</span>
+                </div>
+              </div>
+            </div>
+            <div class="step3-right">
+              <h3>Your Details</h3>
+
+              <div class="name-row">
+                <div class="field">
+                  <label>First Name *</label>
+                  <input type="text" placeholder="First Name" />
+                </div>
+                <div class="field">
+                  <label> Last Name *</label>
+                  <input type="text" placeholder="Last Name" />
+                </div>
+              </div>
+              <div class="field">
+                <label> Email *</label>
+                <input type="email" placeholder="email@example.com" />
+              </div>
+
+              <div class="field">
+                <label> Phone Number</label>
+                <input type="number" placeholder="+20 123 456 7890" />
+              </div>
+
+              <div class="field">
+                <label> Comments</label>
+                <textarea
+                  placeholder="Any additional notes for your doctor..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button type="button" class="btn-back" id="back-btn-3">
+              <i class="ti ti-arrow-left"></i> Back
+            </button>
+            <button class="btn-solid" type="button" id="next-btn-3">
+              Submit
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- COPY FOOTER FROM index.html EXACTLY -->
+    <footer class="footer">
+      <p>
+        © 2026 Basira Eye Center · All rights reserved ·
+        <a href="policies.html">Privacy Policy</a> · Made with care in Cairo
+      </p>
+    </footer>
+
+    <script src="js/global.js"></script>
+    <script src="js/booking.js"></script>
+    <!-- your page JS -->
+  </body>
+</html>
