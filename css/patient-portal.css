@@ -1,0 +1,848 @@
+/*
+=======================================================
+  patient-portal.css — Basira Eye Center
+=======================================================
+  ONLY styles unique to the Patient Portal page.
+  global.css handles: navbar, footer, colors, fonts.
+=======================================================
+*/
+
+
+/* ======================================================
+   PAGE HERO
+====================================================== */
+.page-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
+  color: white;
+  padding: 60px var(--space-2xl) 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover { color: white; }
+
+.breadcrumb i {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb span {
+  color: white;
+  font-weight: 600;
+}
+
+.page-hero-title {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.page-hero-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.page-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.shape-1 { width: 400px; height: 400px; top: -200px; right: -100px; }
+.shape-2 { width: 200px; height: 200px; bottom: -80px; right: 300px; }
+
+
+/* ======================================================
+   PORTAL SECTION WRAPPER
+====================================================== */
+.portal-section {
+  padding: var(--space-2xl) var(--space-2xl);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+
+/* ======================================================
+   WELCOME BAR
+   ======================================================
+   The top bar with the user's avatar, name, and book button.
+====================================================== */
+.portal-welcome {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.welcome-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/*
+  AVATAR CIRCLE:
+  A circle showing the user's initials.
+  background: linear-gradient gives it a nice teal-to-teal gradient.
+*/
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar span {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.welcome-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.welcome-sub {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* Override btn-primary for the portal button to add an icon */
+.portal-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+
+/* ======================================================
+   QUICK STATS ROW
+   ======================================================
+   4 cards in a row showing counts at a glance.
+====================================================== */
+.portal-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.portal-stat-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: box-shadow var(--transition);
+}
+
+.portal-stat-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Icon circle inside stat card */
+.pstat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pstat-icon i {
+  font-size: 22px;
+}
+
+.teal-icon {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.orange-icon {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.pstat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pstat-num {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.pstat-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+
+/* ======================================================
+   MAIN PORTAL GRID (left + right columns)
+====================================================== */
+.portal-grid {
+  display: grid;
+  /*
+    2fr = left column gets 2 "shares" of the space
+    1.2fr = right column gets 1.2 "shares"
+    So left is wider (more content), right is narrower (sidebar)
+  */
+  grid-template-columns: 2fr 1.2fr;
+  gap: var(--space-lg);
+  align-items: start;   /* cards don't stretch to match the tallest — they stop at their own height */
+}
+
+.portal-left,
+.portal-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+
+/* ======================================================
+   PORTAL CARD (reusable card container)
+   ======================================================
+   Used for every white card inside the dashboard.
+====================================================== */
+.portal-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.portal-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.portal-card-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.portal-card-title i {
+  font-size: 18px;
+  color: var(--color-primary-mid);
+}
+
+.portal-card-link {
+  font-size: 13px;
+  color: var(--color-primary-mid);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition);
+}
+
+.portal-card-link:hover {
+  color: var(--color-primary);
+}
+
+
+/* ======================================================
+   APPOINTMENTS LIST
+====================================================== */
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appt-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  flex-wrap: wrap;
+  transition: box-shadow var(--transition);
+}
+
+.appt-row:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Doctor avatar circle */
+.appt-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.teal-avatar  { background: var(--color-primary-light); color: var(--color-primary); }
+.orange-avatar { background: var(--color-accent-light); color: var(--color-accent); }
+
+.appt-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 140px;
+}
+
+.appt-doctor {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.appt-type {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.appt-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.appt-date,
+.appt-time {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.appt-date i,
+.appt-time i {
+  font-size: 13px;
+  color: var(--color-primary-mid);
+}
+
+/* Status badge */
+.appt-status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.appt-status.confirmed {
+  background: #e6f4f0;
+  color: #1a7a5e;
+}
+
+.appt-status.pending {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* Cancel (X) button */
+.appt-cancel-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.appt-cancel-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+
+/* ======================================================
+   MEDICAL RECORDS LIST
+====================================================== */
+.records-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.record-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  flex-wrap: wrap;
+}
+
+.record-icon {
+  width: 40px;
+  height: 40px;
+  background: #fee2e2;      /* light red — PDF files are typically red */
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.record-icon i {
+  font-size: 20px;
+  color: #dc2626;
+}
+
+.record-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 120px;
+}
+
+.record-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.record-meta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.record-download-btn {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.record-download-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+
+/* ======================================================
+   PRESCRIPTION TABLE (right column)
+====================================================== */
+.prescription-table {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.prescription-header-row,
+.prescription-data-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.prescription-header-row {
+  background: var(--color-primary);
+  padding: 8px 0;
+}
+
+.prescription-header-row span {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.prescription-data-row {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.prescription-data-row:last-child {
+  border-bottom: none;
+}
+
+.prescription-data-row span {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+/* Eye label badge (OD / OS) */
+.eye-label {
+  font-weight: 700;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.eye-label.od { background: var(--color-primary-light); color: var(--color-primary); }
+.eye-label.os { background: var(--color-accent-light); color: var(--color-accent); }
+
+.prescription-date {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.prescription-download-btn {
+  width: 100%;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background var(--transition);
+  font-family: var(--font-body);
+}
+
+.prescription-download-btn:hover {
+  background: var(--color-primary-mid);
+}
+
+
+/* ======================================================
+   QUICK ACTIONS GRID (right column)
+====================================================== */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 8px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.quick-action-btn i {
+  font-size: 22px;
+  color: var(--color-primary);
+}
+
+.quick-action-btn span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.quick-action-btn:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-mid);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.quick-action-btn:hover i,
+.quick-action-btn:hover span {
+  color: var(--color-primary);
+}
+
+
+/* ======================================================
+   INSURANCE SUMMARY (right column)
+====================================================== */
+.insurance-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.insurance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.insurance-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ins-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.ins-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.ins-valid {
+  color: #1a7a5e;   /* green — signals "still valid" */
+}
+
+
+/* ======================================================
+   LOGIN NOTE BANNER
+====================================================== */
+.portal-login-note {
+  background: var(--color-accent-light);
+  border-top: 3px solid var(--color-accent);
+  padding: var(--space-lg) var(--space-2xl);
+}
+
+.login-note-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.login-note-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.login-note-content h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.login-note-content p {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.login-note-content > div:nth-child(2) {
+  flex: 1;
+}
+
+.login-note-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.login-note-register {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ======================================================
+   PORTAL FEATURES SECTION
+====================================================== */
+.portal-features-section {
+  padding: var(--space-2xl) var(--space-2xl);
+  background: var(--color-bg-white);
+}
+
+.portal-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portal-feature-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.portal-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.pf-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: var(--space-sm);
+}
+
+.pf-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.pf-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 1024px) {
+  .portal-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .portal-section {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .page-hero {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .page-hero-title { font-size: 30px; }
+
+  .portal-welcome {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .portal-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .portal-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login-note-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .appt-row { flex-wrap: wrap; }
+
+  .portal-features-section,
+  .portal-login-note {
+    padding: var(--space-lg) var(--space-sm);
+  }
+}

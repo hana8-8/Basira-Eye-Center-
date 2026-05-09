@@ -1,0 +1,256 @@
+
+/* =========================
+   PAGE
+========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f8f8;
+  color: #1f2d3d;
+}
+
+
+/* =========================
+   MAIN DASHBOARD
+========================= */
+
+.admin-dashboard {
+  padding: 40px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+
+  gap: 20px;
+}
+
+.dashboard-header h1 {
+
+  margin: 0;
+
+  font-size: 42px;
+
+  color: #0D5C63;
+}
+
+.dashboard-header p {
+
+  margin-top: 10px;
+
+  color: #666;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-btn {
+
+  background: #0D5C63;
+  color: white;
+
+  padding: 14px 24px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+
+  background: #16727a;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(13,92,99,0.25);
+}
+
+
+/* =========================
+   STATS GRID
+========================= */
+
+.stats-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 25px;
+
+  margin-bottom: 45px;
+}
+
+
+/* =========================
+   STAT CARD
+========================= */
+
+.stat-card {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+
+  margin-bottom: 18px;
+
+  color: #0D5C63;
+
+  font-size: 20px;
+}
+
+.stat-card p {
+
+  margin: 0;
+
+  font-size: 42px;
+
+  font-weight: bold;
+
+  color: #1f2d3d;
+}
+
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 30px;
+}
+
+
+/* =========================
+   DASHBOARD CARD
+========================= */
+
+.dashboard-card {
+
+  background: white;
+
+  padding: 32px;
+
+  border-radius: 24px;
+
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+
+.dashboard-card h2 {
+
+  margin-top: 0;
+
+  margin-bottom: 18px;
+
+  color: #0D5C63;
+
+  font-size: 28px;
+}
+
+.dashboard-card p {
+
+  color: #666;
+
+  line-height: 1.7;
+
+  margin-bottom: 24px;
+}
+
+
+/* =========================
+   CARD BUTTON
+========================= */
+
+.dashboard-card a {
+
+  display: inline-block;
+
+  background: #0D5C63;
+
+  color: white;
+
+  padding: 12px 24px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.dashboard-card a:hover {
+
+  background: #16727a;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .admin-dashboard {
+    padding: 25px;
+  }
+
+  .dashboard-header {
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 34px;
+  }
+
+}

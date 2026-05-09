@@ -1,0 +1,131 @@
+
+
+/* =========================
+   PAGE
+========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7fbfb;
+  color: #1f2d3d;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  background: linear-gradient(135deg, #0D5C63 0%, #16727a 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 52px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+
+/* =========================
+   ABOUT SECTIONS
+========================= */
+
+.about-section {
+  background: white;
+  padding: 35px;
+  margin-bottom: 28px;
+  border-radius: 22px;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+}
+
+.about-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+
+.about-section h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+
+  color: #0D5C63;
+
+  font-size: 30px;
+}
+
+.about-section p {
+  margin: 0;
+
+  color: #555;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   NAVBAR FIX SUPPORT
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* =========================
+   FOOTER IMAGE FIX
+========================= */
+
+.partner-slot img {
+  max-width: 100%;
+  max-height: 55px;
+  object-fit: contain;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  main {
+    padding: 40px 18px;
+  }
+
+  .about-section {
+    padding: 26px;
+  }
+
+  .about-section h2 {
+    font-size: 25px;
+  }
+
+  .about-section p {
+    font-size: 15px;
+  }
+
+}

@@ -1,0 +1,336 @@
+
+/* =========================
+   PAGE
+========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7fbfb;
+  color: #1f2d3d;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.complaints-hero {
+  background: linear-gradient(135deg, #0D5C63 0%, #16727a 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.complaints-hero h1 {
+  margin: 0 0 15px;
+  font-size: 52px;
+}
+
+.complaints-hero p {
+  margin: 0;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.complaints-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.complaints-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+
+  background: white;
+  padding: 45px;
+  border-radius: 24px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   INFO SIDE
+========================= */
+
+.complaints-info h2 {
+  margin-top: 0;
+  color: #0D5C63;
+  font-size: 34px;
+}
+
+.complaints-info p {
+  color: #666;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.complaints-list {
+  padding-left: 20px;
+  color: #444;
+  line-height: 2;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.complaint-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #0D5C63;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 14px 16px;
+  border: 1px solid #d8e1e2;
+  border-radius: 14px;
+  font-size: 15px;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #0D5C63;
+  outline: none;
+  box-shadow: 0 0 8px rgba(13,92,99,0.18);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.submit-btn {
+  background: #0D5C63;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #16727a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13,92,99,0.25);
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success-message {
+  display: none;
+  grid-column: 1 / -1;
+  margin-top: 25px;
+  padding: 16px;
+  background: #dff5e4;
+  color: #1b5e20;
+  border-radius: 14px;
+  font-weight: bold;
+  transition: opacity 0.4s ease;
+}
+
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-section {
+  margin-top: 60px;
+}
+
+.faq-section h2 {
+  color: #0D5C63;
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.faq-card {
+  background: white;
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.faq-card h3 {
+  margin-top: 0;
+  color: #0D5C63;
+}
+
+.faq-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .complaints-container {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .complaints-hero h1 {
+    font-size: 36px;
+  }
+
+  .complaints-page {
+    padding: 40px 18px;
+  }
+
+  .complaints-info h2,
+  .faq-section h2 {
+    font-size: 28px;
+  }
+
+}
+
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.success-page {
+  min-height: 100vh;
+  background: #f7fbfb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+}
+
+.success-card {
+  max-width: 650px;
+
+  background: white;
+
+  text-align: center;
+
+  padding: 55px 40px;
+
+  border-radius: 28px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.success-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 25px;
+
+  background: #0D5C63;
+  color: white;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.success-card h1 {
+  color: #0D5C63;
+
+  font-size: 42px;
+
+  margin-bottom: 18px;
+}
+
+.success-card p {
+  color: #666;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+.back-home {
+  display: inline-block;
+
+  background: #0D5C63;
+  color: white;
+
+  padding: 14px 30px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  background: #16727a;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(13,92,99,0.25);
+}

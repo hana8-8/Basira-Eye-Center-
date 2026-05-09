@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Devices — Basira Eye Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/news.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="news-hero">
+    <div class="news-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="ti ti-chevron-right"></i>
+        <span>News &amp; Devices</span>
+      </nav>
+      <h1>News &amp; Latest Devices</h1>
+      <p>Stay informed about the latest breakthroughs in eye care technology and updates from Basira Eye Center.</p>
+    </div>
+    <div class="news-hero-shape s1"></div>
+    <div class="news-hero-shape s2"></div>
+  </section>
+
+
+  <!-- ===================== TAB SWITCHER ===================== -->
+  <!--
+    TEACHER NOTE:
+    Tabs let users switch between two sections — News and Devices —
+    without leaving the page. JavaScript handles the switching.
+    Only one tab's content shows at a time.
+  -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('news')">
+      <i class="ti ti-news"></i> Latest News
+    </button>
+    <button class="tab-btn" onclick="switchTab('devices')">
+      <i class="ti ti-device-desktop-analytics"></i> Our Devices
+    </button>
+  </div>
+
+
+  <!-- ===================== NEWS TAB ===================== -->
+  <div class="tab-content" id="tab-news">
+
+    <!-- FEATURED ARTICLE (big card on top) -->
+    <div class="featured-article">
+      <!--
+        IMAGE FILES TO ADD:
+        Save to: assets/images/news/
+        File name: news-featured.jpg
+        What to search: "ophthalmology clinic modern technology 2025"
+        Recommended size: wide landscape photo, at least 1200×600px
+      -->
+      <div class="featured-img-wrap">
+        <img src="assets/images/news/news-featured.jpg" alt="AI in Eye Care" class="featured-img" />
+        <div class="featured-img-overlay">
+          <span class="article-category">Technology</span>
+        </div>
+      </div>
+      <div class="featured-article-body">
+        <div class="article-meta">
+          <span><i class="ti ti-calendar"></i> May 2026</span>
+          <span><i class="ti ti-clock"></i> 4 min read</span>
+        </div>
+        <h2 class="featured-title">
+          AI-Powered Retinal Screening Is Now Available at Basira Eye Center
+        </h2>
+        <p class="featured-desc">
+          We are proud to announce that Basira Eye Center has integrated cutting-edge
+          artificial intelligence into our retinal screening workflow. Our new AI system
+          can detect early signs of diabetic retinopathy, glaucoma, and macular degeneration
+          months before traditional examinations — giving our patients a significant
+          advantage in early treatment.
+        </p>
+        <a href="#" class="read-more-btn">Read Full Article <i class="ti ti-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- NEWS GRID — smaller cards -->
+    <div class="news-grid">
+
+      <!--
+        IMAGE FILES TO ADD for news cards:
+        All saved to: assets/images/news/
+        Search Google Images for each description below.
+
+        news-1.jpg → search: "LASIK eye surgery procedure 2025"
+        news-2.jpg → search: "pediatric eye exam child clinic"
+        news-3.jpg → search: "ophthalmology conference doctors"
+        news-4.jpg → search: "cataract surgery lens implant"
+        news-5.jpg → search: "eye drops new treatment dry eye"
+        news-6.jpg → search: "eye center clinic interior modern"
+      -->
+
+      <article class="news-card">
+        <div class="news-card-img-wrap">
+          <img src="assets/images/news/news-1.jpg" alt="LASIK advancement" />
+          <span class="news-tag">Surgery</span>
+        </div>
+        <div class="news-card-body">
+          <div class="article-meta">
+            <span><i class="ti ti-calendar"></i> April 2026</span>
+            <span><i class="ti ti-clock"></i> 3 min read</span>
+          </div>
+          <h3>New Bladeless LASIK Technique Reduces Recovery Time by 40%</h3>
+          <p>The latest generation of femtosecond laser technology allows for a blade-free, more precise LASIK procedure with significantly faster healing and less discomfort.</p>
+          <a href="#" class="card-read-more">Read more <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-img-wrap">
+          <img src="assets/images/news/news-2.jpg" alt="Pediatric eye care" />
+          <span class="news-tag teal-tag">Pediatrics</span>
+        </div>
+        <div class="news-card-body">
+          <div class="article-meta">
+            <span><i class="ti ti-calendar"></i> March 2026</span>
+            <span><i class="ti ti-clock"></i> 2 min read</span>
+          </div>
+          <h3>Basira Launches New Children's Vision Screening Program</h3>
+          <p>Early detection of vision problems in children is critical. Our new school screening initiative brings eye care directly to students across Giza.</p>
+          <a href="#" class="card-read-more">Read more <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-img-wrap">
+          <img src="assets/images/news/news-3.jpg" alt="Conference" />
+          <span class="news-tag orange-tag">Event</span>
+        </div>
+        <div class="news-card-body">
+          <div class="article-meta">
+            <span><i class="ti ti-calendar"></i> February 2026</span>
+            <span><i class="ti ti-clock"></i> 2 min read</span>
+          </div>
+          <h3>Our Doctors Attend the 2026 International Ophthalmology Congress</h3>
+          <p>Three of our senior consultants presented their research at the global ophthalmology congress in Dubai, bringing back the latest advances to our patients.</p>
+          <a href="#" class="card-read-more">Read more <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-img-wrap">
+          <img src="assets/images/news/news-4.jpg" alt="Cataract surgery" />
+          <span class="news-tag">Surgery</span>
+        </div>
+        <div class="news-card-body">
+          <div class="article-meta">
+            <span><i class="ti ti-calendar"></i> January 2026</span>
+            <span><i class="ti ti-clock"></i> 3 min read</span>
+          </div>
+          <h3>Light Adjustable Lens — Cataract Surgery Now Fine-Tuned After the Operation</h3>
+          <p>The revolutionary Light Adjustable Lens lets our surgeons refine a patient's vision using UV light weeks after implantation — a world first now available at Basira.</p>
+          <a href="#" class="card-read-more">Read more <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-img-wrap">
+          <img src="assets/images/news/news-5.jpg" alt="Dry eye treatment" />
+          <span class="news-tag teal-tag">Treatment</span>
+        </div>
+        <div class="news-card-body">
+          <div class="article-meta">
+            <span><i class="ti ti-calendar"></i> December 2025</span>
+            <span><i class="ti ti-clock"></i> 2 min read</span>
+          </div>
+          <h3>FDA-Approved Dry Eye Drop Tryptyr Now Available in Egypt</h3>
+          <p>The first treatment targeting corneal nerve stimulation for chronic dry eye syndrome is now available at our pharmacy. Ask your doctor if it's right for you.</p>
+          <a href="#" class="card-read-more">Read more <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-img-wrap">
+          <img src="assets/images/news/news-6.jpg" alt="Clinic expansion" />
+          <span class="news-tag orange-tag">Basira News</span>
+        </div>
+        <div class="news-card-body">
+          <div class="article-meta">
+            <span><i class="ti ti-calendar"></i> November 2025</span>
+            <span><i class="ti ti-clock"></i> 1 min read</span>
+          </div>
+          <h3>Basira Eye Center Completes Major Expansion — New Wing Now Open</h3>
+          <p>We have opened a new surgical wing equipped with three state-of-the-art operating theaters, doubling our capacity to serve more patients across Giza.</p>
+          <a href="#" class="card-read-more">Read more <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </article>
+
+    </div>
+    <!-- end news-grid -->
+
+  </div>
+  <!-- ===================== END NEWS TAB ===================== -->
+
+
+  <!-- ===================== DEVICES TAB ===================== -->
+  <!--
+    Hidden by default — shown when user clicks "Our Devices" tab
+  -->
+  <div class="tab-content hidden" id="tab-devices">
+
+    <div class="devices-intro">
+      <span class="section-tag teal">State of the Art</span>
+      <h2 class="section-title">Our Technology</h2>
+      <p class="section-sub">
+        Basira Eye Center invests in the most advanced diagnostic and surgical
+        equipment available — because accurate diagnosis is the foundation of great care.
+      </p>
+    </div>
+
+    <!-- DEVICES GRID -->
+    <!--
+      DESIGN: alternating layout — each device row flips image left/right.
+      Odd rows: image left, text right.
+      Even rows: image right, text left (achieved with .device-row.reverse).
+      This is more editorial than a grid and feels premium.
+    -->
+
+    <!--
+      IMAGE FILES TO ADD for devices:
+      All saved to: assets/images/devices/
+
+      oct.jpg         → search: "Zeiss Cirrus OCT machine ophthalmology"
+      femtosecond.jpg → search: "femtosecond laser LASIK machine Alcon WaveLight"
+      topographer.jpg → search: "corneal topographer Pentacam ophthalmology"
+      fundus.jpg      → search: "Optos ultra-widefield fundus camera retinal"
+      visual-field.jpg→ search: "Humphrey visual field analyzer perimetry"
+      phaco.jpg       → search: "Alcon Centurion phacoemulsification cataract machine"
+    -->
+
+    <div class="devices-list">
+
+      <!-- DEVICE 1 -->
+      <div class="device-row">
+        <div class="device-img-col">
+          <div class="device-img-wrap">
+            <img src="assets/images/devices/oct.jpg" alt="Zeiss Cirrus HD-OCT" />
+            <div class="device-img-badge">
+              <i class="ti ti-award"></i> Gold Standard
+            </div>
+          </div>
+        </div>
+        <div class="device-text-col">
+          <span class="device-category">Diagnostic Imaging</span>
+          <h3 class="device-name">Zeiss Cirrus HD-OCT 6000</h3>
+          <p class="device-desc">
+            Optical Coherence Tomography produces cross-sectional images of the retina
+            with microscopic resolution. Our Zeiss Cirrus captures 100,000 scans per second,
+            detecting retinal diseases, glaucoma damage, and macular conditions years
+            before they cause symptoms.
+          </p>
+          <div class="device-specs">
+            <div class="spec-item">
+              <i class="ti ti-scan"></i>
+              <span><strong>100,000</strong> A-scans/second</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-ruler"></i>
+              <span><strong>5μm</strong> axial resolution</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-brain"></i>
+              <span><strong>AI-powered</strong> analysis</span>
+            </div>
+          </div>
+          <div class="device-services-used">
+            <span class="used-label">Used for:</span>
+            <span class="used-tag">Glaucoma</span>
+            <span class="used-tag">Retina</span>
+            <span class="used-tag">Diabetic Eye Care</span>
+            <span class="used-tag">Macular Degeneration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEVICE 2 (reversed) -->
+      <div class="device-row reverse">
+        <div class="device-img-col">
+          <div class="device-img-wrap">
+            <img src="assets/images/devices/femtosecond.jpg" alt="Alcon WaveLight EX500" />
+            <div class="device-img-badge orange-badge-d">
+              <i class="ti ti-star-filled"></i> Most Advanced
+            </div>
+          </div>
+        </div>
+        <div class="device-text-col">
+          <span class="device-category">Laser Surgery</span>
+          <h3 class="device-name">Alcon WaveLight EX500 Excimer Laser</h3>
+          <p class="device-desc">
+            The fastest and most precise laser platform for LASIK and PRK refractive surgery.
+            At 500Hz repetition rate, it completes a full LASIK treatment in under 3 seconds
+            per eye, with eye-tracking technology that follows every micro-movement
+            for unparalleled accuracy.
+          </p>
+          <div class="device-specs">
+            <div class="spec-item">
+              <i class="ti ti-bolt"></i>
+              <span><strong>500Hz</strong> repetition rate</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-eye"></i>
+              <span><strong>1,050Hz</strong> eye tracker</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-clock"></i>
+              <span><strong>&lt;3 sec</strong> per eye</span>
+            </div>
+          </div>
+          <div class="device-services-used">
+            <span class="used-label">Used for:</span>
+            <span class="used-tag">LASIK Surgery</span>
+            <span class="used-tag">PRK</span>
+            <span class="used-tag">Vision Correction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEVICE 3 -->
+      <div class="device-row">
+        <div class="device-img-col">
+          <div class="device-img-wrap">
+            <img src="assets/images/devices/topographer.jpg" alt="Pentacam AXL Wave" />
+            <div class="device-img-badge">
+              <i class="ti ti-award"></i> Precision Tool
+            </div>
+          </div>
+        </div>
+        <div class="device-text-col">
+          <span class="device-category">Corneal Mapping</span>
+          <h3 class="device-name">Pentacam AXL Wave</h3>
+          <p class="device-desc">
+            The Pentacam captures the full 3D geometry of the cornea and anterior segment
+            in a single 2-second scan. It detects keratoconus at its earliest stage,
+            maps the cornea before surgery, and measures the lens for IOL calculations
+            with extraordinary precision.
+          </p>
+          <div class="device-specs">
+            <div class="spec-item">
+              <i class="ti ti-scan"></i>
+              <span><strong>138,000</strong> elevation points</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-clock"></i>
+              <span><strong>2 seconds</strong> scan time</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-3d-cube-sphere"></i>
+              <span><strong>Full 3D</strong> corneal map</span>
+            </div>
+          </div>
+          <div class="device-services-used">
+            <span class="used-label">Used for:</span>
+            <span class="used-tag">Keratoconus</span>
+            <span class="used-tag">Pre-LASIK Screening</span>
+            <span class="used-tag">Cataract Planning</span>
+            <span class="used-tag">Contact Lens</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEVICE 4 (reversed) -->
+      <div class="device-row reverse">
+        <div class="device-img-col">
+          <div class="device-img-wrap">
+            <img src="assets/images/devices/fundus.jpg" alt="Optos Daytona Retinal Camera" />
+            <div class="device-img-badge orange-badge-d">
+              <i class="ti ti-star-filled"></i> Ultra-Wide Field
+            </div>
+          </div>
+        </div>
+        <div class="device-text-col">
+          <span class="device-category">Retinal Imaging</span>
+          <h3 class="device-name">Optos Daytona Ultra-Widefield Camera</h3>
+          <p class="device-desc">
+            Traditional fundus cameras capture only 45° of the retina.
+            The Optos Daytona captures 200° — 82% of the retinal surface —
+            in a single image without pupil dilation. This allows us to detect
+            peripheral retinal tears, detachments, and lesions that would otherwise be missed.
+          </p>
+          <div class="device-specs">
+            <div class="spec-item">
+              <i class="ti ti-eye"></i>
+              <span><strong>200°</strong> field of view</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-percentage"></i>
+              <span><strong>82%</strong> retinal surface</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-sun-off"></i>
+              <span><strong>No dilation</strong> needed</span>
+            </div>
+          </div>
+          <div class="device-services-used">
+            <span class="used-label">Used for:</span>
+            <span class="used-tag">Retinal Detachment</span>
+            <span class="used-tag">Diabetic Retinopathy</span>
+            <span class="used-tag">Peripheral Retina</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEVICE 5 -->
+      <div class="device-row">
+        <div class="device-img-col">
+          <div class="device-img-wrap">
+            <img src="assets/images/devices/visual-field.jpg" alt="Humphrey Visual Field Analyzer" />
+            <div class="device-img-badge">
+              <i class="ti ti-award"></i> Global Standard
+            </div>
+          </div>
+        </div>
+        <div class="device-text-col">
+          <span class="device-category">Perimetry</span>
+          <h3 class="device-name">Humphrey Field Analyzer 3</h3>
+          <p class="device-desc">
+            The worldwide gold standard for visual field testing. It maps the full
+            extent of your peripheral and central vision, detecting the subtle
+            losses caused by glaucoma, neurological conditions, and optic nerve
+            disease — often before the patient notices any symptoms.
+          </p>
+          <div class="device-specs">
+            <div class="spec-item">
+              <i class="ti ti-map"></i>
+              <span><strong>120°</strong> visual field coverage</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-brain"></i>
+              <span><strong>SITA Faster</strong> AI algorithm</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-clock"></i>
+              <span><strong>Fast</strong> 2-min test</span>
+            </div>
+          </div>
+          <div class="device-services-used">
+            <span class="used-label">Used for:</span>
+            <span class="used-tag">Glaucoma</span>
+            <span class="used-tag">Neurological Eye Disease</span>
+            <span class="used-tag">Optic Nerve</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEVICE 6 (reversed) -->
+      <div class="device-row reverse">
+        <div class="device-img-col">
+          <div class="device-img-wrap">
+            <img src="assets/images/devices/phaco.jpg" alt="Alcon Centurion Vision System" />
+            <div class="device-img-badge orange-badge-d">
+              <i class="ti ti-star-filled"></i> Surgical Elite
+            </div>
+          </div>
+        </div>
+        <div class="device-text-col">
+          <span class="device-category">Cataract Surgery</span>
+          <h3 class="device-name">Alcon Centurion Vision System</h3>
+          <p class="device-desc">
+            The most advanced phacoemulsification system for cataract surgery.
+            Its Active Fluidics technology maintains rock-solid intraocular pressure
+            throughout the procedure, reducing surgical trauma and enabling faster
+            recovery. The result: safer surgery, clearer vision, faster healing.
+          </p>
+          <div class="device-specs">
+            <div class="spec-item">
+              <i class="ti ti-droplet"></i>
+              <span><strong>Active Fluidics</strong> pressure control</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-bolt"></i>
+              <span><strong>Ozil</strong> torsional ultrasound</span>
+            </div>
+            <div class="spec-item">
+              <i class="ti ti-heart-rate-monitor"></i>
+              <span><strong>Real-time</strong> IOP monitoring</span>
+            </div>
+          </div>
+          <div class="device-services-used">
+            <span class="used-label">Used for:</span>
+            <span class="used-tag">Cataract Surgery</span>
+            <span class="used-tag">IOL Implantation</span>
+            <span class="used-tag">Complex Cataracts</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end devices-list -->
+
+  </div>
+  <!-- ===================== END DEVICES TAB ===================== -->
+
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="news-cta">
+    <div class="cta-content">
+      <h2>Experience the Future of Eye Care</h2>
+      <p>Our technology is only as good as the team behind it. Book a consultation with one of our specialists today.</p>
+      <div class="cta-buttons">
+        <a href="booking.html" class="btn-primary">Book an Appointment</a>
+        <a href="contact.html" class="cta-call-btn"><i class="ti ti-phone"></i> Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-partners">
+      <p class="partners-label">Our Trusted Partners</p>
+      <div class="partners-row">
+        <div class="partner-group">
+          <span class="partner-group-title">Insurance</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/axa.png" alt="Axa" /></div>
+            <div class="partner-slot"><img src="assets/images/metlife.jpg" alt="MetLife" /></div>
+            <div class="partner-slot"><img src="assets/images/globemed.jpg" alt="Global Med" /></div>
+          </div>
+        </div>
+        <div class="partner-divider"></div>
+        <div class="partner-group">
+          <span class="partner-group-title">Glasses &amp; Lenses</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/rayban.png" alt="Ray-Ban" /></div>
+            <div class="partner-slot"><img src="assets/images/maghrabi.jpg" alt="Maghrabi" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#A8C5A0" stroke-width="2"/>
+            <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="rgba(168,197,160,0.6)" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+            <circle cx="23" cy="23" r="9" fill="#A8C5A0"/>
+            <circle cx="23" cy="23" r="4.5" fill="#0D5C63"/>
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+          </svg>
+          <div><span class="footer-logo-name">BASIRA</span><span class="footer-logo-sub">EYE CENTER</span></div>
+        </div>
+        <p class="footer-tagline">Delivering the highest standards of eye care with compassion and cutting-edge technology.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="ti ti-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="ti ti-chevron-right"></i> Our Services</a></li>
+          <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title"><i class="ti ti-clock"></i> Opening Hours</h4>
+        <ul class="footer-hours">
+          <li><span class="day">Sat – Wed</span><span class="time">09:00 am – 06:00 pm</span></li>
+          <li><span class="day">Thursday</span><span class="time">09:00 am – 04:00 pm</span></li>
+          <li class="closed"><span class="day">Friday</span><span class="time">Closed</span></li>
+        </ul>
+        <div class="footer-open-now"><span class="open-dot"></span><span>Open Now</span></div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li><i class="ti ti-map-pin"></i><span>123 Example Street,<br/>Giza, Egypt</span></li>
+          <li><i class="ti ti-phone"></i><a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a></li>
+          <li><i class="ti ti-mail"></i><a href="mailto:info@basira.com">info@basira.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Basira Eye Center · All rights reserved</p>
+      <div class="footer-bottom-links">
+        <a href="policies.html">Privacy Policy</a><span>·</span>
+        <a href="policies.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/news.js"></script>
+
+</body>
+</html>

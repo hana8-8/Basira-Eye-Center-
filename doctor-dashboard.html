@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Basira Eye Center</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/doctor-dashboard.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"><span class="link-text">Home</span><span class="eye-dot"></span></a></li>
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctor-dashboard.html"><span class="link-text">Doctor Dashboard</span><span class="eye-dot"></span></a></li>
+    </ul>
+
+    <!-- CTA BUTTONS -->
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+
+      <!-- Hamburger for mobile — JavaScript will toggle this -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </nav>
+
+<main class="doctor-dashboard">
+
+  <section class="doctor-header">
+    <div>
+      <h1>Doctor Dashboard</h1>
+      <p>View appointments, patient records, prescriptions, and schedule updates.</p>
+    </div>
+
+    <a href="login.html" class="logout-btn" onclick="return confirmLogout();">Logout</a>
+  </section>
+
+  <section class="doctor-stats">
+    <div class="stat-card">
+      <h3>Today’s Appointments</h3>
+      <p>8</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Pending Reports</h3>
+      <p>3</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Follow-ups</h3>
+      <p>5</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Available Slots</h3>
+      <p>6</p>
+    </div>
+  </section>
+
+  <section class="doctor-grid">
+
+    <div class="dashboard-section">
+      <h2>Patient Appointments</h2>
+
+      <table class="appointments-table">
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Time</th>
+            <th>Reason</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>10:00 AM</td>
+            <td>Eye Exam</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+
+          <tr>
+            <td>Jane Smith</td>
+            <td>11:30 AM</td>
+            <td>Follow-up</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+
+          <tr>
+            <td>Omar Ali</td>
+            <td>01:00 PM</td>
+            <td>Glaucoma Check</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dashboard-section">
+      <h2>Quick Actions</h2>
+
+      <div class="action-list">
+        <a href="patient-records.html">View Patient Records</a>
+        <a href="prescriptions.html">Write Prescription</a>
+        <a href="medical-reports.html">Upload Medical Report</a>
+        <a href="doctor-schedule.html">Update Availability</a>
+      </div>
+    </div>
+
+    <div class="dashboard-section">
+      <h2>Recent Patient Notes</h2>
+
+      <div class="note-card">
+        <h3>John Doe</h3>
+        <p>Needs follow-up after vision correction consultation.</p>
+      </div>
+
+      <div class="note-card">
+        <h3>Jane Smith</h3>
+        <p>Review previous eye pressure measurements before appointment.</p>
+      </div>
+    </div>
+
+    <div class="dashboard-section">
+      <h2>Schedule Overview</h2>
+
+      <ul class="schedule-list">
+        <li><span>Saturday</span> 09:00 AM - 03:00 PM</li>
+        <li><span>Monday</span> 10:00 AM - 04:00 PM</li>
+        <li><span>Wednesday</span> 09:00 AM - 02:00 PM</li>
+      </ul>
+    </div>
+
+  </section>
+
+</main>
+<footer class="footer">
+
+   
+    <div class="footer-partners">
+      <p class="partners-label">Our Trusted Partners</p>
+      <div class="partners-row">
+
+        <!-- INSURANCE COMPANIES -->
+        <div class="partner-group">
+          <span class="partner-group-title">Insurance</span>
+          <div class="partner-logos">
+
+            <div class="partner-slot">
+              <!--
+                Replace this div with:
+                <img src="assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
+              -->
+              <img src="assets/images/axa.png" alt="Axa" />
+            </div>
+
+            <div class="partner-slot">
+              <img src="assets/images/metlife.jpg" alt="MetLife" />
+            </div>
+
+            <div class="partner-slot">
+              <img src="assets/images/globemed.jpg" alt="Global Med" />
+            </div>
+
+          </div>
+        </div>
+
+        <div class="partner-divider"></div>
+
+        <!-- GLASSES & LENSES STORES -->
+        <div class="partner-group">
+          <span class="partner-group-title">Glasses &amp; Lenses</span>
+          <div class="partner-logos">
+
+            <div class="partner-slot">
+              <img src="assets/images/rayban.png" alt="Ray-Ban" />
+            </div>
+
+            <div class="partner-slot">
+              <img src="assets/images/maghrabi.jpg" alt="Maghrabi" />
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- END PARTNERS STRIP -->
+
+
+    <!-- ROW 2: MAIN FOOTER COLUMNS -->
+    <div class="footer-main">
+
+      <!-- COLUMN 1: Brand -->
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#A8C5A0" stroke-width="2"/>
+            <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="rgba(168,197,160,0.6)" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+            <circle cx="23" cy="23" r="9" fill="#A8C5A0"/>
+            <circle cx="23" cy="23" r="4.5" fill="#0D5C63"/>
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+          </svg>
+          <div>
+            <span class="footer-logo-name">BASIRA</span>
+            <span class="footer-logo-sub">EYE CENTER</span>
+          </div>
+        </div>
+        <p class="footer-tagline">
+          Delivering the highest standards of eye care with compassion and cutting-edge technology.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="ti ti-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="ti ti-chevron-right"></i> Our Services</a></li>
+          <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="eye-diseases.html"><i class="ti ti-chevron-right"></i> Eye Diseases</a></li>
+          <li><a href="shop.html"><i class="ti ti-chevron-right"></i> Shop Glasses</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
+          <li><a href="news.html"><i class="ti ti-chevron-right"></i> News &amp; Devices</a></li>
+          <li><a href="complaints.html"><i class="ti ti-chevron-right"></i> Complaints</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: Opening Hours -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">
+          <i class="ti ti-clock"></i> Opening Hours
+        </h4>
+        <ul class="footer-hours">
+          <!--
+            Update these days and times to match your real schedule.
+            To mark a day as closed, add class="closed" to the <li>.
+          -->
+          <li>
+            <span class="day">Sat – Wed</span>
+            <span class="time">09:00 am – 06:00 pm</span>
+          </li>
+          <li>
+            <span class="day">Thursday</span>
+            <span class="time">09:00 am – 04:00 pm</span>
+          </li>
+          <li class="closed">
+            <span class="day">Friday</span>
+            <span class="time">Closed</span>
+          </li>
+        </ul>
+        <div class="footer-open-now">
+          <span class="open-dot"></span>
+          <span>Open Now</span>
+        </div>
+      </div>
+
+      <!-- COLUMN 4: Contact -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li>
+            <i class="ti ti-map-pin"></i>
+            <!--
+              Replace this with your real address
+            -->
+            <span>123 Example Street,<br/>Giza, Egypt</span>
+          </li>
+          <li>
+            <i class="ti ti-phone"></i>
+            <a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a>
+          </li>
+          <li>
+            <i class="ti ti-mail"></i>
+            <a href="mailto:info@basira.com">info@basira.com</a>
+          </li>
+          <li>
+            <i class="ti ti-brand-whatsapp"></i>
+            <a href="https://wa.me/20XXXXXXXXXX">WhatsApp Us</a>
+          </li>
+        </ul>
+        <!-- Payment Methods -->
+        <div class="footer-payment">
+          <span class="payment-label">We Accept</span>
+          <div class="payment-icons">
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">Mastercard</span>
+            <span class="payment-badge">Cash</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END MAIN FOOTER -->
+
+
+    <!-- ROW 3: BOTTOM BAR -->
+    <div class="footer-bottom">
+      <p>© 2026 Basira Eye Center · All rights reserved</p>
+      <div class="footer-bottom-links">
+        <a href="policies.html">Privacy Policy</a>
+        <span>·</span>
+        <a href="policies.html">Terms of Use</a>
+        <span>·</span>
+        <a href="complaints.html">Complaints</a>
+      </div>
+    </div>
+    <!-- END BOTTOM BAR -->
+
+  </footer>
+
+<script src="js/global.js"></script>
+<script src="js/doctor-dashboard.js"></script> 
+
+<script>
+  function confirmLogout() {
+    return confirm("Are you sure you want to logout?");
+  }
+</script>
+
+</body>
+
+
+</html>

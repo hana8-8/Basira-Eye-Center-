@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Doctors — Basira Eye Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/doctors.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR (same as every page) ===================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <section class="page-header">
+    <div class="page-header-content">
+      <span class="section-tag teal">Basira Eye Center</span>
+      <h1>Our Doctors</h1>
+      <p>Meet our team of certified ophthalmologists dedicated to protecting and restoring your vision.</p>
+    </div>
+  </section>
+
+
+  <!-- ===================== DOCTORS LIST ===================== -->
+  <main class="doctors-page">
+
+    <!--
+      TEACHER NOTE — DOCTOR CARD STRUCTURE:
+      Each .doctor-card is one row — full width of the page.
+      It has two sides:
+        .doctor-left  → photo + name + rating + tags
+        .doctor-right → details + book button
+
+      When clicked, .doctor-details expands below showing
+      degrees, specialties, and a full booking calendar.
+
+      To add a real doctor photo:
+      Replace the .doctor-photo-placeholder div with:
+      <img src="assets/images/doctors/doctor-name.jpg" alt="Dr. Name" />
+
+      To add a new doctor: copy one entire .doctor-card block
+      and update the text content inside it.
+    -->
+
+    <!-- ===== DOCTOR 1 ===== -->
+    <div class="doctor-card" id="doc1">
+      <div class="doctor-summary" onclick="toggleDoctor('doc1')">
+
+        <div class="doctor-left">
+          <div class="doctor-photo-wrap">
+            <img src="assets/images/doc1.jpg" alt="Dr. Ahmed Hassan" />
+          </div>
+
+          <div class="doctor-info">
+            <div class="doctor-name-row">
+              <span class="doctor-title-label">Doctor</span>
+              <h2 class="doctor-name">Ahmed Hassan El-Sayed</h2>
+            </div>
+            <p class="doctor-position">Consultant Ophthalmologist — Faculty of Medicine, Cairo University</p>
+
+            <div class="doctor-rating">
+              <div class="stars">
+                <i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-filled"></i>
+              </div>
+              <span class="rating-count">Overall Rating from 214 visitors</span>
+            </div>
+
+            <div class="doctor-tags">
+              <span class="tag"><i class="ti ti-ear"></i> Good Listener</span>
+              <span class="tag"><i class="ti ti-sparkles"></i> Highly Recommended</span>
+            </div>
+
+            <div class="doctor-quick-info">
+              <span><i class="ti ti-stethoscope"></i> Ophthalmologist — Specialized in Adult Ophthalmology, Lasik, Cataract Surgery</span>
+              <span><i class="ti ti-coin"></i> Fees: 500 EGP</span>
+              <span><i class="ti ti-clock"></i> Avg. Waiting Time: 10 Minutes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-right">
+          <div class="expand-hint">
+            <span>View Profile &amp; Book</span>
+            <i class="ti ti-chevron-down expand-icon"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EXPANDED DETAILS — hidden until clicked -->
+      <div class="doctor-details" id="doc1-details">
+
+        <div class="details-grid">
+
+          <!-- LEFT: About + Degrees -->
+          <div class="details-left">
+
+            <div class="detail-section">
+              <h3><i class="ti ti-user"></i> About the Doctor</h3>
+              <p>
+                Dr. Ahmed Hassan El-Sayed is a senior consultant ophthalmologist with over 15 years
+                of experience. He specializes in refractive surgery, cataract operations, and
+                diabetic eye disease management. He has performed over 3,000 successful Lasik procedures.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3><i class="ti ti-school"></i> Scientific Degrees &amp; Qualifications</h3>
+              <ul class="degrees-list">
+                <li><i class="ti ti-certificate"></i> M.B.B.Ch — Cairo University, 2005</li>
+                <li><i class="ti ti-certificate"></i> MSc Ophthalmology — Cairo University, 2009</li>
+                <li><i class="ti ti-certificate"></i> MD Ophthalmology — Cairo University, 2013</li>
+                <li><i class="ti ti-certificate"></i> Fellowship in Refractive Surgery — Germany, 2015</li>
+                <li><i class="ti ti-certificate"></i> Member of the Egyptian Ophthalmological Society</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3><i class="ti ti-eye"></i> Symptoms &amp; Services</h3>
+              <div class="services-tags">
+                <span>Cataract Surgery</span>
+                <span>Lasik</span>
+                <span>Glaucoma</span>
+                <span>Diabetic Retinopathy</span>
+                <span>Dry Eye</span>
+                <span>Refractive Errors</span>
+                <span>Corneal Diseases</span>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3><i class="ti ti-message-circle"></i> Latest Patient Review</h3>
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                  <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                  <i class="ti ti-star-filled"></i>
+                </div>
+                <p class="review-text">"الدكتور ممتاز جداً، شرح التشخيص بالتفصيل وكان صبور جداً مع أسئلتي."</p>
+                <span class="review-meta">Sarah M. · March 2026</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Booking Calendar -->
+          <div class="details-right">
+            <div class="booking-panel">
+              <h3><i class="ti ti-calendar"></i> Book an Appointment</h3>
+
+              <div class="day-columns">
+                <div class="day-col available">
+                  <div class="day-header active-day">Today</div>
+                  <div class="time-slots">
+                    <button class="time-slot">09:00 AM</button>
+                    <button class="time-slot">09:30 AM</button>
+                    <button class="time-slot selected">10:00 AM</button>
+                    <button class="time-slot">10:30 AM</button>
+                    <button class="time-slot">11:00 AM</button>
+                    <button class="time-slot">02:00 PM</button>
+                  </div>
+                  <button class="book-btn">BOOK</button>
+                </div>
+
+                <div class="day-col available">
+                  <div class="day-header">Tomorrow</div>
+                  <div class="time-slots">
+                    <button class="time-slot">09:00 AM</button>
+                    <button class="time-slot">09:30 AM</button>
+                    <button class="time-slot">10:00 AM</button>
+                    <button class="time-slot">11:30 AM</button>
+                    <button class="time-slot">03:00 PM</button>
+                    <button class="time-slot">04:00 PM</button>
+                  </div>
+                  <button class="book-btn">BOOK</button>
+                </div>
+
+                <div class="day-col unavailable">
+                  <div class="day-header muted-day">Sat 10/5</div>
+                  <div class="no-slots">
+                    <i class="ti ti-calendar-off"></i>
+                    <span>No Available Appointments</span>
+                  </div>
+                  <button class="book-btn disabled" disabled>BOOK</button>
+                </div>
+              </div>
+
+              <p class="booking-note">
+                <i class="ti ti-info-circle"></i>
+                Reservation required — first come, first served.
+                <a href="booking.html">View full calendar →</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- ===== END DOCTOR 1 ===== -->
+
+
+    <!-- ===== DOCTOR 2 ===== -->
+    <div class="doctor-card" id="doc2">
+      <div class="doctor-summary" onclick="toggleDoctor('doc2')">
+        <div class="doctor-left">
+          <div class="doctor-photo-wrap">
+            <img src="assets/images/doc6.jpeg" alt="Dr. Mona Khaled Ibrahim" />
+          </div>
+          <div class="doctor-info">
+            <div class="doctor-name-row">
+              <span class="doctor-title-label">Doctor</span>
+              <h2 class="doctor-name">Mona Khaled Ibrahim</h2>
+            </div>
+            <p class="doctor-position">Pediatric Ophthalmology Specialist — Ain Shams University</p>
+            <div class="doctor-rating">
+              <div class="stars">
+                <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-half-filled"></i>
+              </div>
+              <span class="rating-count">Overall Rating from 187 visitors</span>
+            </div>
+            <div class="doctor-tags">
+              <span class="tag"><i class="ti ti-heart"></i> Child Friendly</span>
+              <span class="tag"><i class="ti ti-sparkles"></i> Highly Experienced</span>
+            </div>
+            <div class="doctor-quick-info">
+              <span><i class="ti ti-stethoscope"></i> Pediatric Ophthalmologist — Specialized in Children's Vision, Strabismus, Amblyopia</span>
+              <span><i class="ti ti-coin"></i> Fees: 400 EGP</span>
+              <span><i class="ti ti-clock"></i> Avg. Waiting Time: 15 Minutes</span>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-right">
+          <div class="expand-hint">
+            <span>View Profile &amp; Book</span>
+            <i class="ti ti-chevron-down expand-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="doctor-details" id="doc2-details">
+        <div class="details-grid">
+          <div class="details-left">
+            <div class="detail-section">
+              <h3><i class="ti ti-user"></i> About the Doctor</h3>
+              <p>Dr. Mona Khaled Ibrahim is a leading specialist in pediatric eye care with 12 years of dedicated experience treating children from infancy through adolescence. She is known for her gentle approach and ability to put young patients at ease.</p>
+            </div>
+            <div class="detail-section">
+              <h3><i class="ti ti-school"></i> Scientific Degrees &amp; Qualifications</h3>
+              <ul class="degrees-list">
+                <li><i class="ti ti-certificate"></i> M.B.B.Ch — Ain Shams University, 2008</li>
+                <li><i class="ti ti-certificate"></i> MSc Ophthalmology — Ain Shams University, 2012</li>
+                <li><i class="ti ti-certificate"></i> MD Pediatric Ophthalmology — Ain Shams, 2016</li>
+                <li><i class="ti ti-certificate"></i> Fellowship in Strabismus — London, 2018</li>
+              </ul>
+            </div>
+            <div class="detail-section">
+              <h3><i class="ti ti-eye"></i> Symptoms &amp; Services</h3>
+              <div class="services-tags">
+                <span>Strabismus</span><span>Amblyopia</span><span>Pediatric Glaucoma</span>
+                <span>Lazy Eye</span><span>Children's Vision Testing</span><span>Congenital Cataracts</span>
+              </div>
+            </div>
+            <div class="detail-section">
+              <h3><i class="ti ti-message-circle"></i> Latest Patient Review</h3>
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                  <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                  <i class="ti ti-star-filled"></i>
+                </div>
+                <p class="review-text">"دكتورة رائعة مع الأطفال، ابني كان خايف في الأول وبعدين اتبسط جداً."</p>
+                <span class="review-meta">Heba A. · April 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="details-right">
+            <div class="booking-panel">
+              <h3><i class="ti ti-calendar"></i> Book an Appointment</h3>
+              <div class="day-columns">
+                <div class="day-col available">
+                  <div class="day-header active-day">Today</div>
+                  <div class="time-slots">
+                    <button class="time-slot">10:00 AM</button>
+                    <button class="time-slot">11:00 AM</button>
+                    <button class="time-slot">01:00 PM</button>
+                  </div>
+                  <button class="book-btn">BOOK</button>
+                </div>
+                <div class="day-col available">
+                  <div class="day-header">Tomorrow</div>
+                  <div class="time-slots">
+                    <button class="time-slot">09:30 AM</button>
+                    <button class="time-slot">10:30 AM</button>
+                    <button class="time-slot">12:00 PM</button>
+                    <button class="time-slot">02:30 PM</button>
+                  </div>
+                  <button class="book-btn">BOOK</button>
+                </div>
+                <div class="day-col unavailable">
+                  <div class="day-header muted-day">Sat 10/5</div>
+                  <div class="no-slots"><i class="ti ti-calendar-off"></i><span>No Available Appointments</span></div>
+                  <button class="book-btn disabled" disabled>BOOK</button>
+                </div>
+              </div>
+              <p class="booking-note"><i class="ti ti-info-circle"></i> Reservation required. <a href="booking.html">View full calendar →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ===== END DOCTOR 2 ===== -->
+
+
+    <!-- ===== DOCTOR 3 ===== -->
+    <div class="doctor-card" id="doc3">
+      <div class="doctor-summary" onclick="toggleDoctor('doc3')">
+        <div class="doctor-left">
+          <div class="doctor-photo-wrap">
+            <img src="assets/images/doc3.jpg" alt="Dr. Tariq Youssef Mansour" />
+          </div>
+          <div class="doctor-info">
+            <div class="doctor-name-row">
+              <span class="doctor-title-label">Doctor</span>
+              <h2 class="doctor-name">Tariq Youssef Mansour</h2>
+            </div>
+            <p class="doctor-position">Retina &amp; Vitreous Specialist — Alexandria University</p>
+            <div class="doctor-rating">
+              <div class="stars">
+                <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                <i class="ti ti-star-filled"></i>
+              </div>
+              <span class="rating-count">Overall Rating from 302 visitors</span>
+            </div>
+            <div class="doctor-tags">
+              <span class="tag"><i class="ti ti-award"></i> Top Specialist</span>
+            </div>
+            <div class="doctor-quick-info">
+              <span><i class="ti ti-stethoscope"></i> Retina Specialist — Vitreoretinal Surgery, Macular Degeneration, Diabetic Retinopathy</span>
+              <span><i class="ti ti-coin"></i> Fees: 700 EGP</span>
+              <span><i class="ti ti-clock"></i> Avg. Waiting Time: 20 Minutes</span>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-right">
+          <div class="expand-hint"><span>View Profile &amp; Book</span><i class="ti ti-chevron-down expand-icon"></i></div>
+        </div>
+      </div>
+      <div class="doctor-details" id="doc3-details">
+        <div class="details-grid">
+          <div class="details-left">
+            <div class="detail-section">
+              <h3><i class="ti ti-user"></i> About the Doctor</h3>
+              <p>Dr. Tariq Youssef Mansour is one of Egypt's leading retina specialists with 18 years of experience. He has pioneered minimally invasive vitreoretinal techniques and trained over 50 ophthalmology residents.</p>
+            </div>
+            <div class="detail-section">
+              <h3><i class="ti ti-school"></i> Scientific Degrees &amp; Qualifications</h3>
+              <ul class="degrees-list">
+                <li><i class="ti ti-certificate"></i> M.B.B.Ch — Alexandria University, 2002</li>
+                <li><i class="ti ti-certificate"></i> MD Ophthalmology — Alexandria University, 2008</li>
+                <li><i class="ti ti-certificate"></i> Fellowship Vitreoretinal Surgery — USA, 2011</li>
+                <li><i class="ti ti-certificate"></i> FRCS (Ophthalmology) — Edinburgh, 2013</li>
+              </ul>
+            </div>
+            <div class="detail-section">
+              <h3><i class="ti ti-eye"></i> Symptoms &amp; Services</h3>
+              <div class="services-tags">
+                <span>Retinal Detachment</span><span>Macular Degeneration</span>
+                <span>Vitreoretinal Surgery</span><span>Diabetic Retinopathy</span>
+                <span>Epiretinal Membrane</span><span>Macular Hole</span>
+              </div>
+            </div>
+            <div class="detail-section">
+              <h3><i class="ti ti-message-circle"></i> Latest Patient Review</h3>
+              <div class="review-card">
+                <div class="review-stars">
+                  <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                  <i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i>
+                  <i class="ti ti-star-filled"></i>
+                </div>
+                <p class="review-text">"Exceptional surgeon. Saved my mother's vision after a complex retinal detachment."</p>
+                <span class="review-meta">Omar F. · February 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="details-right">
+            <div class="booking-panel">
+              <h3><i class="ti ti-calendar"></i> Book an Appointment</h3>
+              <div class="day-columns">
+                <div class="day-col available">
+                  <div class="day-header active-day">Today</div>
+                  <div class="time-slots">
+                    <button class="time-slot">08:00 AM</button>
+                    <button class="time-slot">09:00 AM</button>
+                    <button class="time-slot">11:00 AM</button>
+                  </div>
+                  <button class="book-btn">BOOK</button>
+                </div>
+                <div class="day-col available">
+                  <div class="day-header">Tomorrow</div>
+                  <div class="time-slots">
+                    <button class="time-slot">08:30 AM</button>
+                    <button class="time-slot">10:00 AM</button>
+                    <button class="time-slot">01:00 PM</button>
+                  </div>
+                  <button class="book-btn">BOOK</button>
+                </div>
+                <div class="day-col unavailable">
+                  <div class="day-header muted-day">Sat 10/5</div>
+                  <div class="no-slots"><i class="ti ti-calendar-off"></i><span>No Available Appointments</span></div>
+                  <button class="book-btn disabled" disabled>BOOK</button>
+                </div>
+              </div>
+              <p class="booking-note"><i class="ti ti-info-circle"></i> Reservation required. <a href="booking.html">View full calendar →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ===== END DOCTOR 3 ===== -->
+
+
+    <!-- ===== DOCTORS 4, 5, 6 — compact versions ===== -->
+    <!-- Copy the full doctor card structure above for each one -->
+    <!-- For now these show as placeholder cards ready to fill -->
+
+    <div class="doctor-card" id="doc4">
+      <div class="doctor-summary" onclick="toggleDoctor('doc4')">
+        <div class="doctor-left">
+          <div class="doctor-photo-wrap"><img src="assets/images/doc2.jpg" alt="Dr. Layla Nasser Farouk" /></div>
+          <div class="doctor-info">
+            <div class="doctor-name-row"><span class="doctor-title-label">Doctor</span><h2 class="doctor-name">Layla Nasser Farouk</h2></div>
+            <p class="doctor-position">Glaucoma Specialist — Cairo University</p>
+            <div class="doctor-rating">
+              <div class="stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star"></i></div>
+              <span class="rating-count">Overall Rating from 145 visitors</span>
+            </div>
+            <div class="doctor-tags"><span class="tag"><i class="ti ti-ear"></i> Good Listener</span></div>
+            <div class="doctor-quick-info">
+              <span><i class="ti ti-stethoscope"></i> Glaucoma, Optic Nerve Disorders, Intraocular Pressure Management</span>
+              <span><i class="ti ti-coin"></i> Fees: 450 EGP</span>
+              <span><i class="ti ti-clock"></i> Avg. Waiting Time: 12 Minutes</span>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-right"><div class="expand-hint"><span>View Profile &amp; Book</span><i class="ti ti-chevron-down expand-icon"></i></div></div>
+      </div>
+      <div class="doctor-details" id="doc4-details">
+        <div class="details-grid">
+          <div class="details-left">
+            <div class="detail-section"><h3><i class="ti ti-user"></i> About the Doctor</h3><p>Dr. Layla Nasser Farouk is a glaucoma specialist with a focus on early detection and long-term management of optic nerve diseases. She has published research on IOP management techniques.</p></div>
+            <div class="detail-section">
+              <h3><i class="ti ti-school"></i> Scientific Degrees &amp; Qualifications</h3>
+              <ul class="degrees-list">
+                <li><i class="ti ti-certificate"></i> M.B.B.Ch — Cairo University, 2007</li>
+                <li><i class="ti ti-certificate"></i> MSc Ophthalmology — Cairo University, 2011</li>
+                <li><i class="ti ti-certificate"></i> MD Glaucoma — Cairo University, 2015</li>
+              </ul>
+            </div>
+            <div class="detail-section"><h3><i class="ti ti-eye"></i> Symptoms &amp; Services</h3><div class="services-tags"><span>Glaucoma</span><span>High Eye Pressure</span><span>Optic Nerve</span><span>Visual Field Testing</span></div></div>
+          </div>
+          <div class="details-right">
+            <div class="booking-panel">
+              <h3><i class="ti ti-calendar"></i> Book an Appointment</h3>
+              <div class="day-columns">
+                <div class="day-col available"><div class="day-header active-day">Today</div><div class="time-slots"><button class="time-slot">10:00 AM</button><button class="time-slot">11:30 AM</button><button class="time-slot">02:00 PM</button></div><button class="book-btn">BOOK</button></div>
+                <div class="day-col available"><div class="day-header">Tomorrow</div><div class="time-slots"><button class="time-slot">09:00 AM</button><button class="time-slot">12:00 PM</button></div><button class="book-btn">BOOK</button></div>
+                <div class="day-col unavailable"><div class="day-header muted-day">Sat 10/5</div><div class="no-slots"><i class="ti ti-calendar-off"></i><span>No Available Appointments</span></div><button class="book-btn disabled" disabled>BOOK</button></div>
+              </div>
+              <p class="booking-note"><i class="ti ti-info-circle"></i> Reservation required. <a href="booking.html">View full calendar →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-card" id="doc5">
+      <div class="doctor-summary" onclick="toggleDoctor('doc5')">
+        <div class="doctor-left">
+          <div class="doctor-photo-wrap"><img src="assets/images/doc5.jpg" alt="Dr. Karim Samir El-Naggar" /></div>
+          <div class="doctor-info">
+            <div class="doctor-name-row"><span class="doctor-title-label">Doctor</span><h2 class="doctor-name">Karim Samir El-Naggar</h2></div>
+            <p class="doctor-position">Cornea &amp; External Eye Disease Specialist</p>
+            <div class="doctor-rating">
+              <div class="stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-half-filled"></i></div>
+              <span class="rating-count">Overall Rating from 98 visitors</span>
+            </div>
+            <div class="doctor-tags"><span class="tag"><i class="ti ti-sparkles"></i> Highly Recommended</span></div>
+            <div class="doctor-quick-info">
+              <span><i class="ti ti-stethoscope"></i> Corneal Transplant, Keratoconus, Dry Eye Syndrome</span>
+              <span><i class="ti ti-coin"></i> Fees: 550 EGP</span>
+              <span><i class="ti ti-clock"></i> Avg. Waiting Time: 8 Minutes</span>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-right"><div class="expand-hint"><span>View Profile &amp; Book</span><i class="ti ti-chevron-down expand-icon"></i></div></div>
+      </div>
+      <div class="doctor-details" id="doc5-details">
+        <div class="details-grid">
+          <div class="details-left">
+            <div class="detail-section"><h3><i class="ti ti-user"></i> About the Doctor</h3><p>Dr. Karim Samir El-Naggar specializes in corneal diseases and has performed over 500 corneal transplantation surgeries with exceptional outcomes.</p></div>
+            <div class="detail-section">
+              <h3><i class="ti ti-school"></i> Scientific Degrees &amp; Qualifications</h3>
+              <ul class="degrees-list">
+                <li><i class="ti ti-certificate"></i> M.B.B.Ch — Mansoura University, 2010</li>
+                <li><i class="ti ti-certificate"></i> MD Ophthalmology — Mansoura University, 2016</li>
+                <li><i class="ti ti-certificate"></i> Fellowship Cornea — Germany, 2019</li>
+              </ul>
+            </div>
+            <div class="detail-section"><h3><i class="ti ti-eye"></i> Symptoms &amp; Services</h3><div class="services-tags"><span>Keratoconus</span><span>Corneal Transplant</span><span>Dry Eye</span><span>Corneal Infections</span></div></div>
+          </div>
+          <div class="details-right">
+            <div class="booking-panel">
+              <h3><i class="ti ti-calendar"></i> Book an Appointment</h3>
+              <div class="day-columns">
+                <div class="day-col available"><div class="day-header active-day">Today</div><div class="time-slots"><button class="time-slot">09:00 AM</button><button class="time-slot">10:30 AM</button></div><button class="book-btn">BOOK</button></div>
+                <div class="day-col available"><div class="day-header">Tomorrow</div><div class="time-slots"><button class="time-slot">11:00 AM</button><button class="time-slot">03:00 PM</button></div><button class="book-btn">BOOK</button></div>
+                <div class="day-col unavailable"><div class="day-header muted-day">Sat 10/5</div><div class="no-slots"><i class="ti ti-calendar-off"></i><span>No Available Appointments</span></div><button class="book-btn disabled" disabled>BOOK</button></div>
+              </div>
+              <p class="booking-note"><i class="ti ti-info-circle"></i> Reservation required. <a href="booking.html">View full calendar →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-card" id="doc6">
+      <div class="doctor-summary" onclick="toggleDoctor('doc6')">
+        <div class="doctor-left">
+          <div class="doctor-photo-wrap"><img src="assets/images/doc4.jpg" alt="Dr. Nadia Fawzy El-Rashidy" /></div>
+          <div class="doctor-info">
+            <div class="doctor-name-row"><span class="doctor-title-label">Doctor</span><h2 class="doctor-name">Nadia Fawzy El-Rashidy</h2></div>
+            <p class="doctor-position">Oculoplastics &amp; Orbit Specialist — Zagazig University</p>
+            <div class="doctor-rating">
+              <div class="stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
+              <span class="rating-count">Overall Rating from 76 visitors</span>
+            </div>
+            <div class="doctor-tags"><span class="tag"><i class="ti ti-heart"></i> Caring</span><span class="tag"><i class="ti ti-award"></i> Expert</span></div>
+            <div class="doctor-quick-info">
+              <span><i class="ti ti-stethoscope"></i> Eyelid Surgery, Orbital Tumors, Tearing Problems, Botox</span>
+              <span><i class="ti ti-coin"></i> Fees: 600 EGP</span>
+              <span><i class="ti ti-clock"></i> Avg. Waiting Time: 18 Minutes</span>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-right"><div class="expand-hint"><span>View Profile &amp; Book</span><i class="ti ti-chevron-down expand-icon"></i></div></div>
+      </div>
+      <div class="doctor-details" id="doc6-details">
+        <div class="details-grid">
+          <div class="details-left">
+            <div class="detail-section"><h3><i class="ti ti-user"></i> About the Doctor</h3><p>Dr. Nadia Fawzy El-Rashidy is a pioneer in oculoplastic surgery in Egypt, combining functional and aesthetic eye surgery with exceptional precision and care.</p></div>
+            <div class="detail-section">
+              <h3><i class="ti ti-school"></i> Scientific Degrees &amp; Qualifications</h3>
+              <ul class="degrees-list">
+                <li><i class="ti ti-certificate"></i> M.B.B.Ch — Zagazig University, 2006</li>
+                <li><i class="ti ti-certificate"></i> MD Ophthalmology — Zagazig University, 2013</li>
+                <li><i class="ti ti-certificate"></i> Fellowship Oculoplastics — UK, 2016</li>
+              </ul>
+            </div>
+            <div class="detail-section"><h3><i class="ti ti-eye"></i> Symptoms &amp; Services</h3><div class="services-tags"><span>Eyelid Surgery</span><span>Ptosis</span><span>Orbital Tumors</span><span>Tearing</span><span>Botox</span></div></div>
+          </div>
+          <div class="details-right">
+            <div class="booking-panel">
+              <h3><i class="ti ti-calendar"></i> Book an Appointment</h3>
+              <div class="day-columns">
+                <div class="day-col available"><div class="day-header active-day">Today</div><div class="time-slots"><button class="time-slot">02:00 PM</button><button class="time-slot">03:30 PM</button></div><button class="book-btn">BOOK</button></div>
+                <div class="day-col available"><div class="day-header">Tomorrow</div><div class="time-slots"><button class="time-slot">10:00 AM</button><button class="time-slot">11:30 AM</button><button class="time-slot">01:00 PM</button></div><button class="book-btn">BOOK</button></div>
+                <div class="day-col unavailable"><div class="day-header muted-day">Sat 10/5</div><div class="no-slots"><i class="ti ti-calendar-off"></i><span>No Available Appointments</span></div><button class="book-btn disabled" disabled>BOOK</button></div>
+              </div>
+              <p class="booking-note"><i class="ti ti-info-circle"></i> Reservation required. <a href="booking.html">View full calendar →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <!-- ===================== END DOCTORS LIST ===================== -->
+
+
+  <!-- ===================== FOOTER (same as every page) ===================== -->
+  <footer class="footer">
+    <div class="footer-partners">
+      <p class="partners-label">Our Trusted Partners</p>
+      <div class="partners-row">
+        <div class="partner-group">
+          <span class="partner-group-title">Insurance</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/axa.png" alt="Axa" /></div>
+            <div class="partner-slot"><img src="assets/images/metlife.jpg" alt="MetLife" /></div>
+            <div class="partner-slot"><img src="assets/images/globemed.jpg" alt="Global Med" /></div>
+          </div>
+        </div>
+        <div class="partner-divider"></div>
+        <div class="partner-group">
+          <span class="partner-group-title">Glasses &amp; Lenses</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/rayban.png" alt="Ray-Ban" /></div>
+            <div class="partner-slot"><img src="assets/images/maghrabi.jpg" alt="Maghrabi" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#A8C5A0" stroke-width="2"/>
+            <circle cx="23" cy="23" r="9" fill="#A8C5A0"/>
+            <circle cx="23" cy="23" r="4.5" fill="#0D5C63"/>
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+          </svg>
+          <div><span class="footer-logo-name">BASIRA</span><span class="footer-logo-sub">EYE CENTER</span></div>
+        </div>
+        <p class="footer-tagline">Delivering the highest standards of eye care with compassion and cutting-edge technology.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="ti ti-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="ti ti-chevron-right"></i> Our Services</a></li>
+          <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
+          <li><a href="news.html"><i class="ti ti-chevron-right"></i> News &amp; Devices</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title"><i class="ti ti-clock"></i> Opening Hours</h4>
+        <ul class="footer-hours">
+          <li><span class="day">Sat – Wed</span><span class="time">09:00 am – 06:00 pm</span></li>
+          <li><span class="day">Thursday</span><span class="time">09:00 am – 04:00 pm</span></li>
+          <li class="closed"><span class="day">Friday</span><span class="time">Closed</span></li>
+        </ul>
+        <div class="footer-open-now"><span class="open-dot"></span><span>Open Now</span></div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li><i class="ti ti-map-pin"></i><span>123 Example Street,<br/>Giza, Egypt</span></li>
+          <li><i class="ti ti-phone"></i><a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a></li>
+          <li><i class="ti ti-mail"></i><a href="mailto:info@basira.com">info@basira.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Basira Eye Center · All rights reserved</p>
+      <div class="footer-bottom-links">
+        <a href="policies.html">Privacy Policy</a><span>·</span>
+        <a href="policies.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/doctors.js"></script>
+
+</body>
+</html>

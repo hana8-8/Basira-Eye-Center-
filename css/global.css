@@ -126,93 +126,225 @@ button {
    NAVBAR — shared across ALL pages
    ======================================================
    TEACHER NOTE:
-   This navbar code should be copied exactly as-is
-   into every page's HTML. The styles come from here
-   in global.css so every page's navbar looks the same.
-   Your partner Farah is responsible for this section —
-   she should finalize it and everyone else copies it.
+   The navbar has 4 design decisions made here:
+
+   1. BLENDING — instead of a harsh border-bottom, we use
+      a gradient fade at the bottom so the navbar melts
+      into the page content below it naturally.
+
+   2. LOGO IMAGE — .logo-img-wrap gives the logo a fixed
+      square container. Your image goes in assets/images/logo.png
+
+   3. LINK STYLE — links are now bolder, spaced better,
+      and have a smooth underline animation on hover instead
+      of a background block. Much more refined.
+
+   4. EYE INDICATOR — .eye-dot is the little eye SVG under
+      the active link. It's hidden by default (opacity: 0)
+      and appears only when the parent <a> has class "active".
 ====================================================== */
+
+/* --- NAVBAR WRAPPER --- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-lg);
-  height: 70px;
+  height: 76px;
   background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;           /* Sticks to top when you scroll */
+  position: sticky;
   top: 0;
-  z-index: 1000;              /* Sits above everything else */
-  transition: box-shadow var(--transition);
+  z-index: 1000;
+  transition: box-shadow var(--transition), background var(--transition);
+  /*
+    BLENDING TRICK — two shadows at once (comma separates them):
+    First shadow: short, subtle, right below the bar
+    Second shadow: very tall, very blurred, nearly transparent —
+    this is the one that fades softly into the hero below.
+    The 98% white covers the sharp edge and creates a melt effect.
+  */
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* When user scrolls, JS adds this class to add a shadow */
 .navbar.scrolled {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
 }
 
-/* LOGO */
+/* --- LOGO --- */
+/*
+  TEACHER NOTE:
+  .nav-logo is now an <a> tag (link to home page).
+  We make it flex so the image and text sit side by side.
+  flex-shrink: 0 means it will never get squeezed smaller.
+*/
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-  flex-shrink: 0;             /* Logo never shrinks */
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
-.logo-svg { display: block; }
+/*
+  The logo image wrapper gives the image a fixed size box.
+  object-fit: contain means the image scales to fit without
+  being cropped or stretched — important for logos.
+*/
+.logo-img-wrap {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* Scales image to fit without cropping */
+}
+
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  /* Dashed box — visible only when logo.png is missing */
+  border: 2px dashed var(--color-primary-mid);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-light);
+}
 
 .logo-text {
   display: flex;
   flex-direction: column;
+  gap: 1px;
 }
 
 .logo-name {
   font-family: var(--font-heading);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--color-primary);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   line-height: 1;
 }
 
 .logo-sub {
   font-size: 9px;
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
   color: var(--color-primary-mid);
   text-transform: uppercase;
+  font-weight: 500;
 }
 
-/* NAV LINKS */
+/* --- NAV LINKS --- */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 0;
   flex-wrap: nowrap;
 }
 
+/*
+  TEACHER NOTE — LINK STRUCTURE:
+  Each <a> is now position: relative so we can place the
+  eye dot below it using absolute positioning.
+  The link itself is flex so the text and dot stack vertically.
+*/
 .nav-links a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   font-size: 13px;
-  font-weight: 400;
-  color: var(--color-text);
-  padding: 6px 10px;
-  border-radius: var(--radius-sm);
-  transition: color var(--transition), background var(--transition);
+  font-weight: 600;             /* Bold — clearly readable */
+  color: var(--color-text);     /* Full charcoal — no more muted grey */
+  padding: 8px 11px;
   white-space: nowrap;
+  transition: color var(--transition);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+/*
+  The underline effect — we use ::after pseudo-element.
+  It's a thin teal line that starts at width: 0 (invisible)
+  and grows to width: 100% on hover.
+  This is cleaner than a background block.
+*/
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-primary-mid);
+  border-radius: 2px;
+  transition: width var(--transition);
 }
 
 .nav-links a:hover {
   color: var(--color-primary);
-  background: var(--color-primary-light);
 }
 
-/* Active page link — add class="active" to current page's link */
-.nav-links a.active {
+.nav-links a:hover::after {
+  width: 60%;
+}
+
+/* --- EYE INDICATOR --- */
+/*
+  TEACHER NOTE:
+  The eye shape is now drawn as an SVG injected by JavaScript.
+  CSS here just controls its visibility and animation.
+  The SVG is an almond/leaf shape (not a circle) with:
+  - pointed corners left and right (real eye shape)
+  - eyelash strokes radiating from the top lid
+  - an iris circle with a pupil and a highlight dot
+*/
+.eye-dot {
+  display: block;
+  width: 22px;
+  height: 14px;
+  opacity: 0;
+  transform: scale(0.4) translateY(-6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.nav-links a.active .eye-dot,
+.nav-links a:hover .eye-dot {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Active link text */
+.nav-links a.active .link-text {
   color: var(--color-primary);
-  font-weight: 600;
-  background: var(--color-primary-light);
+  font-weight: 700;
 }
 
-/* CTA BUTTONS */
+.nav-links a.active::after {
+  width: 60%;
+  background: var(--color-primary);
+}
+
+/* --- CTA BUTTONS --- */
+/*
+  TEACHER NOTE — THE FADE EFFECT YOU LIKED:
+  Both buttons use the same trick:
+  - btn-login starts transparent, FILLS with teal on hover
+  - btn-book starts filled teal, EMPTIES to transparent on hover
+  The transition property is what makes it a smooth fade
+  instead of an instant jump. "all 0.25s ease" means
+  every property (color, background, border) fades over 0.25 seconds.
+*/
 .nav-cta {
   display: flex;
   align-items: center;
@@ -220,6 +352,18 @@ button {
   flex-shrink: 0;
 }
 
+/*
+  TEACHER NOTE — TWO DIFFERENT BUTTON STYLES:
+
+  btn-login  = "ghost" button — transparent background, teal border and text
+               On hover → fills with teal (fades IN)
+
+  btn-book   = "solid" button — filled teal background, white text
+               On hover → background lightens to medium teal (fades LIGHTER)
+
+  They look clearly different because one is empty and one is filled.
+  The transition: all makes the color change a smooth fade, not a jump.
+*/
 .btn-login {
   border: 1.5px solid var(--color-primary);
   color: var(--color-primary);
@@ -228,41 +372,46 @@ button {
   border-radius: var(--radius-full);
   font-size: 13px;
   font-weight: 500;
-  transition: all var(--transition);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
   display: inline-block;
+  cursor: pointer;
 }
 
 .btn-login:hover {
   background: var(--color-primary);
-  color: white;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(13, 92, 99, 0.35);
 }
 
 .btn-book {
-  background: var(--color-primary);
+  background: var(--color-primary);       /* solid filled teal */
   color: white;
-  border: none;
+  border: 1.5px solid var(--color-primary);
   padding: 8px 18px;
   border-radius: var(--radius-full);
   font-size: 13px;
   font-weight: 600;
-  transition: background var(--transition);
+  transition: all 0.3s ease;
   white-space: nowrap;
   display: inline-block;
 }
 
 .btn-book:hover {
-  background: var(--color-primary-mid);
+  background: var(--color-primary-mid);   /* fades to lighter teal */
+  border-color: var(--color-primary-mid);
+  color: white;
 }
 
-/* HAMBURGER (mobile menu button) */
+/* --- HAMBURGER (mobile) --- */
 .hamburger {
-  display: none;              /* Hidden on desktop, shown on mobile */
+  display: none;
   flex-direction: column;
   gap: 5px;
   background: none;
   border: none;
   padding: 4px;
+  cursor: pointer;
 }
 
 .hamburger span {
@@ -274,7 +423,6 @@ button {
   transition: all var(--transition);
 }
 
-/* Hamburger animation when open */
 .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
@@ -345,22 +493,413 @@ button {
 
 /* ======================================================
    FOOTER — shared across ALL pages
+   ======================================================
+   TEACHER NOTE:
+   The footer is split into 3 stacked rows:
+   .footer-partners  → partner logos strip (light teal bg)
+   .footer-main      → 4 column grid (dark teal bg)
+   .footer-bottom    → copyright bar (darkest teal bg)
+
+   Each column inside .footer-main is a .footer-col.
+   They sit in a CSS Grid with 4 equal columns.
 ====================================================== */
+
 .footer {
   background: var(--color-primary);
   color: rgba(255, 255, 255, 0.85);
-  text-align: center;
-  padding: var(--space-lg);
   font-size: 13px;
 }
 
-.footer a {
+
+/* --- PARTNERS STRIP --- */
+.footer-partners {
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-lg) var(--space-2xl);
+  text-align: center;
+}
+
+.partners-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: var(--color-sage);
+  margin-bottom: var(--space-md);
+}
+
+.partners-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.partner-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.partner-group-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.partner-logos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*
+  TEACHER NOTE — PARTNER SLOTS:
+  Each .partner-slot is a fixed-height container.
+  The width is set to auto so it naturally fits the logo inside.
+  min-width: 80px prevents tiny logos from collapsing.
+  max-width: 140px prevents wide logos from dominating.
+
+  When you add a real logo image:
+  <img src="..." alt="..." />
+  The image fills the slot and object-fit: contain
+  scales it to fit without cropping or stretching.
+
+  If a specific logo needs more room, add an inline style:
+  <div class="partner-slot" style="max-width: 180px;">
+*/
+.partner-slot {
+  height: 60px;
+  min-width: 90px;
+  max-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.partner-slot:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.partner-slot img {
+  max-width: 100%;
+  max-height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.partner-placeholder {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.partner-divider {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* --- MAIN FOOTER COLUMNS --- */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl) var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-col-title i {
+  font-size: 15px;
+  color: var(--color-sage);
+}
+
+/* BRAND COLUMN */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-md);
+}
+
+.footer-logo-name {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2.5px;
+  line-height: 1;
+}
+
+.footer-logo-sub {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  color: var(--color-sage);
+  text-transform: uppercase;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  max-width: 240px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.social-btn:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* QUICK LINKS COLUMN */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition), gap var(--transition);
+}
+
+.footer-links a i {
+  font-size: 11px;
+  color: var(--color-sage);
+  transition: transform var(--transition);
+}
+
+.footer-links a:hover {
+  color: white;
+  gap: 8px;
+}
+
+.footer-links a:hover i {
+  transform: translateX(2px);
+}
+
+/* OPENING HOURS COLUMN */
+.footer-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-hours li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 13px;
+}
+
+.footer-hours li:last-child {
+  border-bottom: none;
+}
+
+.footer-hours .day {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.footer-hours .time {
+  color: var(--color-sage);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.footer-hours li.closed .time {
+  color: rgba(255, 100, 100, 0.7);
+}
+
+.footer-open-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(168, 197, 160, 0.15);
+  border: 1px solid rgba(168, 197, 160, 0.3);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-sage);
+  margin-top: var(--space-xs);
+}
+
+.open-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  animation: blink 2s ease-in-out infinite;
+}
+
+/* CONTACT COLUMN */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--space-md);
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+.footer-contact li i {
+  font-size: 15px;
+  color: var(--color-sage);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.65);
   transition: color var(--transition);
 }
 
-.footer a:hover {
+.footer-contact a:hover {
   color: white;
+}
+
+.footer-payment {
+  margin-top: var(--space-sm);
+}
+
+.payment-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.payment-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+}
+
+
+/* --- BOTTOM BAR --- */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-2xl);
+  background: rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.45);
+  transition: color var(--transition);
+}
+
+.footer-bottom-links a:hover {
+  color: white;
+}
+
+/* FOOTER RESPONSIVE */
+@media (max-width: 1024px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partner-divider { display: none; }
+  .partners-row    { flex-direction: column; gap: var(--space-md); }
 }
 
 
@@ -374,31 +913,45 @@ button {
    — this is your tablet/mobile breakpoint.
 ====================================================== */
 @media (max-width: 1100px) {
-  .nav-links { display: none; }        /* Hide links on smaller screens */
-  .hamburger { display: flex; }        /* Show hamburger button instead */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
 
-  /* Mobile menu — shown when JS adds the 'open' class */
   .nav-links.open {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     position: absolute;
-    top: 70px;
+    top: 76px;
     left: 0;
     right: 0;
     background: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
     padding: var(--space-sm);
-    gap: 4px;
+    gap: 2px;
     z-index: 999;
+    box-shadow: 0 8px 24px rgba(13, 92, 99, 0.1);
   }
+
+  /* On mobile, hide the eye dot — not enough room */
+  .nav-links.open .eye-dot { display: none; }
+
+  /* Make links full width on mobile */
+  .nav-links.open a {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .nav-links.open a:hover {
+    background: var(--color-primary-light);
+  }
+
+  .nav-links.open a::after { display: none; }
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0 var(--space-sm);
-  }
-
-  .btn-login {
-    display: none;           /* Hide login button on very small screens */
-  }
+  .navbar { padding: 0 var(--space-sm); }
+  .btn-login { display: none; }
 }

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Portal — Basira Eye Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/patient-portal.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- ===================== END NAVBAR ===================== -->
+
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="ti ti-chevron-right"></i>
+        <span>Patient Portal</span>
+      </nav>
+      <h1 class="page-hero-title">Patient Portal</h1>
+      <p class="page-hero-sub">
+        Manage your appointments, view your medical records, and
+        communicate with your care team — all in one secure place.
+      </p>
+    </div>
+    <div class="page-hero-shape shape-1"></div>
+    <div class="page-hero-shape shape-2"></div>
+  </section>
+
+
+  <!-- ===================== PORTAL DASHBOARD PREVIEW ===================== -->
+  <!--
+    TEACHER NOTE — WHAT IS THIS SECTION?
+    Since the actual portal requires a backend (login system, database),
+    we show a realistic PREVIEW of what the portal looks like.
+    This is called a "UI mockup" — it looks real but the data is fake.
+
+    When your team adds the backend later, these placeholder values
+    will be replaced with real data pulled from a database.
+    The HTML structure (the skeleton) stays the same — only the content changes.
+
+    You'll notice we use <!-- TODO: BACKEND comments to mark
+    every place where real data needs to come from the server. -->
+  <section class="portal-section">
+
+    <!-- TOP WELCOME BAR -->
+    <!--
+      WHY A WELCOME BAR?
+      The first thing a logged-in user sees should be personal.
+      Showing their name makes them feel recognized and trusted.
+      On a real site, "Ahmed Hassan" would come from the login session.
+    -->
+    <div class="portal-welcome">
+      <div class="welcome-left">
+        <div class="avatar">
+          <!--
+            The avatar shows the user's initials inside a colored circle.
+            It's a simple way to have a profile icon without needing a photo.
+            "AH" = Ahmed Hassan's initials.
+            TODO: BACKEND — replace "AH" with the first letters of the logged-in user's name.
+          -->
+          <span>AH</span>
+        </div>
+        <div>
+          <h2 class="welcome-name">Welcome back, Ahmed</h2>
+          <!--
+            TODO: BACKEND — replace "Ahmed" with the real user's first name.
+            In JavaScript this would look like:
+            document.getElementById('userName').textContent = user.firstName;
+          -->
+          <p class="welcome-sub">Patient ID: #BAS-00412 &nbsp;·&nbsp; Member since 2023</p>
+        </div>
+      </div>
+      <a href="booking.html" class="btn-primary portal-book-btn">
+        <i class="ti ti-calendar-plus"></i> Book New Appointment
+      </a>
+    </div>
+
+    <!-- QUICK STATS ROW -->
+    <!--
+      These 4 cards give the user a snapshot of their account at a glance.
+      Each .portal-stat-card has an icon, a number, and a label.
+      TODO: BACKEND — all numbers here are placeholders.
+    -->
+    <div class="portal-stats-row">
+
+      <div class="portal-stat-card">
+        <div class="pstat-icon teal-icon">
+          <i class="ti ti-calendar-check"></i>
+        </div>
+        <div class="pstat-info">
+          <span class="pstat-num">3</span>
+          <span class="pstat-label">Upcoming Appointments</span>
+        </div>
+      </div>
+
+      <div class="portal-stat-card">
+        <div class="pstat-icon teal-icon">
+          <i class="ti ti-history"></i>
+        </div>
+        <div class="pstat-info">
+          <span class="pstat-num">12</span>
+          <span class="pstat-label">Past Visits</span>
+        </div>
+      </div>
+
+      <div class="portal-stat-card">
+        <div class="pstat-icon orange-icon">
+          <i class="ti ti-file-description"></i>
+        </div>
+        <div class="pstat-info">
+          <span class="pstat-num">5</span>
+          <span class="pstat-label">Medical Reports</span>
+        </div>
+      </div>
+
+      <div class="portal-stat-card">
+        <div class="pstat-icon teal-icon">
+          <i class="ti ti-pill"></i>
+        </div>
+        <div class="pstat-info">
+          <span class="pstat-num">2</span>
+          <span class="pstat-label">Active Prescriptions</span>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- MAIN DASHBOARD GRID -->
+    <!--
+      TWO-COLUMN LAYOUT:
+      Left column (wider): upcoming appointments + medical records
+      Right column (narrower): prescription summary + quick actions
+    -->
+    <div class="portal-grid">
+
+      <!-- ── LEFT COLUMN ── -->
+      <div class="portal-left">
+
+        <!-- UPCOMING APPOINTMENTS CARD -->
+        <div class="portal-card">
+          <div class="portal-card-header">
+            <h3 class="portal-card-title">
+              <i class="ti ti-calendar-event"></i> Upcoming Appointments
+            </h3>
+            <a href="#" class="portal-card-link">View all</a>
+          </div>
+
+          <!--
+            EACH APPOINTMENT ROW:
+            Shows the doctor's initial, name, date, time, service type.
+            .appt-status shows if the appointment is confirmed or pending.
+            TODO: BACKEND — this list should be fetched from the database
+            and rendered dynamically using JavaScript's .forEach() loop.
+          -->
+          <div class="appointments-list">
+
+            <div class="appt-row">
+              <div class="appt-avatar teal-avatar">Dr</div>
+              <div class="appt-info">
+                <span class="appt-doctor">Dr. Layla Ahmed</span>
+                <span class="appt-type">Routine Eye Exam</span>
+              </div>
+              <div class="appt-datetime">
+                <span class="appt-date"><i class="ti ti-calendar"></i> May 15, 2026</span>
+                <span class="appt-time"><i class="ti ti-clock"></i> 10:30 AM</span>
+              </div>
+              <span class="appt-status confirmed">Confirmed</span>
+              <button class="appt-cancel-btn" title="Cancel appointment">
+                <i class="ti ti-x"></i>
+              </button>
+            </div>
+
+            <div class="appt-row">
+              <div class="appt-avatar orange-avatar">Dr</div>
+              <div class="appt-info">
+                <span class="appt-doctor">Dr. Khaled Mansour</span>
+                <span class="appt-type">LASIK Consultation</span>
+              </div>
+              <div class="appt-datetime">
+                <span class="appt-date"><i class="ti ti-calendar"></i> May 22, 2026</span>
+                <span class="appt-time"><i class="ti ti-clock"></i> 2:00 PM</span>
+              </div>
+              <span class="appt-status pending">Pending</span>
+              <button class="appt-cancel-btn" title="Cancel appointment">
+                <i class="ti ti-x"></i>
+              </button>
+            </div>
+
+            <div class="appt-row">
+              <div class="appt-avatar teal-avatar">Dr</div>
+              <div class="appt-info">
+                <span class="appt-doctor">Dr. Layla Ahmed</span>
+                <span class="appt-type">Follow-up Visit</span>
+              </div>
+              <div class="appt-datetime">
+                <span class="appt-date"><i class="ti ti-calendar"></i> June 3, 2026</span>
+                <span class="appt-time"><i class="ti ti-clock"></i> 11:00 AM</span>
+              </div>
+              <span class="appt-status confirmed">Confirmed</span>
+              <button class="appt-cancel-btn" title="Cancel appointment">
+                <i class="ti ti-x"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <!-- END UPCOMING APPOINTMENTS -->
+
+
+        <!-- MEDICAL RECORDS CARD -->
+        <div class="portal-card">
+          <div class="portal-card-header">
+            <h3 class="portal-card-title">
+              <i class="ti ti-file-description"></i> Medical Records
+            </h3>
+            <a href="#" class="portal-card-link">View all</a>
+          </div>
+
+          <!--
+            Each record row has:
+            - A file-type icon (PDF)
+            - The report name and date
+            - The doctor who issued it
+            - A download button
+            TODO: BACKEND — real files will be stored on a server
+            and the download link will point to a real PDF URL.
+          -->
+          <div class="records-list">
+
+            <div class="record-row">
+              <div class="record-icon">
+                <i class="ti ti-file-type-pdf"></i>
+              </div>
+              <div class="record-info">
+                <span class="record-name">Annual Eye Examination Report</span>
+                <span class="record-meta">Dr. Layla Ahmed &nbsp;·&nbsp; April 10, 2026</span>
+              </div>
+              <button class="record-download-btn">
+                <i class="ti ti-download"></i> Download
+              </button>
+            </div>
+
+            <div class="record-row">
+              <div class="record-icon">
+                <i class="ti ti-file-type-pdf"></i>
+              </div>
+              <div class="record-info">
+                <span class="record-name">Retinal OCT Scan Results</span>
+                <span class="record-meta">Dr. Layla Ahmed &nbsp;·&nbsp; March 5, 2026</span>
+              </div>
+              <button class="record-download-btn">
+                <i class="ti ti-download"></i> Download
+              </button>
+            </div>
+
+            <div class="record-row">
+              <div class="record-icon">
+                <i class="ti ti-file-type-pdf"></i>
+              </div>
+              <div class="record-info">
+                <span class="record-name">Glaucoma Pressure Report</span>
+                <span class="record-meta">Dr. Khaled Mansour &nbsp;·&nbsp; Jan 18, 2026</span>
+              </div>
+              <button class="record-download-btn">
+                <i class="ti ti-download"></i> Download
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <!-- END MEDICAL RECORDS -->
+
+      </div>
+      <!-- ── END LEFT COLUMN ── -->
+
+
+      <!-- ── RIGHT COLUMN ── -->
+      <div class="portal-right">
+
+        <!-- CURRENT PRESCRIPTION CARD -->
+        <div class="portal-card">
+          <div class="portal-card-header">
+            <h3 class="portal-card-title">
+              <i class="ti ti-eye-check"></i> Current Prescription
+            </h3>
+            <span class="prescription-date">Updated: April 2026</span>
+          </div>
+
+          <!--
+            PRESCRIPTION TABLE:
+            Shows the patient's glasses/contact lens prescription.
+            Medical shorthand:
+            - OD = Right eye (Oculus Dexter in Latin)
+            - OS = Left eye (Oculus Sinister in Latin)
+            - SPH = Sphere (power of the lens)
+            - CYL = Cylinder (for astigmatism)
+            - AXIS = direction of astigmatism in degrees
+            TODO: BACKEND — values come from the doctor's records.
+          -->
+          <div class="prescription-table">
+            <div class="prescription-header-row">
+              <span>Eye</span>
+              <span>SPH</span>
+              <span>CYL</span>
+              <span>AXIS</span>
+            </div>
+            <div class="prescription-data-row">
+              <span class="eye-label od">OD</span>
+              <span>-2.25</span>
+              <span>-0.75</span>
+              <span>90°</span>
+            </div>
+            <div class="prescription-data-row">
+              <span class="eye-label os">OS</span>
+              <span>-1.75</span>
+              <span>-0.50</span>
+              <span>85°</span>
+            </div>
+          </div>
+
+          <button class="prescription-download-btn">
+            <i class="ti ti-download"></i> Download Prescription PDF
+          </button>
+        </div>
+
+
+        <!-- QUICK ACTIONS CARD -->
+        <!--
+          WHY QUICK ACTIONS?
+          Instead of making the user search through menus,
+          we surface the most common tasks right here.
+          Each action is a big tappable button — easy on mobile too.
+        -->
+        <div class="portal-card">
+          <div class="portal-card-header">
+            <h3 class="portal-card-title">
+              <i class="ti ti-bolt"></i> Quick Actions
+            </h3>
+          </div>
+          <div class="quick-actions-grid">
+            <a href="booking.html" class="quick-action-btn">
+              <i class="ti ti-calendar-plus"></i>
+              <span>Book Appointment</span>
+            </a>
+            <a href="#" class="quick-action-btn">
+              <i class="ti ti-message-dots"></i>
+              <span>Message Doctor</span>
+            </a>
+            <a href="insurance.html" class="quick-action-btn">
+              <i class="ti ti-shield-check"></i>
+              <span>Insurance Info</span>
+            </a>
+            <a href="#" class="quick-action-btn">
+              <i class="ti ti-user-edit"></i>
+              <span>Edit Profile</span>
+            </a>
+            <a href="complaints.html" class="quick-action-btn">
+              <i class="ti ti-message-report"></i>
+              <span>Submit Complaint</span>
+            </a>
+            <a href="contact.html" class="quick-action-btn">
+              <i class="ti ti-phone"></i>
+              <span>Contact Us</span>
+            </a>
+          </div>
+        </div>
+
+
+        <!-- INSURANCE SUMMARY CARD -->
+        <div class="portal-card">
+          <div class="portal-card-header">
+            <h3 class="portal-card-title">
+              <i class="ti ti-shield-check"></i> Insurance
+            </h3>
+          </div>
+          <div class="insurance-summary">
+            <div class="insurance-item">
+              <span class="ins-label">Provider</span>
+              <span class="ins-value">AXA Egypt</span>
+            </div>
+            <div class="insurance-item">
+              <span class="ins-label">Policy Number</span>
+              <span class="ins-value">AXA-7823-EG</span>
+            </div>
+            <div class="insurance-item">
+              <span class="ins-label">Valid Until</span>
+              <span class="ins-value ins-valid">Dec 31, 2026</span>
+            </div>
+            <div class="insurance-item">
+              <span class="ins-label">Coverage</span>
+              <span class="ins-value">80% outpatient</span>
+            </div>
+          </div>
+          <a href="insurance.html" class="portal-card-link" style="margin-top: 12px; display: inline-block;">
+            View full details <i class="ti ti-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+      <!-- ── END RIGHT COLUMN ── -->
+
+    </div>
+    <!-- end .portal-grid -->
+
+  </section>
+  <!-- ===================== END PORTAL DASHBOARD ===================== -->
+
+
+  <!-- ===================== NOT LOGGED IN NOTICE ===================== -->
+  <!--
+    TEACHER NOTE — WHAT IS THIS?
+    In real life, if a user is NOT logged in and tries to visit
+    this page, they should be redirected to login.html.
+    That redirect is done with JavaScript using:
+      window.location.href = 'login.html';
+
+    But for now, we show an info banner explaining what the portal is,
+    because we don't have a login system yet.
+    When your backend is ready, the JavaScript will hide this banner
+    and show the dashboard above only to logged-in users.
+  -->
+  <section class="portal-login-note">
+    <div class="login-note-content">
+      <div class="login-note-icon">
+        <i class="ti ti-lock"></i>
+      </div>
+      <div>
+        <h3>This is a preview — login required</h3>
+        <p>
+          The dashboard above shows what your portal will look like.
+          To access your real appointments, records, and prescriptions,
+          please log in or create an account.
+        </p>
+      </div>
+      <div class="login-note-buttons">
+        <a href="login.html" class="btn-primary">Log In</a>
+        <a href="login.html" class="login-note-register">Create Account</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== PORTAL FEATURES OVERVIEW ===================== -->
+  <!--
+    This section explains what the portal CAN do.
+    It's useful for users who haven't signed up yet —
+    it convinces them to register.
+  -->
+  <section class="portal-features-section">
+
+    <div class="section-header">
+      <span class="section-tag teal">Everything You Need</span>
+      <h2 class="section-title">What You Can Do in the Portal</h2>
+      <p class="section-sub">Your complete eye care history, anytime, anywhere.</p>
+    </div>
+
+    <div class="portal-features-grid">
+
+      <div class="portal-feature-card">
+        <div class="pf-icon">
+          <i class="ti ti-calendar-event"></i>
+        </div>
+        <h4 class="pf-title">Manage Appointments</h4>
+        <p class="pf-desc">Book, reschedule, or cancel appointments online. Get automatic reminders by SMS or email.</p>
+      </div>
+
+      <div class="portal-feature-card">
+        <div class="pf-icon">
+          <i class="ti ti-file-description"></i>
+        </div>
+        <h4 class="pf-title">View Medical Records</h4>
+        <p class="pf-desc">Access your complete eye health history — exam reports, imaging scans, and surgical notes.</p>
+      </div>
+
+      <div class="portal-feature-card">
+        <div class="pf-icon">
+          <i class="ti ti-eye-check"></i>
+        </div>
+        <h4 class="pf-title">Download Prescriptions</h4>
+        <p class="pf-desc">Get your latest glasses or contact lens prescription as a PDF, ready to share with any optical shop.</p>
+      </div>
+
+      <div class="portal-feature-card">
+        <div class="pf-icon">
+          <i class="ti ti-message-dots"></i>
+        </div>
+        <h4 class="pf-title">Message Your Doctor</h4>
+        <p class="pf-desc">Send non-urgent questions to your care team and receive responses within 24 hours.</p>
+      </div>
+
+      <div class="portal-feature-card">
+        <div class="pf-icon">
+          <i class="ti ti-shield-check"></i>
+        </div>
+        <h4 class="pf-title">Insurance Management</h4>
+        <p class="pf-desc">View your coverage details, check what's covered, and track insurance claims in one place.</p>
+      </div>
+
+      <div class="portal-feature-card">
+        <div class="pf-icon">
+          <i class="ti ti-bell"></i>
+        </div>
+        <h4 class="pf-title">Smart Reminders</h4>
+        <p class="pf-desc">Never miss a follow-up. Get reminders for upcoming appointments, medication refills, and annual checkups.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-partners">
+      <p class="partners-label">Our Trusted Partners</p>
+      <div class="partners-row">
+        <div class="partner-group">
+          <span class="partner-group-title">Insurance</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/axa.png" alt="Axa" /></div>
+            <div class="partner-slot"><img src="assets/images/metlife.jpg" alt="MetLife" /></div>
+            <div class="partner-slot"><img src="assets/images/globemed.jpg" alt="Global Med" /></div>
+          </div>
+        </div>
+        <div class="partner-divider"></div>
+        <div class="partner-group">
+          <span class="partner-group-title">Glasses &amp; Lenses</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/rayban.png" alt="Ray-Ban" /></div>
+            <div class="partner-slot"><img src="assets/images/maghrabi.jpg" alt="Maghrabi" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#A8C5A0" stroke-width="2"/>
+            <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="rgba(168,197,160,0.6)" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+            <circle cx="23" cy="23" r="9" fill="#A8C5A0"/>
+            <circle cx="23" cy="23" r="4.5" fill="#0D5C63"/>
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+          </svg>
+          <div><span class="footer-logo-name">BASIRA</span><span class="footer-logo-sub">EYE CENTER</span></div>
+        </div>
+        <p class="footer-tagline">Delivering the highest standards of eye care with compassion and cutting-edge technology.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="ti ti-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="ti ti-chevron-right"></i> Our Services</a></li>
+          <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="eye-diseases.html"><i class="ti ti-chevron-right"></i> Eye Diseases</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
+          <li><a href="news.html"><i class="ti ti-chevron-right"></i> News &amp; Devices</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title"><i class="ti ti-clock"></i> Opening Hours</h4>
+        <ul class="footer-hours">
+          <li><span class="day">Sat – Wed</span><span class="time">09:00 am – 06:00 pm</span></li>
+          <li><span class="day">Thursday</span><span class="time">09:00 am – 04:00 pm</span></li>
+          <li class="closed"><span class="day">Friday</span><span class="time">Closed</span></li>
+        </ul>
+        <div class="footer-open-now"><span class="open-dot"></span><span>Open Now</span></div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li><i class="ti ti-map-pin"></i><span>123 Example Street,<br/>Giza, Egypt</span></li>
+          <li><i class="ti ti-phone"></i><a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a></li>
+          <li><i class="ti ti-mail"></i><a href="mailto:info@basira.com">info@basira.com</a></li>
+          <li><i class="ti ti-brand-whatsapp"></i><a href="https://wa.me/20XXXXXXXXXX">WhatsApp Us</a></li>
+        </ul>
+        <div class="footer-payment">
+          <span class="payment-label">We Accept</span>
+          <div class="payment-icons">
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">Mastercard</span>
+            <span class="payment-badge">Cash</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Basira Eye Center · All rights reserved</p>
+      <div class="footer-bottom-links">
+        <a href="policies.html">Privacy Policy</a><span>·</span>
+        <a href="policies.html">Terms of Use</a><span>·</span>
+        <a href="complaints.html">Complaints</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/patient-portal.js"></script>
+</body>
+</html>
