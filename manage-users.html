@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manage Users - Basira Eye Center</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/manage-users.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+
+    <a href="index.html" class="nav-logo">
+
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46"
+          xmlns="http://www.w3.org/2000/svg">
+
+          <circle cx="23" cy="23" r="21"
+            fill="none" stroke="#0D5C63" stroke-width="2"/>
+
+          <ellipse cx="23" cy="23" rx="13" ry="16"
+            fill="none" stroke="#3B9EA6"
+            stroke-width="1.5"
+            transform="rotate(-20 23 23)"/>
+
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+
+    </a>
+
+    <div class="nav-cta">
+      <a href="admin-dashboard.html" class="btn-book">
+        Back to Dashboard
+      </a>
+    </div>
+
+  </nav>
+
+
+  <!-- PAGE -->
+  <main class="manage-users-page">
+
+    <!-- HEADER -->
+    <section class="page-header">
+
+      <div>
+        <h1>Manage Users</h1>
+
+        <p>
+          Add, edit, remove, and manage all system users.
+        </p>
+      </div>
+
+      <button class="add-user-btn">
+        + Add New User
+      </button>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="users-stats">
+
+      <div class="user-stat-card">
+        <h3>Total Users</h3>
+        <p>340</p>
+      </div>
+
+      <div class="user-stat-card">
+        <h3>Patients</h3>
+        <p>280</p>
+      </div>
+
+      <div class="user-stat-card">
+        <h3>Doctors</h3>
+        <p>45</p>
+      </div>
+
+      <div class="user-stat-card">
+        <h3>Admins</h3>
+        <p>15</p>
+      </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-section">
+
+      <input
+        type="text"
+        placeholder="Search users..."
+        class="search-input"
+      >
+
+      <select class="filter-select">
+        <option>All Roles</option>
+        <option>Patients</option>
+        <option>Doctors</option>
+        <option>Admins</option>
+      </select>
+
+    </section>
+
+
+    <!-- TABLE -->
+    <section class="users-table-section">
+
+      <table class="users-table">
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Ahmed Ali</td>
+            <td>ahmed@example.com</td>
+            <td>Patient</td>
+
+            <td>
+              <span class="status active">
+                Active
+              </span>
+            </td>
+
+            <td class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Dr. Sarah Hassan</td>
+            <td>sarah@example.com</td>
+            <td>Doctor</td>
+
+            <td>
+              <span class="status active">
+                Active
+              </span>
+            </td>
+
+            <td class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Mohamed Adel</td>
+            <td>mohamed@example.com</td>
+            <td>Admin</td>
+
+            <td>
+              <span class="status inactive">
+                Inactive
+              </span>
+            </td>
+
+            <td class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+  </main>
+
+
+  <script src="js/global.js"></script>
+  <script src="js/manage-users.js"></script>
+
+</body>
+</html>

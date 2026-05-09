@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7fbfb;
+  color: #1f2d3d;
+}
+
+.doctor-dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 24px;
+}
+
+.doctor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.doctor-header h1 {
+  margin: 0;
+  color: #0D5C63;
+  font-size: 42px;
+}
+
+.doctor-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.logout-btn {
+  background: #0D5C63;
+  color: white;
+  padding: 13px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #16727a;
+  transform: translateY(-2px);
+}
+
+.doctor-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.stat-card,
+.dashboard-section {
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.stat-card:hover,
+.dashboard-section:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  margin: 0 0 14px;
+  color: #0D5C63;
+  font-size: 18px;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+}
+
+.dashboard-section h2 {
+  color: #0D5C63;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appointments-table th,
+.appointments-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e2eeee;
+  text-align: left;
+}
+
+.appointments-table th {
+  color: #0D5C63;
+  background: #eef7f7;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.status.confirmed {
+  background: #dff5e4;
+  color: #1b5e20;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.action-list {
+  display: grid;
+  gap: 14px;
+}
+
+.action-list a {
+  background: #eef7f7;
+  color: #0D5C63;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.action-list a:hover {
+  background: #0D5C63;
+  color: white;
+}
+
+.note-card {
+  background: #f7fbfb;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+}
+
+.note-card h3 {
+  margin: 0 0 8px;
+  color: #0D5C63;
+}
+
+.note-card p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid #e2eeee;
+  color: #555;
+}
+
+.schedule-list span {
+  display: inline-block;
+  min-width: 110px;
+  color: #0D5C63;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .doctor-stats,
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doctor-header h1 {
+    font-size: 34px;
+  }
+
+  .appointments-table {
+    font-size: 14px;
+  }
+}
