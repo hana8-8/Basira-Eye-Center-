@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance — Basira Eye Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/insurance.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- ===================== END NAVBAR ===================== -->
+
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="ti ti-chevron-right"></i>
+        <span>Insurance</span>
+      </nav>
+      <h1 class="page-hero-title">Insurance</h1>
+      <p class="page-hero-sub">
+        We partner with Egypt's leading insurance providers so you can
+        focus on your vision — not your paperwork.
+      </p>
+    </div>
+    <div class="page-hero-shape shape-1"></div>
+    <div class="page-hero-shape shape-2"></div>
+  </section>
+
+
+  <!-- ===================== INSURANCE INTRO ===================== -->
+  <!--
+    TEACHER NOTE:
+    This section gives the user confidence right away:
+    "Yes, your insurance is probably accepted here."
+    The 3 icons summarize the key benefits in seconds.
+    This is called "above the fold" content — visible without scrolling.
+  -->
+  <section class="insurance-intro">
+    <div class="intro-benefits">
+
+      <div class="intro-benefit">
+        <div class="benefit-icon">
+          <i class="ti ti-shield-check"></i>
+        </div>
+        <div>
+          <h4>15+ Insurance Partners</h4>
+          <p>We work with all major providers in Egypt.</p>
+        </div>
+      </div>
+
+      <div class="intro-benefit">
+        <div class="benefit-icon">
+          <i class="ti ti-file-check"></i>
+        </div>
+        <div>
+          <h4>Direct Billing</h4>
+          <p>We bill your insurance directly — no upfront payment needed for covered services.</p>
+        </div>
+      </div>
+
+      <div class="intro-benefit">
+        <div class="benefit-icon">
+          <i class="ti ti-headset"></i>
+        </div>
+        <div>
+          <h4>Dedicated Insurance Desk</h4>
+          <p>Our team handles all paperwork and pre-approval requests for you.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================== INSURANCE PARTNERS GRID ===================== -->
+  <!--
+    TEACHER NOTE:
+    This is the main section — cards for each insurance provider.
+    Each card shows:
+    1. The company logo (placeholder div for now, replace with <img>)
+    2. The company name
+    3. What type of coverage they provide
+    4. Which services are covered (bulleted list)
+    5. A "Check Coverage" button
+
+    TO ADD A REAL LOGO:
+    Replace the <div class="ins-logo-placeholder"> with:
+    <img src="assets/images/[company-name].png" alt="[Company Name]" class="ins-logo-img" />
+  -->
+  <section class="insurance-section" id="partners">
+
+    <div class="section-header">
+      <span class="section-tag teal">Accepted Providers</span>
+      <h2 class="section-title">Our Insurance Partners</h2>
+      <p class="section-sub">
+        Don't see your provider? Call us — we may still be able to help.
+      </p>
+    </div>
+
+    <div class="insurance-grid">
+
+      <!-- CARD: AXA Egypt -->
+      <div class="insurance-card">
+        <div class="ins-logo-wrap">
+          <!--
+            Replace this div with your real logo image when ready:
+            <img src="assets/images/axa.png" alt="AXA Egypt" class="ins-logo-img" />
+          -->
+          <img src="assets/images/axa.png" alt="AXA Egypt" class="ins-logo-img" />
+        </div>
+        <div class="ins-card-body">
+          <h3 class="ins-card-name">AXA Egypt</h3>
+          <span class="ins-coverage-badge full-badge">Full Coverage</span>
+          <ul class="ins-covered-list">
+            <li><i class="ti ti-check"></i> Eye examinations</li>
+            <li><i class="ti ti-check"></i> Cataract surgery</li>
+            <li><i class="ti ti-check"></i> Glaucoma treatment</li>
+            <li><i class="ti ti-check"></i> Retina procedures</li>
+            <li><i class="ti ti-check"></i> Contact lens fittings</li>
+          </ul>
+        </div>
+        <div class="ins-card-footer">
+          <a href="contact.html" class="ins-check-btn">Check Coverage</a>
+          <span class="ins-type">Direct Billing</span>
+        </div>
+      </div>
+
+      <!-- CARD: MetLife -->
+      <div class="insurance-card">
+        <div class="ins-logo-wrap">
+          <img src="assets/images/metlife.jpg" alt="MetLife" class="ins-logo-img" />
+        </div>
+        <div class="ins-card-body">
+          <h3 class="ins-card-name">MetLife</h3>
+          <span class="ins-coverage-badge full-badge">Full Coverage</span>
+          <ul class="ins-covered-list">
+            <li><i class="ti ti-check"></i> Routine eye exams</li>
+            <li><i class="ti ti-check"></i> Surgical procedures</li>
+            <li><i class="ti ti-check"></i> Prescription glasses</li>
+            <li><i class="ti ti-check"></i> Diabetic eye care</li>
+            <li><i class="ti ti-check"></i> Emergency visits</li>
+          </ul>
+        </div>
+        <div class="ins-card-footer">
+          <a href="contact.html" class="ins-check-btn">Check Coverage</a>
+          <span class="ins-type">Direct Billing</span>
+        </div>
+      </div>
+
+      <!-- CARD: GlobeMed -->
+      <div class="insurance-card">
+        <div class="ins-logo-wrap">
+          <img src="assets/images/globemed.jpg" alt="GlobeMed" class="ins-logo-img" />
+        </div>
+        <div class="ins-card-body">
+          <h3 class="ins-card-name">GlobeMed Egypt</h3>
+          <span class="ins-coverage-badge partial-badge">Partial Coverage</span>
+          <ul class="ins-covered-list">
+            <li><i class="ti ti-check"></i> Eye examinations</li>
+            <li><i class="ti ti-check"></i> Medical treatments</li>
+            <li><i class="ti ti-check"></i> Laser procedures</li>
+            <li><i class="ti ti-x ins-x"></i> Cosmetic procedures</li>
+            <li><i class="ti ti-x ins-x"></i> Refractive surgery</li>
+          </ul>
+        </div>
+        <div class="ins-card-footer">
+          <a href="contact.html" class="ins-check-btn">Check Coverage</a>
+          <span class="ins-type">Direct Billing</span>
+        </div>
+      </div>
+
+      <!-- CARD: Allianz -->
+      <div class="insurance-card">
+        <div class="ins-logo-wrap">
+          <!-- TODO: replace with real logo -->
+          <div class="ins-logo-placeholder">ALLIANZ</div>
+        </div>
+        <div class="ins-card-body">
+          <h3 class="ins-card-name">Allianz Egypt</h3>
+          <span class="ins-coverage-badge full-badge">Full Coverage</span>
+          <ul class="ins-covered-list">
+            <li><i class="ti ti-check"></i> All surgical procedures</li>
+            <li><i class="ti ti-check"></i> Optical benefits</li>
+            <li><i class="ti ti-check"></i> LASIK consultation</li>
+            <li><i class="ti ti-check"></i> Pediatric eye care</li>
+            <li><i class="ti ti-check"></i> Annual checkups</li>
+          </ul>
+        </div>
+        <div class="ins-card-footer">
+          <a href="contact.html" class="ins-check-btn">Check Coverage</a>
+          <span class="ins-type">Direct Billing</span>
+        </div>
+      </div>
+
+      <!-- CARD: Misr Insurance -->
+      <div class="insurance-card">
+        <div class="ins-logo-wrap">
+          <div class="ins-logo-placeholder">MISR</div>
+        </div>
+        <div class="ins-card-body">
+          <h3 class="ins-card-name">Misr Insurance</h3>
+          <span class="ins-coverage-badge partial-badge">Partial Coverage</span>
+          <ul class="ins-covered-list">
+            <li><i class="ti ti-check"></i> Eye examinations</li>
+            <li><i class="ti ti-check"></i> Cataract surgery</li>
+            <li><i class="ti ti-check"></i> Glaucoma monitoring</li>
+            <li><i class="ti ti-x ins-x"></i> Contact lenses</li>
+            <li><i class="ti ti-x ins-x"></i> Cosmetic eyelid surgery</li>
+          </ul>
+        </div>
+        <div class="ins-card-footer">
+          <a href="contact.html" class="ins-check-btn">Check Coverage</a>
+          <span class="ins-type">Direct Billing</span>
+        </div>
+      </div>
+
+      <!-- CARD: Egyptian Life Takaful -->
+      <div class="insurance-card">
+        <div class="ins-logo-wrap">
+          <div class="ins-logo-placeholder">ELT</div>
+        </div>
+        <div class="ins-card-body">
+          <h3 class="ins-card-name">Egyptian Life Takaful</h3>
+          <span class="ins-coverage-badge full-badge">Full Coverage</span>
+          <ul class="ins-covered-list">
+            <li><i class="ti ti-check"></i> Comprehensive exams</li>
+            <li><i class="ti ti-check"></i> Surgical procedures</li>
+            <li><i class="ti ti-check"></i> Prescription eyewear</li>
+            <li><i class="ti ti-check"></i> Diabetic eye care</li>
+            <li><i class="ti ti-check"></i> Follow-up visits</li>
+          </ul>
+        </div>
+        <div class="ins-card-footer">
+          <a href="contact.html" class="ins-check-btn">Check Coverage</a>
+          <span class="ins-type">Direct Billing</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- "Don't see your provider?" notice -->
+    <div class="more-providers-note">
+      <i class="ti ti-info-circle"></i>
+      <span>We also work with <strong>Bupa, Cigna, HSBC Insurance, Orient Takaful</strong>, and more.
+        Call us at <a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a> to verify your specific plan.
+      </span>
+    </div>
+
+  </section>
+
+
+  <!-- ===================== HOW TO USE INSURANCE ===================== -->
+  <!--
+    TEACHER NOTE:
+    Patients are often confused about how to use insurance at a clinic.
+    This step-by-step section removes that confusion.
+    Clear steps = less anxiety = more bookings.
+  -->
+  <section class="how-to-use-section">
+
+    <div class="section-header">
+      <span class="section-tag teal">Step by Step</span>
+      <h2 class="section-title">How to Use Your Insurance</h2>
+      <p class="section-sub">We make using insurance as easy as possible.</p>
+    </div>
+
+    <div class="how-to-grid">
+
+      <div class="how-to-step">
+        <div class="how-to-num">1</div>
+        <div class="how-to-content">
+          <h4>Book Your Appointment</h4>
+          <p>When booking, tell us your insurance provider and policy number. We'll verify your coverage before your visit.</p>
+        </div>
+      </div>
+
+      <div class="how-to-step">
+        <div class="how-to-num">2</div>
+        <div class="how-to-content">
+          <h4>Bring Your Insurance Card</h4>
+          <p>Bring your insurance card and a valid national ID to your appointment. Our desk staff will handle the rest.</p>
+        </div>
+      </div>
+
+      <div class="how-to-step">
+        <div class="how-to-num">3</div>
+        <div class="how-to-content">
+          <h4>We Handle Pre-Approval</h4>
+          <p>For surgical procedures, we submit pre-approval requests to your insurer on your behalf — no calls needed from your side.</p>
+        </div>
+      </div>
+
+      <div class="how-to-step">
+        <div class="how-to-num">4</div>
+        <div class="how-to-content">
+          <h4>Pay Only Your Co-pay</h4>
+          <p>For covered services, you only pay your policy's co-payment. We bill the rest directly to your insurance company.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== COVERAGE CHECKER ===================== -->
+  <!--
+    TEACHER NOTE — WHAT IS THIS FORM?
+    This is a simple HTML form where users type their insurance provider
+    and submit to check if it's accepted.
+
+    HOW A FORM WORKS:
+    - <form> wraps all the input fields
+    - <label> describes what an input is for (important for accessibility)
+    - <input> is where the user types
+    - <button type="submit"> submits the form
+
+    The JavaScript in insurance.js intercepts the form submission
+    and handles it without refreshing the page (using preventDefault).
+    TODO: BACKEND — on a real site, this would query a database.
+  -->
+  <section class="coverage-checker-section" id="checker">
+
+    <div class="checker-card">
+      <div class="checker-left">
+        <span class="section-tag teal" style="display:inline-block; margin-bottom: 12px;">Free Check</span>
+        <h2 class="checker-title">Check Your Coverage</h2>
+        <p class="checker-sub">
+          Not sure if your insurance is accepted? Enter your provider name
+          below and we'll let you know right away.
+        </p>
+      </div>
+
+      <form class="checker-form" id="coverageForm">
+
+        <div class="form-group">
+          <!--
+            TEACHER NOTE — WHY <label>?
+            The <label> element links to the input via the "for" attribute.
+            The "for" value must match the input's "id".
+            This means clicking the label also focuses the input — useful on mobile!
+            It also helps screen readers understand the form.
+          -->
+          <label for="providerInput">Your Insurance Provider</label>
+          <input
+            type="text"
+            id="providerInput"
+            name="provider"
+            placeholder="e.g. AXA, MetLife, Bupa..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="policyInput">Policy Number (optional)</label>
+          <input
+            type="text"
+            id="policyInput"
+            name="policy"
+            placeholder="e.g. AXA-1234-EG"
+          />
+        </div>
+
+        <!--
+          type="submit" makes this button submit the form.
+          The JavaScript intercepts this and prevents page refresh.
+        -->
+        <button type="submit" class="checker-submit-btn">
+          <i class="ti ti-search"></i> Check Coverage
+        </button>
+
+        <!-- Result box — hidden by default, shown by JavaScript -->
+        <!--
+          TEACHER NOTE:
+          The id="checkerResult" lets JavaScript find this element.
+          By default it's hidden (CSS: display: none).
+          JS will fill in the text and show it after the user submits.
+        -->
+        <div class="checker-result" id="checkerResult" style="display: none;">
+          <i class="ti ti-shield-check"></i>
+          <span id="checkerResultText"></span>
+        </div>
+
+      </form>
+    </div>
+
+  </section>
+
+
+  <!-- ===================== FAQ ===================== -->
+  <!--
+    TEACHER NOTE — ACCORDION / FAQ:
+    An accordion is a list of questions. Each question can be
+    clicked to expand and show the answer. Clicking again collapses it.
+    Only one answer is open at a time.
+
+    HOW IT WORKS:
+    - Each .faq-item has a .faq-question button and a .faq-answer div
+    - JavaScript toggles the class "faq-open" on the .faq-item
+    - CSS shows/hides the answer based on whether "faq-open" exists
+  -->
+  <section class="faq-section">
+
+    <div class="section-header">
+      <span class="section-tag teal">Common Questions</span>
+      <h2 class="section-title">Insurance FAQ</h2>
+    </div>
+
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Does my insurance cover LASIK surgery?</span>
+          <i class="ti ti-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>LASIK is typically considered an elective (non-essential) procedure and is not covered by most standard insurance plans. However, some premium plans do include partial refractive surgery coverage. We recommend calling your insurer directly or asking our desk team to verify before your consultation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do I need pre-approval for surgery?</span>
+          <i class="ti ti-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, most surgical procedures require pre-approval from your insurance company. Our team handles this process entirely on your behalf — you just need to bring your insurance card and we take it from there. Pre-approval typically takes 1–3 business days.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is a co-payment?</span>
+          <i class="ti ti-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>A co-payment (or co-pay) is the fixed amount you pay out of pocket for a covered service. For example, if your plan has a 20% co-pay and your visit costs 500 EGP, you pay 100 EGP and your insurance pays the remaining 400 EGP. Your co-pay amount is printed on your insurance card.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I use insurance for contact lens fittings?</span>
+          <i class="ti ti-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Contact lens fitting and a basic supply of lenses is covered by some plans (like AXA and MetLife) but not all. It depends on your specific plan's "optical benefits". Our team can verify this before your appointment to avoid surprises at checkout.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What if my insurance isn't listed?</span>
+          <i class="ti ti-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We're always adding new insurance partners. Even if you don't see your provider listed, please call us or use the checker above — we may still be able to accept it. We also offer flexible self-pay payment plans for uninsured or underinsured patients.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you offer payment plans for uninsured patients?</span>
+          <i class="ti ti-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! We believe cost should never be a barrier to eye care. We offer flexible payment plans for surgical procedures, allowing you to spread payments over 3 to 12 months. Speak to our billing team during your visit or call us to learn more.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================== CONTACT INSURANCE DESK ===================== -->
+  <section class="insurance-contact-strip">
+    <div class="ins-contact-content">
+      <div class="ins-contact-icon">
+        <i class="ti ti-headset"></i>
+      </div>
+      <div>
+        <h3>Still have questions about your insurance?</h3>
+        <p>Our dedicated insurance desk is available 6 days a week to help you.</p>
+      </div>
+      <div class="ins-contact-actions">
+        <a href="tel:+20XXXXXXXXXX" class="btn-primary ins-call-btn">
+          <i class="ti ti-phone"></i> Call Us
+        </a>
+        <a href="https://wa.me/20XXXXXXXXXX" class="ins-whatsapp-btn">
+          <i class="ti ti-brand-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-partners">
+      <p class="partners-label">Our Trusted Partners</p>
+      <div class="partners-row">
+        <div class="partner-group">
+          <span class="partner-group-title">Insurance</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/axa.png" alt="Axa" /></div>
+            <div class="partner-slot"><img src="assets/images/metlife.jpg" alt="MetLife" /></div>
+            <div class="partner-slot"><img src="assets/images/globemed.jpg" alt="Global Med" /></div>
+          </div>
+        </div>
+        <div class="partner-divider"></div>
+        <div class="partner-group">
+          <span class="partner-group-title">Glasses &amp; Lenses</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/rayban.png" alt="Ray-Ban" /></div>
+            <div class="partner-slot"><img src="assets/images/maghrabi.jpg" alt="Maghrabi" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#A8C5A0" stroke-width="2"/>
+            <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="rgba(168,197,160,0.6)" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+            <circle cx="23" cy="23" r="9" fill="#A8C5A0"/>
+            <circle cx="23" cy="23" r="4.5" fill="#0D5C63"/>
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+          </svg>
+          <div><span class="footer-logo-name">BASIRA</span><span class="footer-logo-sub">EYE CENTER</span></div>
+        </div>
+        <p class="footer-tagline">Delivering the highest standards of eye care with compassion and cutting-edge technology.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="ti ti-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="ti ti-chevron-right"></i> Our Services</a></li>
+          <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="eye-diseases.html"><i class="ti ti-chevron-right"></i> Eye Diseases</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
+          <li><a href="news.html"><i class="ti ti-chevron-right"></i> News &amp; Devices</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title"><i class="ti ti-clock"></i> Opening Hours</h4>
+        <ul class="footer-hours">
+          <li><span class="day">Sat – Wed</span><span class="time">09:00 am – 06:00 pm</span></li>
+          <li><span class="day">Thursday</span><span class="time">09:00 am – 04:00 pm</span></li>
+          <li class="closed"><span class="day">Friday</span><span class="time">Closed</span></li>
+        </ul>
+        <div class="footer-open-now"><span class="open-dot"></span><span>Open Now</span></div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li><i class="ti ti-map-pin"></i><span>123 Example Street,<br/>Giza, Egypt</span></li>
+          <li><i class="ti ti-phone"></i><a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a></li>
+          <li><i class="ti ti-mail"></i><a href="mailto:info@basira.com">info@basira.com</a></li>
+          <li><i class="ti ti-brand-whatsapp"></i><a href="https://wa.me/20XXXXXXXXXX">WhatsApp Us</a></li>
+        </ul>
+        <div class="footer-payment">
+          <span class="payment-label">We Accept</span>
+          <div class="payment-icons">
+            <span class="payment-badge">Visa</span>
+            <span class="payment-badge">Mastercard</span>
+            <span class="payment-badge">Cash</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Basira Eye Center · All rights reserved</p>
+      <div class="footer-bottom-links">
+        <a href="policies.html">Privacy Policy</a><span>·</span>
+        <a href="policies.html">Terms of Use</a><span>·</span>
+        <a href="complaints.html">Complaints</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/insurance.js"></script>
+</body>
+</html>
