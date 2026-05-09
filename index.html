@@ -30,24 +30,30 @@
   <nav class="navbar" id="navbar">
 
     <!-- LOGO -->
-    <div class="nav-logo">
-      <!--
-        We use an inline SVG here as a placeholder for your real logo image.
-        When you have the actual logo file, replace this entire <svg> block with:
-        <img src="assets/images/logo.png" alt="Basira Eye Center Logo" />
-      -->
-      <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
-        <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
-        <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
-        <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
-        <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
-      </svg>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
       <div class="logo-text">
         <span class="logo-name">BASIRA</span>
         <span class="logo-sub">EYE CENTER</span>
       </div>
-    </div>
+    </a>
+
+    <!--
+      ══════════════════════════════════════════
+      WHEN YOUR LOGO IMAGE IS READY:
+      Replace the entire <svg ...> block above
+      with this single line:
+      <img src="assets/images/logo.png" alt="Basira Eye Center" class="logo-img" />
+      ══════════════════════════════════════════
+    -->
 
     <!-- NAVIGATION LINKS -->
     <!--
@@ -55,16 +61,24 @@
       "go nowhere for now". Your team will replace each # with the actual
       page like href="about.html" or href="services.html"
     -->
+    <!--
+      TEACHER NOTE — THE EYE INDICATOR:
+      Every <li> now has a wrapping structure.
+      The <span class="eye-dot"> is the little eye icon that appears
+      under the active link. JavaScript in global.js adds the class
+      "active" to the current page's <a> tag, and CSS makes the
+      eye-dot visible only when that happens.
+    -->
     <ul class="nav-links" id="navLinks">
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Our Services</a></li>
-      <li><a href="eye-diseases.html">Eye Diseases</a></li>
-      <li><a href="doctors.html">Our Doctors</a></li>
-      <li><a href="insurance.html">Insurance</a></li>
-      <li><a href="news.html">News &amp; Devices</a></li>
-      <li><a href="complaints.html">Complaints</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="patient-portal.html">Patient Portal</a></li>
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
     </ul>
 
     <!-- CTA BUTTONS -->

@@ -115,6 +115,68 @@ document.querySelectorAll('.nav-links a').forEach(function (link) {
 
 
 /* ======================================================
+   4. INJECT REAL EYE SVG INTO EVERY .eye-dot SPAN
+   ======================================================
+   TEACHER NOTE:
+   Instead of drawing the eye with CSS alone (which can only
+   make circles and squares), we inject a proper SVG shape.
+   An SVG lets us draw the almond/leaf eye outline with
+   pointed corners and curved eyelash strokes.
+
+   innerHTML sets the HTML content INSIDE the span.
+   We do this for every .eye-dot on the page at once.
+====================================================== */
+document.querySelectorAll('.eye-dot').forEach(function (dot) {
+  /*
+    This SVG draws:
+    - An almond eye outline using a "path" with curves
+    - 5 eyelash lines radiating upward from the top lid
+    - An iris circle
+    - A pupil circle inside the iris
+    - A white shine dot
+  */
+  dot.innerHTML = `
+    <svg width="22" height="14" viewBox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- EYELASHES — short strokes above the lid -->
+      <!-- Each line goes from a point ON the top lid curve upward -->
+      <line x1="5"  y1="4.5" x2="3.5" y2="1.5"  stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+      <line x1="8"  y1="2.5" x2="7.5" y2="0"    stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+      <line x1="11" y1="2"   x2="11"  y2="0"    stroke="#0D5C63" stroke-width="1.1" stroke-linecap="round"/>
+      <line x1="14" y1="2.5" x2="14.5" y2="0"   stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+      <line x1="17" y1="4.5" x2="18.5" y2="1.5" stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+
+      <!-- EYE OUTLINE — almond/leaf shape with pointed corners -->
+      <!--
+        M = move to starting point (left corner)
+        Q = quadratic curve: Q controlPoint endPoint
+        The top curve bows upward, the bottom bows downward.
+        This creates the classic eye almond shape.
+      -->
+      <path
+        d="M1,7 Q5.5,2 11,2 Q16.5,2 21,7 Q16.5,12 11,12 Q5.5,12 1,7 Z"
+        fill="white"
+        stroke="#0D5C63"
+        stroke-width="1.2"
+        stroke-linejoin="round"
+      />
+
+      <!-- IRIS circle -->
+      <circle cx="11" cy="7" r="3.2" fill="#0D5C63"/>
+
+      <!-- PUPIL circle -->
+      <circle cx="11" cy="7" r="1.6" fill="#07383d"/>
+
+      <!-- SHINE dot -->
+      <circle cx="12.5" cy="5.8" r="0.9" fill="white" opacity="0.9"/>
+
+    </svg>
+  `;
+});
+
+
+
+/* ======================================================
    4. SMOOTH SCROLL for anchor links
    ======================================================
    When a link goes to #eye-test, this smoothly scrolls
