@@ -1,43 +1,52 @@
-
-
 /* =========================
    GET ELEMENTS
 ========================= */
 
 const loginTab = document.getElementById('loginTab');
 const registerTab = document.getElementById('registerTab');
+const adminLoginTab = document.getElementById('loginAdmin');
 
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
+const adminLoginForm = document.getElementById('adminLoginForm');
 
 
 /* =========================
-   SWITCH BETWEEN LOGIN / REGISTER
+   HELPER FUNCTION
 ========================= */
 
-if (loginTab && registerTab && loginForm && registerForm) {
+function showForm(activeTab, activeForm) {
+
+  loginTab.classList.remove('active');
+  registerTab.classList.remove('active');
+  adminLoginTab.classList.remove('active');
+
+  loginForm.classList.remove('active');
+  registerForm.classList.remove('active');
+  adminLoginForm.classList.remove('active');
+
+  activeTab.classList.add('active');
+  activeForm.classList.add('active');
+
+}
+
+
+/* =========================
+   SWITCH BETWEEN FORMS
+========================= */
+
+if (loginTab && registerTab && adminLoginTab && loginForm && registerForm && adminLoginForm) {
 
   loginTab.addEventListener('click', function () {
-
-    loginTab.classList.add('active');
-    registerTab.classList.remove('active');
-
-    loginForm.classList.add('active');
-    registerForm.classList.remove('active');
-
+    showForm(loginTab, loginForm);
   });
 
-
   registerTab.addEventListener('click', function () {
+    showForm(registerTab, registerForm);
+  });
 
-    
-
-    registerTab.classList.add('active');
-    loginTab.classList.remove('active');
-
-    registerForm.classList.add('active');
-    loginForm.classList.remove('active');
-
+  adminLoginTab.addEventListener('click', function () {
+    showForm(adminLoginTab, adminLoginForm);
   });
 
 }
@@ -63,8 +72,8 @@ if (loginForm) {
       window.location.href = 'doctor-dashboard.html';
     }
 
-    else if (role === 'admin') {
-      window.location.href = 'admin-dashboard.html';
+    else {
+      alert('Please select a valid role.');
     }
 
   });
@@ -92,9 +101,26 @@ if (registerForm) {
       window.location.href = 'doctor-dashboard.html';
     }
 
-    else if (role === 'admin') {
-      window.location.href = 'admin-dashboard.html';
+    else {
+      alert('Please select a valid role.');
     }
+
+  });
+
+}
+
+
+/* =========================
+   ADMIN LOGIN REDIRECTION
+========================= */
+
+if (adminLoginForm) {
+
+  adminLoginForm.addEventListener('submit', function(event) {
+
+    event.preventDefault();
+
+    window.location.href = 'admin-dashboard.html';
 
   });
 
