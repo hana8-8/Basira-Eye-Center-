@@ -1,0 +1,677 @@
+/*
+=======================================================
+  services.css — Basira Eye Center Services Page
+=======================================================
+
+  TEACHER NOTE:
+  This file ONLY styles the services page.
+  It works TOGETHER with global.css.
+  global.css already defines:
+    - All the color variables (--color-primary, etc.)
+    - The navbar styles
+    - The footer styles
+    - Utility classes (.section-tag, .section-title, etc.)
+
+  So here we ONLY write what's unique to this page.
+  Never duplicate what global.css already does!
+=======================================================
+*/
+
+
+/* ======================================================
+   PAGE HERO
+   ======================================================
+   The banner at the top of the page under the navbar.
+   It has a teal gradient background and contains:
+   - A breadcrumb (Home > Our Services)
+   - The page title
+   - A subtitle
+====================================================== */
+.page-hero {
+  /*
+    background: linear-gradient(...) creates a smooth color transition.
+    We go from the darker --color-primary on the left
+    to the medium --color-primary-mid on the right.
+    135deg means the gradient runs diagonally.
+  */
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
+  color: white;
+  padding: 60px var(--space-2xl) 70px;
+  position: relative;      /* needed so child shapes can be positioned inside */
+  overflow: hidden;         /* clips the decorative shapes that go beyond the edge */
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;               /* sits ABOVE the decorative shapes */
+  max-width: 700px;
+}
+
+/* --- BREADCRUMB --- */
+/*
+  TEACHER NOTE:
+  The breadcrumb shows the path: Home > Our Services
+  We use flexbox to put the items in a row with gaps between them.
+*/
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);    /* slightly transparent white */
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover {
+  color: white;
+}
+
+.breadcrumb i {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb span {
+  color: white;
+  font-weight: 600;
+}
+
+/* --- HERO TEXT --- */
+.page-hero-title {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.page-hero-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* --- DECORATIVE BACKGROUND SHAPES --- */
+/*
+  TEACHER NOTE:
+  These shapes are <div>s with no content.
+  We give them a size, a semi-transparent background, and a border-radius
+  to make them circles. Then we position them with "absolute" positioning
+  so they float in specific corners of the hero.
+  The .page-hero has position: relative, which is required
+  for absolute children to be positioned relative to IT.
+*/
+.page-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  right: -100px;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  right: 300px;
+}
+
+
+/* ======================================================
+   SERVICES INTRO SECTION
+   ======================================================
+   Two-column layout:
+   Left  = big statistics numbers
+   Right = descriptive text and CTA button
+====================================================== */
+.services-intro {
+  padding: var(--space-2xl) var(--space-2xl);
+  background: var(--color-bg-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/*
+  CSS GRID for 2 columns.
+  1fr means "1 fraction" — each column gets equal space.
+  gap: adds space BETWEEN the columns (not outside).
+*/
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* LEFT COLUMN: big stat numbers */
+.intro-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.intro-stat {
+  display: flex;
+  align-items: baseline;    /* aligns items along their text baseline */
+  gap: var(--space-sm);
+}
+
+.big-num {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.big-num sup {
+  font-size: 32px;
+  color: var(--color-accent);
+}
+
+.big-label {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+
+/* ======================================================
+   SERVICES GRID SECTION
+   ======================================================
+   The main section with all the service cards.
+====================================================== */
+.services-section {
+  padding: var(--space-2xl) var(--space-2xl);
+  background: var(--color-bg);
+}
+
+/*
+  3-COLUMN GRID:
+  repeat(3, 1fr) means: repeat 3 times, each 1 fraction wide.
+  This is shorthand for: grid-template-columns: 1fr 1fr 1fr;
+*/
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* ======================================================
+   SERVICE CARD
+   ======================================================
+   Each card has 3 stacked parts:
+   1. .service-icon    → colored circle with icon
+   2. .service-card-body → title, description, feature list
+   3. .service-card-footer → buttons at the bottom
+
+   KEY TRICK: display: flex + flex-direction: column on the card,
+   and margin-top: auto on the footer — this PUSHES the footer
+   to the bottom of the card no matter how tall the content is.
+   This makes all cards have their buttons aligned at the same level.
+====================================================== */
+.service-card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;   /* stack children vertically */
+  gap: var(--space-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;       /* needed for the featured badge */
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);    /* lifts the card up by 6px on hover */
+  box-shadow: var(--shadow-lg);
+}
+
+/* FEATURED CARD — extra styling for the "Most Popular" card */
+.featured-card {
+  border-color: var(--color-accent);
+  border-width: 2px;
+}
+
+/* The "Most Popular" badge */
+.featured-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--color-accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.featured-badge i {
+  font-size: 10px;
+}
+
+/* THE ICON CIRCLE */
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;           /* don't let it shrink if space is tight */
+}
+
+.service-icon i {
+  font-size: 26px;
+}
+
+/* Two color variants for the icon */
+.teal-icon {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.orange-icon {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* CARD BODY */
+.service-card-body {
+  flex: 1;                  /* takes up as much space as possible, pushing footer down */
+}
+
+.service-card-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.service-card-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+
+/* FEATURE LIST — the checkmark list inside each card */
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.service-features li i {
+  font-size: 14px;
+  color: var(--color-primary-mid);
+  flex-shrink: 0;
+}
+
+/* CARD FOOTER — buttons at the bottom */
+.service-card-footer {
+  margin-top: auto;         /* KEY: pushes footer to the very bottom */
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* "Book Now" button */
+.service-book-btn {
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all var(--transition);
+  display: inline-block;
+}
+
+.service-book-btn:hover {
+  background: var(--color-primary-mid);
+  transform: translateY(-1px);
+}
+
+/* Orange variant of Book Now (for featured/orange cards) */
+.orange-btn {
+  background: var(--color-accent);
+}
+
+.orange-btn:hover {
+  background: #d0731f;      /* slightly darker orange for hover */
+}
+
+/* "Learn more →" text link */
+.service-learn-link {
+  font-size: 13px;
+  color: var(--color-primary-mid);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.service-learn-link:hover {
+  color: var(--color-primary);
+  gap: 8px;                 /* the arrow moves right on hover */
+}
+
+.service-learn-link i {
+  font-size: 14px;
+  transition: transform var(--transition);
+}
+
+.service-learn-link:hover i {
+  transform: translateX(2px);
+}
+
+
+/* ======================================================
+   PROCESS SECTION (How It Works)
+   ======================================================
+   4 steps in a horizontal row with connecting lines between them.
+====================================================== */
+.process-section {
+  padding: var(--space-2xl) var(--space-2xl);
+  background: var(--color-bg-white);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;                   /* no gap — the connecting line handles spacing visually */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-sm);
+}
+
+/* Top area = number circle + connecting line */
+.step-top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+/* The circular number badge */
+.step-number {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+/* The horizontal line connecting number circles */
+.step-line {
+  flex: 1;                  /* stretches to fill all remaining space */
+  height: 2px;
+  background: var(--color-border);
+  margin-left: 8px;
+}
+
+.step-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+
+/* ======================================================
+   CTA BANNER
+   ======================================================
+   Full-width teal banner urging users to book.
+   Uses the same decorative shape trick as the hero.
+====================================================== */
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
+  padding: var(--space-2xl) var(--space-2xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.cta-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-lg);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Override btn-primary background for contrast on teal */
+.cta-banner .btn-primary {
+  background: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+.cta-banner .btn-primary:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+.cta-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 13px 30px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.cta-call-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
+
+/* Decorative circles in the CTA banner */
+.cta-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cta-shape-1 {
+  width: 300px;
+  height: 300px;
+  bottom: -150px;
+  left: -100px;
+}
+
+.cta-shape-2 {
+  width: 200px;
+  height: 200px;
+  top: -80px;
+  right: 150px;
+}
+
+
+/* ======================================================
+   SCROLL ANIMATIONS
+   ======================================================
+   These two classes are added/removed by JavaScript.
+   .animate-hidden = element starts invisible (before scrolling to it)
+   .animate-visible = element becomes visible (when it enters the screen)
+====================================================== */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ======================================================
+   RESPONSIVE — Services Page
+   ======================================================
+   TEACHER NOTE:
+   @media (max-width: 992px) means: apply these styles
+   ONLY when the screen is 992 pixels wide or less.
+   This is for tablets.
+
+   @media (max-width: 600px) is for phones.
+
+   We reduce columns from 3 → 2 → 1 as the screen shrinks.
+   This is called "responsive design".
+====================================================== */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .page-hero-title {
+    font-size: 34px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;     /* stack intro columns vertically */
+  }
+
+  .intro-stats {
+    flex-direction: row;            /* show stats in a row on tablet */
+    justify-content: space-around;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);    /* 2 columns instead of 3 */
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);    /* 2x2 grid for steps */
+    gap: var(--space-lg);
+  }
+
+  /* Hide step-line on tablet since 2x2 layout breaks the visual */
+  .step-line {
+    display: none;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .page-hero {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+
+  .page-hero-title {
+    font-size: 28px;
+  }
+
+  .services-section,
+  .services-intro,
+  .process-section,
+  .cta-banner {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;     /* 1 column on mobile */
+  }
+
+  .intro-stats {
+    flex-direction: column;         /* stack stats vertically on mobile */
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .big-num {
+    font-size: 48px;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;     /* 1 column steps on mobile */
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: 24px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
