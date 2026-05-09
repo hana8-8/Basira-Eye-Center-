@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul>
+
+    <!-- CTA BUTTONS -->
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+
+      <!-- Hamburger for mobile — JavaScript will toggle this -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </nav>
+
+<main class="auth-page">
+
+  <section class="auth-container">
+
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab active" id="loginTab">Login</button>
+      <button type="button" class="auth-tab" id="registerTab">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form class="auth-form active" id="loginForm" method="POST">
+
+      <h2>Login</h2>
+
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="loginRole">Login as</label>
+        <select id="loginRole" name="role" required>
+          <option value="">Select role</option>
+          <option value="patient">Patient</option>
+          <option value="doctor">Doctor</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form class="auth-form" id="registerForm" method="POST">
+
+      <h2>Create Account</h2>
+
+      <div class="form-group">
+        <label for="registerName">Full Name</label>
+        <input type="text" id="registerName" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="registerEmail">Email</label>
+        <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input type="password" id="registerPassword" name="password" placeholder="Create a password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="registerConfirmPassword">Confirm Password</label>
+        <input type="password" id="registerConfirmPassword" name="confirm_password" placeholder="Confirm your password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="registerRole">Register as</label>
+        <select id="registerRole" name="role" required>
+          <option value="">Select role</option>
+          <option value="patient">Patient</option>
+          <option value="doctor">Doctor</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+  </section>
+
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/global.js"></script>
+
+
+</body>
+</html>

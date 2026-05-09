@@ -1,0 +1,210 @@
+
+/* =========================
+   PAGE
+========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7fbfb;
+  color: #1f2d3d;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.contact-header {
+  background: linear-gradient(135deg, #0D5C63 0%, #16727a 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contact-header h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.contact-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.contact-info,
+.contact-form-section {
+
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+}
+
+.contact-info:hover,
+.contact-form-section:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.contact-info h2,
+.contact-form-section h2 {
+  color: #0D5C63;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+
+
+/* =========================
+   CONTACT TEXT
+========================= */
+
+.contact-info p {
+  font-size: 17px;
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+.contact-info a {
+  color: #0D5C63;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #0D5C63;
+}
+
+.form-group input,
+.form-group textarea {
+
+  width: 100%;
+  padding: 14px;
+
+  border: 1px solid #d5dfe0;
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+  border-color: #0D5C63;
+  outline: none;
+
+  box-shadow: 0 0 8px rgba(13,92,99,0.2);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+  background: #0D5C63;
+  color: white;
+
+  border: none;
+
+  padding: 14px 28px;
+
+  border-radius: 50px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+
+  background: #16727a;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(13,92,99,0.25);
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.6s ease;
+}
+
+.fade-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .contact-page {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-header h1 {
+    font-size: 40px;
+  }
+
+}
