@@ -1,0 +1,784 @@
+/*
+=======================================================
+  eye-diseases.css — Basira Eye Center
+=======================================================
+  Styles only for eye-diseases.html.
+  global.css handles: navbar, footer, variables, resets.
+=======================================================
+*/
+
+/* ======================================================
+   PAGE HERO
+====================================================== */
+.page-hero {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-mid) 100%
+  );
+  color: white;
+  padding: 60px var(--space-2xl) 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover {
+  color: white;
+}
+
+.breadcrumb i {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb span {
+  color: white;
+  font-weight: 600;
+}
+
+.page-hero-title {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.page-hero-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.btn-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: var(--color-primary);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all var(--transition);
+}
+
+.btn-hero-cta:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Decorative shapes */
+.page-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  right: -100px;
+}
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  right: 300px;
+}
+
+/* Floating stat badge */
+.hero-stat-badge {
+  position: absolute;
+  bottom: 32px;
+  right: 64px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: white;
+  z-index: 2;
+  max-width: 280px;
+}
+
+.hero-stat-badge i {
+  font-size: 28px;
+  opacity: 0.8;
+}
+
+.hero-stat-badge strong {
+  display: block;
+  font-size: 18px;
+  font-family: var(--font-heading);
+}
+
+.hero-stat-badge span {
+  font-size: 12px;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* ======================================================
+   FILTER BAR
+====================================================== */
+.filter-bar {
+  background: var(--color-bg-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-2xl);
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+}
+
+.filter-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+/* Search input */
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  background: var(--color-bg);
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  transition: border-color var(--transition);
+}
+
+.search-wrap:focus-within {
+  border-color: var(--color-primary);
+}
+
+.search-wrap i {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.search-wrap input {
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text);
+  width: 100%;
+}
+
+.search-wrap input:focus {
+  outline: none;
+}
+.search-wrap input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Filter buttons */
+.filter-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 7px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* ======================================================
+   DISEASES GRID
+====================================================== */
+.diseases-section {
+  padding: var(--space-2xl);
+  background: var(--color-bg);
+  min-height: 400px;
+}
+
+.diseases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── DISEASE CARD ── */
+.disease-card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.disease-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.highlight-card {
+  border-color: var(--color-accent);
+  border-width: 2px;
+}
+
+/* Card top row: icon + severity badge */
+.disease-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Icon circle */
+.disease-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.disease-icon i {
+  font-size: 24px;
+}
+
+.teal-icon {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.orange-icon {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* Severity badges */
+.severity-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.severity-badge.low {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.severity-badge.medium {
+  background: #fff8e6;
+  color: #b45309;
+}
+
+.severity-badge.high {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Featured badge */
+.featured-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-accent);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.featured-badge i {
+  font-size: 10px;
+}
+
+/* Disease name */
+.disease-name {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Description */
+.disease-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Symptoms block */
+.disease-symptoms {
+  background: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  margin-top: 4px;
+}
+
+.symptoms-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.symptoms-label i {
+  font-size: 14px;
+}
+
+.disease-symptoms ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.disease-symptoms li {
+  font-size: 12px;
+  color: var(--color-text);
+  padding-left: 12px;
+  position: relative;
+}
+
+.disease-symptoms li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-mid);
+}
+
+/* Card footer buttons */
+.disease-card-footer {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.btn-consult {
+  background: var(--color-primary);
+  color: white;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background var(--transition);
+}
+
+.btn-consult:hover {
+  background: var(--color-primary-mid);
+}
+
+.btn-learn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary-mid);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  transition: color var(--transition);
+}
+
+.btn-learn:hover {
+  color: var(--color-primary);
+}
+
+/* No results */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: var(--space-2xl);
+  color: var(--color-text-muted);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.no-results i {
+  font-size: 48px;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+.no-results p {
+  font-size: 16px;
+  margin-bottom: var(--space-md);
+}
+.no-results button {
+  padding: 8px 20px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  transition: all var(--transition);
+}
+
+.no-results button:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Scroll animations (same pattern as services.js) */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======================================================
+   MODAL
+====================================================== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  max-width: 560px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: var(--color-primary-light);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-size: 18px;
+  transition: background var(--transition);
+}
+
+.modal-close:hover {
+  background: var(--color-border);
+}
+
+.modal-body h2 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.modal-body p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+.modal-body h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  margin-top: var(--space-sm);
+}
+
+.modal-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+}
+
+.modal-body li {
+  font-size: 13px;
+  color: var(--color-text);
+  padding-left: 16px;
+  position: relative;
+}
+
+.modal-body li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-mid);
+}
+
+.modal-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: var(--space-sm);
+  transition: background var(--transition);
+}
+
+.modal-cta:hover {
+  background: var(--color-primary-mid);
+}
+
+/* ======================================================
+   WARNING BANNER
+====================================================== */
+.warning-banner {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  padding: var(--space-xl) var(--space-2xl);
+}
+
+.warning-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.warning-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.warning-text {
+  flex: 1;
+}
+
+.warning-text h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.warning-text p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.btn-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #991b1b;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.btn-warning:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* ======================================================
+   CTA SECTION
+====================================================== */
+.diseases-cta {
+  padding: var(--space-2xl);
+  background: var(--color-bg-white);
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-mid);
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 14px;
+  background: transparent;
+  transition: all var(--transition);
+}
+
+.btn-outline-dark:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 1024px) {
+  .diseases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-stat-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .diseases-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-hero {
+    padding: 40px var(--space-lg) 60px;
+  }
+  .page-hero-title {
+    font-size: 32px;
+  }
+  .filter-bar {
+    padding: var(--space-sm) var(--space-md);
+  }
+  .filter-inner {
+    gap: var(--space-sm);
+  }
+  .diseases-section {
+    padding: var(--space-lg);
+  }
+  .warning-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
