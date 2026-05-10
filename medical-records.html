@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Reports</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/medical-records.css">
+</head>
+
+<body>
+
+<main class="doctor-page">
+
+  <section class="page-header">
+    <div>
+      <h1>Medical Reports</h1>
+      <p>Upload and review patient medical reports.</p>
+    </div>
+
+    <a href="doctor-dashboard.html" class="back-btn">Back to Dashboard</a>
+  </section>
+
+  <section class="upload-card">
+
+    <form id="reportForm">
+
+      <div class="form-group">
+        <label>Patient Name</label>
+        <input type="text" id="patientName" required>
+      </div>
+
+      <div class="form-group">
+        <label>Report Type</label>
+        <select id="reportType" required>
+          <option value="">Select report type</option>
+          <option>Eye Exam Report</option>
+          <option>OCT Report</option>
+          <option>Retina Scan</option>
+          <option>Pressure Test</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Upload File</label>
+        <input type="file" id="reportFile" required>
+      </div>
+
+      <button type="submit">Upload Report</button>
+
+    </form>
+
+  </section>
+
+  <section class="reports-list" id="reportsList">
+    <h2>Uploaded Reports</h2>
+  </section>
+
+</main>
+
+<script src="js/medical-records.js"></script>
+<script src="js/global.js"></script>
+
+</body>
+</html>

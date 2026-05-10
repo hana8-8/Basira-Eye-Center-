@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prescriptions</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/prescriptions.css">
+</head>
+
+<body>
+
+<main class="doctor-page">
+
+  <section class="page-header">
+    <div>
+      <h1>Write Prescription</h1>
+      <p>Create and save patient prescriptions.</p>
+    </div>
+
+    <a href="doctor-dashboard.html" class="back-btn">Back to Dashboard</a>
+  </section>
+
+  <section class="form-card">
+
+    <form id="prescriptionForm">
+
+      <div class="form-group">
+        <label>Patient Name</label>
+        <input type="text" id="patientName" required>
+      </div>
+
+      <div class="form-group">
+        <label>Medication</label>
+        <input type="text" id="medication" required>
+      </div>
+
+      <div class="form-group">
+        <label>Dosage</label>
+        <input type="text" id="dosage" placeholder="Example: 2 drops daily" required>
+      </div>
+
+      <div class="form-group">
+        <label>Instructions</label>
+        <textarea id="instructions" rows="5" required></textarea>
+      </div>
+
+      <button type="submit">Save Prescription</button>
+
+    </form>
+
+  </section>
+
+  <section class="prescription-list" id="prescriptionList">
+    <h2>Saved Prescriptions</h2>
+  </section>
+
+</main>
+
+<script src="js/prescriptions.js"></script>
+<script src="js/global.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Schedule</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/doctor-schedule.css">
+</head>
+
+<body>
+
+<main class="doctor-page">
+
+  <section class="page-header">
+    <div>
+      <h1>Doctor Schedule</h1>
+      <p>Update your availability and working hours.</p>
+    </div>
+
+    <a href="doctor-dashboard.html" class="back-btn">Back to Dashboard</a>
+  </section>
+
+  <section class="schedule-card">
+
+    <form id="scheduleForm">
+
+      <div class="form-group">
+        <label>Day</label>
+        <select id="day" required>
+          <option value="">Select day</option>
+          <option>Saturday</option>
+          <option>Sunday</option>
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Start Time</label>
+        <input type="time" id="startTime" required>
+      </div>
+
+      <div class="form-group">
+        <label>End Time</label>
+        <input type="time" id="endTime" required>
+      </div>
+
+      <button type="submit">Add Schedule</button>
+
+    </form>
+
+  </section>
+
+  <section class="schedule-list" id="scheduleList">
+    <h2>Current Schedule</h2>
+  </section>
+
+</main>
+
+<script src="js/doctor-schedule.js"></script>
+<script src="js/global.js"></script>
+
+</body>
+</html>

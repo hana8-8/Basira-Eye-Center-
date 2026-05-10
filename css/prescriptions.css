@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7fbfb;
+  color: #1f2d3d;
+}
+
+.doctor-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 24px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.page-header h1 {
+  color: #0D5C63;
+  font-size: 42px;
+  margin: 0;
+}
+
+.back-btn,
+form button {
+  background: #0D5C63;
+  color: white;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-card,
+.prescription-list {
+  background: white;
+  padding: 32px;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #0D5C63;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px;
+  border: 1px solid #d8e1e2;
+  border-radius: 14px;
+  font-size: 15px;
+}
+
+.prescription-item {
+  background: #eef7f7;
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 15px;
+}
