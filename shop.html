@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Glasses &amp; Lenses — Basira Eye Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-img-wrap">
+        <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
+          <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="#3B9EA6" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+          <circle cx="23" cy="23" r="9" fill="#0D5C63"/>
+          <circle cx="23" cy="23" r="4.5" fill="#1a1a2e"/>
+          <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">BASIRA</span>
+        <span class="logo-sub">EYE CENTER</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
+      <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login">Login / Register</a>
+      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="shop-hero">
+    <div class="shop-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="ti ti-chevron-right"></i>
+        <span>Shop</span>
+      </nav>
+      <h1>Glasses &amp; Lenses</h1>
+      <p>Browse our curated collection of premium frames and lenses from world-class brands — prescribed and fitted by our specialists.</p>
+    </div>
+    <div class="shop-hero-shape s1"></div>
+    <div class="shop-hero-shape s2"></div>
+  </section>
+
+
+  <!-- ===================== FILTER BAR ===================== -->
+  <!--
+    TEACHER NOTE:
+    Filter buttons let users narrow down what they see.
+    JavaScript reads data-filter on each button and
+    shows/hides cards that have a matching data-category.
+  -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Products</button>
+    <button class="filter-btn" data-filter="glasses">Glasses</button>
+    <button class="filter-btn" data-filter="lenses">Contact Lenses</button>
+  </div>
+
+
+  <!-- ===================== SHOP GRID ===================== -->
+  <main class="shop-page">
+
+    <!-- ══════════════════════════════════
+         GLASSES SECTION
+    ══════════════════════════════════════ -->
+    <div class="shop-section-label">
+      <h2><i class="ti ti-eyeglass"></i> Glasses Frames</h2>
+      <span>6 products</span>
+    </div>
+
+    <div class="products-grid">
+
+      <!--
+        ── GLASSES 1 ──
+        IMAGE: assets/images/shop/glasses-1.jpg
+        SEARCH: "Ray-Ban RB2140 Original Wayfarer black" (product photo on white background)
+        BRAND: Ray-Ban
+        DESCRIPTION: Classic wayfarer — the most iconic frame in eyewear history
+      -->
+      <div class="product-card" data-category="glasses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/glasses-1.jpg" alt="Ray-Ban Wayfarer RB2140" />
+          <div class="product-badge">Bestseller</div>
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('g1')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Ray-Ban</span>
+          <h3 class="product-name">Wayfarer Classic RB2140</h3>
+          <p class="product-desc">Iconic square acetate frame. Available in black, tortoise, and havana.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-palette"></i> 4 colors</span>
+            <span><i class="ti ti-ruler"></i> Unisex</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">2,800 EGP</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Ray-Ban Wayfarer RB2140')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── GLASSES 2 ──
+        IMAGE: assets/images/shop/glasses-2.jpg
+        SEARCH: "Ray-Ban Aviator RB3025 gold silver" (product photo on white background)
+        BRAND: Ray-Ban
+        DESCRIPTION: Timeless teardrop aviator in gold/silver metal
+      -->
+      <div class="product-card" data-category="glasses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/glasses-2.jpg" alt="Ray-Ban Aviator RB3025" />
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('g2')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Ray-Ban</span>
+          <h3 class="product-name">Aviator Classic RB3025</h3>
+          <p class="product-desc">Timeless teardrop metal frame. Lightweight and universally flattering.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-palette"></i> 6 colors</span>
+            <span><i class="ti ti-ruler"></i> Unisex</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">3,200 EGP</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Ray-Ban Aviator RB3025')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── GLASSES 3 ──
+        IMAGE: assets/images/shop/glasses-3.jpg
+        SEARCH: "Ray-Ban Clubmaster RB3016 tortoise gold" (product photo on white background)
+        BRAND: Ray-Ban
+        DESCRIPTION: Half-rim clubmaster — retro browline style
+      -->
+      <div class="product-card" data-category="glasses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/glasses-3.jpg" alt="Ray-Ban Clubmaster RB3016" />
+          <div class="product-badge new-badge">New In</div>
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('g3')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Ray-Ban</span>
+          <h3 class="product-name">Clubmaster RB3016</h3>
+          <p class="product-desc">Retro browline half-rim frame in tortoise and gold. A style icon.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-palette"></i> 3 colors</span>
+            <span><i class="ti ti-ruler"></i> Unisex</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">3,000 EGP</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Ray-Ban Clubmaster RB3016')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── GLASSES 4 ──
+        IMAGE: assets/images/shop/glasses-4.jpg
+        SEARCH: "Maghrabi optical glasses thin metal frame silver" (product on white background)
+        BRAND: Maghrabi
+        DESCRIPTION: Slim rectangular metal frame — minimalist and professional
+      -->
+      <div class="product-card" data-category="glasses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/glasses-4.jpg" alt="Maghrabi Slim Rectangle" />
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('g4')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Maghrabi</span>
+          <h3 class="product-name">Slim Rectangle — Silver</h3>
+          <p class="product-desc">Ultra-thin metal frame. Lightweight, professional, and elegant for daily wear.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-palette"></i> 2 colors</span>
+            <span><i class="ti ti-ruler"></i> Unisex</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">1,900 EGP</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Maghrabi Slim Rectangle')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── GLASSES 5 ──
+        IMAGE: assets/images/shop/glasses-5.jpg
+        SEARCH: "Maghrabi optical round acetate glasses brown tortoise" (on white background)
+        BRAND: Maghrabi
+        DESCRIPTION: Round acetate frame — vintage and artistic
+      -->
+      <div class="product-card" data-category="glasses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/glasses-5.jpg" alt="Maghrabi Round Acetate" />
+          <div class="product-badge">Popular</div>
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('g5')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Maghrabi</span>
+          <h3 class="product-name">Round Acetate — Tortoise</h3>
+          <p class="product-desc">Vintage-inspired round frame in warm tortoise acetate. Suits oval and square faces.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-palette"></i> 3 colors</span>
+            <span><i class="ti ti-ruler"></i> Unisex</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">2,100 EGP</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Maghrabi Round Acetate')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── GLASSES 6 ──
+        IMAGE: assets/images/shop/glasses-6.jpg
+        SEARCH: "Maghrabi optical oversized square glasses women black" (on white background)
+        BRAND: Maghrabi
+        DESCRIPTION: Oversized square frame — bold and fashion-forward
+      -->
+      <div class="product-card" data-category="glasses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/glasses-6.jpg" alt="Maghrabi Oversized Square" />
+          <div class="product-badge new-badge">New In</div>
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('g6')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Maghrabi</span>
+          <h3 class="product-name">Oversized Square — Black</h3>
+          <p class="product-desc">Bold oversized acetate frame. A confident statement piece for any look.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-palette"></i> 2 colors</span>
+            <span><i class="ti ti-ruler"></i> Women</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">2,400 EGP</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Maghrabi Oversized Square')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end glasses grid -->
+
+
+    <!-- ══════════════════════════════════
+         LENSES SECTION
+    ══════════════════════════════════════ -->
+    <div class="shop-section-label" style="margin-top: var(--space-2xl);">
+      <h2><i class="ti ti-eye"></i> Contact Lenses</h2>
+      <span>4 products</span>
+    </div>
+
+    <div class="products-grid">
+
+      <!--
+        ── LENSES 1 ──
+        IMAGE: assets/images/shop/lenses-1.jpg
+        SEARCH: "Acuvue Oasys contact lens box product photo"
+        BRAND: Acuvue (Johnson & Johnson)
+        DESCRIPTION: Daily silicone hydrogel lenses for dry eyes
+      -->
+      <div class="product-card lenses-card" data-category="lenses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/lenses-1.jpg" alt="Acuvue Oasys 1-Day" />
+          <div class="product-badge">Doctor Recommended</div>
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('l1')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Acuvue — Johnson &amp; Johnson</span>
+          <h3 class="product-name">Acuvue Oasys 1-Day</h3>
+          <p class="product-desc">Daily silicone hydrogel lenses with HydraLuxe technology. Ideal for dry eye patients and screen users.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-droplet"></i> Hydrogel</span>
+            <span><i class="ti ti-calendar"></i> Daily</span>
+            <span><i class="ti ti-sun"></i> UV block</span>
+          </div>
+          <div class="lens-info-row">
+            <div class="lens-info-item">
+              <span class="lens-info-label">Water Content</span>
+              <span class="lens-info-val">38%</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Pack Size</span>
+              <span class="lens-info-val">30 lenses</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Wear Time</span>
+              <span class="lens-info-val">16 hrs/day</span>
+            </div>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">850 EGP <small>/ box</small></span>
+            <button class="add-to-cart-btn" onclick="addToCart('Acuvue Oasys 1-Day')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── LENSES 2 ──
+        IMAGE: assets/images/shop/lenses-2.jpg
+        SEARCH: "Air Optix Night and Day contact lens box aqua"
+        BRAND: Alcon Air Optix
+        DESCRIPTION: Monthly extended-wear lenses approved for overnight use
+      -->
+      <div class="product-card lenses-card" data-category="lenses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/lenses-2.jpg" alt="Air Optix Night and Day" />
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('l2')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Alcon — Air Optix</span>
+          <h3 class="product-name">Air Optix Night &amp; Day Aqua</h3>
+          <p class="product-desc">The only FDA-approved lens for 30 consecutive nights of continuous wear. Maximum oxygen transmission for corneal health.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-droplet"></i> Silicone Hydrogel</span>
+            <span><i class="ti ti-calendar"></i> Monthly</span>
+            <span><i class="ti ti-moon"></i> Overnight OK</span>
+          </div>
+          <div class="lens-info-row">
+            <div class="lens-info-item">
+              <span class="lens-info-label">Water Content</span>
+              <span class="lens-info-val">24%</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Pack Size</span>
+              <span class="lens-info-val">6 lenses</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Wear Time</span>
+              <span class="lens-info-val">30 nights</span>
+            </div>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">620 EGP <small>/ box</small></span>
+            <button class="add-to-cart-btn" onclick="addToCart('Air Optix Night and Day')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── LENSES 3 ──
+        IMAGE: assets/images/shop/lenses-3.jpg
+        SEARCH: "Bausch Lomb Ultra contact lens box monthly"
+        BRAND: Bausch + Lomb
+        DESCRIPTION: Premium monthly lenses for presbyopia / multifocal
+      -->
+      <div class="product-card lenses-card" data-category="lenses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/lenses-3.jpg" alt="Bausch Lomb Ultra" />
+          <div class="product-badge">Multifocal</div>
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('l3')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">Bausch + Lomb</span>
+          <h3 class="product-name">Ultra Multifocal for Presbyopia</h3>
+          <p class="product-desc">3-Zone Progressive Design gives sharp vision at all distances. For patients over 40 who need reading and distance correction in one lens.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-droplet"></i> Silicone Hydrogel</span>
+            <span><i class="ti ti-calendar"></i> Monthly</span>
+            <span><i class="ti ti-zoom-in"></i> Multifocal</span>
+          </div>
+          <div class="lens-info-row">
+            <div class="lens-info-item">
+              <span class="lens-info-label">Water Content</span>
+              <span class="lens-info-val">46%</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Pack Size</span>
+              <span class="lens-info-val">6 lenses</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Correction</span>
+              <span class="lens-info-val">Near + Far</span>
+            </div>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">780 EGP <small>/ box</small></span>
+            <button class="add-to-cart-btn" onclick="addToCart('Bausch Lomb Ultra Multifocal')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        ── LENSES 4 ──
+        IMAGE: assets/images/shop/lenses-4.jpg
+        SEARCH: "CooperVision Biofinity toric astigmatism contact lens box"
+        BRAND: CooperVision
+        DESCRIPTION: Monthly toric lenses for astigmatism
+      -->
+      <div class="product-card lenses-card" data-category="lenses">
+        <div class="product-img-wrap">
+          <img src="assets/images/shop/lenses-4.jpg" alt="CooperVision Biofinity Toric" />
+          <div class="product-badge new-badge">For Astigmatism</div>
+          <div class="product-actions">
+            <button class="action-btn" title="Add to wishlist"><i class="ti ti-heart"></i></button>
+            <button class="action-btn" title="Quick view" onclick="openModal('l4')"><i class="ti ti-eye"></i></button>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-brand">CooperVision</span>
+          <h3 class="product-name">Biofinity Toric</h3>
+          <p class="product-desc">Naturally Wettable silicone hydrogel toric lens. Stays in position all day for stable, crisp vision in astigmatic eyes.</p>
+          <div class="product-specs">
+            <span><i class="ti ti-droplet"></i> Silicone Hydrogel</span>
+            <span><i class="ti ti-calendar"></i> Monthly</span>
+            <span><i class="ti ti-rotate"></i> Toric / Astigmatism</span>
+          </div>
+          <div class="lens-info-row">
+            <div class="lens-info-item">
+              <span class="lens-info-label">Water Content</span>
+              <span class="lens-info-val">48%</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Pack Size</span>
+              <span class="lens-info-val">6 lenses</span>
+            </div>
+            <div class="lens-info-item">
+              <span class="lens-info-label">Correction</span>
+              <span class="lens-info-val">Astigmatism</span>
+            </div>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">720 EGP <small>/ box</small></span>
+            <button class="add-to-cart-btn" onclick="addToCart('CooperVision Biofinity Toric')">
+              <i class="ti ti-shopping-cart"></i> Request
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end lenses grid -->
+
+  </main>
+
+
+  <!-- ===================== REQUEST NOTICE ===================== -->
+  <div class="request-notice">
+    <i class="ti ti-info-circle"></i>
+    <div>
+      <strong>How ordering works</strong>
+      Clicking "Request" sends your selection to our team. A specialist will contact you to confirm your prescription, sizing, and delivery or pickup details.
+    </div>
+  </div>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-partners">
+      <p class="partners-label">Our Trusted Partners</p>
+      <div class="partners-row">
+        <div class="partner-group">
+          <span class="partner-group-title">Insurance</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/axa.png" alt="Axa" /></div>
+            <div class="partner-slot"><img src="assets/images/metlife.jpg" alt="MetLife" /></div>
+            <div class="partner-slot"><img src="assets/images/globemed.jpg" alt="Global Med" /></div>
+          </div>
+        </div>
+        <div class="partner-divider"></div>
+        <div class="partner-group">
+          <span class="partner-group-title">Glasses &amp; Lenses</span>
+          <div class="partner-logos">
+            <div class="partner-slot"><img src="assets/images/rayban.png" alt="Ray-Ban" /></div>
+            <div class="partner-slot"><img src="assets/images/maghrabi.jpg" alt="Maghrabi" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#A8C5A0" stroke-width="2"/>
+            <ellipse cx="23" cy="23" rx="13" ry="16" fill="none" stroke="rgba(168,197,160,0.6)" stroke-width="1.5" transform="rotate(-20 23 23)"/>
+            <circle cx="23" cy="23" r="9" fill="#A8C5A0"/>
+            <circle cx="23" cy="23" r="4.5" fill="#0D5C63"/>
+            <circle cx="25.5" cy="20.5" r="1.8" fill="white"/>
+          </svg>
+          <div><span class="footer-logo-name">BASIRA</span><span class="footer-logo-sub">EYE CENTER</span></div>
+        </div>
+        <p class="footer-tagline">Delivering the highest standards of eye care with compassion and cutting-edge technology.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="ti ti-brand-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="ti ti-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="ti ti-chevron-right"></i> Our Services</a></li>
+          <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title"><i class="ti ti-clock"></i> Opening Hours</h4>
+        <ul class="footer-hours">
+          <li><span class="day">Sat – Wed</span><span class="time">09:00 am – 06:00 pm</span></li>
+          <li><span class="day">Thursday</span><span class="time">09:00 am – 04:00 pm</span></li>
+          <li class="closed"><span class="day">Friday</span><span class="time">Closed</span></li>
+        </ul>
+        <div class="footer-open-now"><span class="open-dot"></span><span>Open Now</span></div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li><i class="ti ti-map-pin"></i><span>123 Example Street,<br/>Giza, Egypt</span></li>
+          <li><i class="ti ti-phone"></i><a href="tel:+20XXXXXXXXXX">+20 XX XXXX XXXX</a></li>
+          <li><i class="ti ti-mail"></i><a href="mailto:info@basira.com">info@basira.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Basira Eye Center · All rights reserved</p>
+      <div class="footer-bottom-links">
+        <a href="policies.html">Privacy Policy</a><span>·</span>
+        <a href="policies.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart toast container -->
+  <div id="cartToast" class="cart-toast hidden">
+    <i class="ti ti-circle-check"></i>
+    <span id="cartToastMsg">Added to requests</span>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/shop.js"></script>
+
+</body>
+</html>
