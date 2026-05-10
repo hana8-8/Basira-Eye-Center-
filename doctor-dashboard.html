@@ -41,14 +41,22 @@
 
     <!-- CTA BUTTONS -->
     <div class="nav-cta">
-      <a href="login.html" class="btn-login">Login / Register</a>
-      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <!-- Shown only when NOT logged in -->
+      <div id="nav-auth-guest">
+        <a href="login.html" class="btn-login">Login / Register</a>
+      </div>
 
-      <!-- Hamburger for mobile — JavaScript will toggle this -->
+      <!-- Shown only when logged in -->
+      <div id="nav-auth-user" style="display:none;">
+        <span id="nav-greeting" class="nav-greeting"></span>
+        <button id="nav-logout-btn" class="btn-login">Logout</button>
+      </div>
+
+      <!-- Always visible -->
+      <a href="booking.html" class="btn-book" id="nav-book-btn">Book Appointment</a>
+
       <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
 
@@ -61,8 +69,6 @@
       <h1>Doctor Dashboard</h1>
       <p>View appointments, patient records, prescriptions, and schedule updates.</p>
     </div>
-
-    <a href="login.html" class="logout-btn" onclick="return confirmLogout();">Logout</a>
   </section>
 
   <section class="doctor-stats">
