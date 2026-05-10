@@ -649,6 +649,26 @@
 
   <script src="js/global.js"></script>
   <script src="js/news.js"></script>
+  <script>
+    if (new URLSearchParams(window.location.search).get('admin') === 'true') {
+      var nav = document.getElementById('navbar');
+      if (nav) nav.style.display = 'none';
+      document.body.style.paddingTop = '0';
+
+      var breadcrumb = document.querySelector('.news-hero-content .breadcrumb');
+      if (breadcrumb) breadcrumb.style.display = 'none';
+
+      var tabBar = document.querySelector('.tab-bar');
+      if (tabBar) tabBar.style.top = '0';
+
+      var bookBtn = document.getElementById('nav-book-btn');
+      if (bookBtn) bookBtn.style.display = 'none';
+
+      document.querySelectorAll('.cta-buttons .btn-primary').forEach(function (btn) {
+        btn.style.display = 'none';
+      });
+    }
+  </script>
 
 </body>
 </html>
