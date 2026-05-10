@@ -204,13 +204,47 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   });
 });
 
-
 /* ======================================================
-   TEACHER NOTE — What to build next in global.js:
-   ======================================================
-   When you add the backend later, this file is also
-   where you'll add:
-   - Check if user is logged in (read from localStorage)
-   - Show "Welcome, [Name]" in navbar if logged in
-   - Show/hide Patient Portal link based on login status
+   5. AUTH STATE — show/hide navbar buttons based on login
 ====================================================== */
+(function () {
+  const raw  = localStorage.getItem('basiraUser');
+  const user = raw ? JSON.parse(raw) : null;
+
+  const guestDiv  = document.getElementById('nav-auth-guest');
+  const userDiv   = document.getElementById('nav-auth-user');
+  const greeting  = document.getElementById('nav-greeting');
+  const logoutBtn = document.getElementById('nav-logout-btn');
+  const bookBtn   = document.getElementById('nav-book-btn');
+  const portalLi  = document.getElementById('nav-portal-li');
+
+  if (user) {
+    /* LOGGED IN */
+    if (guestDiv)  guestDiv.style.display  = 'none';
+    if (userDiv)   userDiv.style.display   = 'flex';
+    if (greeting) {greeting.style.display = 'none';}
+    if (portalLi)  portalLi.style.display  = 'list-item';
+    if (bookBtn)   bookBtn.href             = 'booking.html';
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function () {
+        localStorage.removeItem('basiraUser');
+        window.location.href = 'index.html';
+      });
+    }
+
+  } else {
+    /* NOT LOGGED IN */
+    if (guestDiv)  guestDiv.style.display  = 'flex';
+    if (userDiv)   userDiv.style.display   = 'none';
+    if (portalLi)  portalLi.style.display  = 'none';
+
+    if (bookBtn) {
+      bookBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.setItem('basiraRedirect', 'booking.html');
+        window.location.href = 'login.html';
+      });
+    }
+  }
+})();

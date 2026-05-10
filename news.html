@@ -39,14 +39,32 @@
       <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
       <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
       <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
-      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+      <li id="nav-portal-li" style="display:none;">
+        <a href="patient-portal.html">
+          <span class="link-text">Patient Portal</span>
+          <span class="eye-dot"></span>
+        </a>
+      </li>
     </ul>
     <div class="nav-cta">
-      <a href="login.html" class="btn-login">Login / Register</a>
-      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <!-- Shown only when NOT logged in -->
+      <div id="nav-auth-guest">
+        <a href="login.html" class="btn-login">Login / Register</a>
+      </div>
+
+      <!-- Shown only when logged in -->
+      <div id="nav-auth-user" style="display:none;">
+        <span id="nav-greeting" class="nav-greeting"></span>
+        <button id="nav-logout-btn" class="btn-login">Logout</button>
+      </div>
+
+      <!-- Always visible -->
+      <a href="booking.html" class="btn-book" id="nav-book-btn">Book Appointment</a>
+
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
+
     </div>
   </nav>
 
