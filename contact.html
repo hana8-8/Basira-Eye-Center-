@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
 
+  <!-- Google Fonts — same as the rest of the site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tabler Icons — the icon library used across the site -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/global.css">
 </head>
@@ -72,11 +80,48 @@
 
 </nav>
 
+  <!-- ===================== PAGE HERO ===================== -->
+  <!--
+    WHAT IS A PAGE HERO?
+    Unlike the home page hero which is huge and takes half the screen,
+    page heroes are smaller — they just introduce the page topic.
+    This one has a teal background and shows the page title + breadcrumb.
 
-<header class="contact-header">
-  <h1>Contact Us</h1>
-  <p>We are here to help you reach Basira Eye Center easily.</p>
-</header>
+    WHAT IS A BREADCRUMB?
+    The little trail: Home > Our Services
+    It helps users know where they are on the site and go back easily.
+  -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+
+      <!-- Breadcrumb navigation -->
+      <!--
+        The > symbol between links is called a "separator".
+        aria-label="Breadcrumb" tells screen readers what this list is for.
+        This is called ACCESSIBILITY — making the site usable for everyone.
+      -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="ti ti-chevron-right"></i>
+        <span>Contact Us</span>
+      </nav>
+
+      <h1 class="page-hero-title">Contact Us</h1>
+      <p class="page-hero-sub">
+        We are here to help you reach Basira Eye Center easily.
+      </p>
+    </div>
+
+    <!--
+      DECORATIVE SHAPES:
+      These <div>s have no content — they only exist for visual decoration.
+      The CSS gives them colors, sizes, and positions.
+      They make the hero background look more interesting.
+    -->
+    <div class="page-hero-shape shape-1"></div>
+    <div class="page-hero-shape shape-2"></div>
+  </section>
+  <!-- ===================== END PAGE HERO ===================== -->
 
 <main class="contact-page">
 

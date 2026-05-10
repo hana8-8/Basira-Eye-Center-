@@ -69,14 +69,38 @@
   </nav>
 
 
-  <!-- ===================== PAGE HEADER ===================== -->
-  <section class="page-header">
-    <div class="page-header-content">
-      <span class="section-tag teal">Basira Eye Center</span>
-      <h1>Our Doctors</h1>
-      <p>Meet our team of certified ophthalmologists dedicated to protecting and restoring your vision.</p>
+  <section class="page-hero">
+    <div class="page-hero-content">
+
+      <!-- Breadcrumb navigation -->
+      <!--
+        The > symbol between links is called a "separator".
+        aria-label="Breadcrumb" tells screen readers what this list is for.
+        This is called ACCESSIBILITY — making the site usable for everyone.
+      -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="ti ti-chevron-right"></i>
+        <span>Our Doctors</span>
+      </nav>
+
+      <h1 class="page-hero-title">Our Doctors</h1>
+      <p class="page-hero-sub">
+        Meet our team of certified ophthalmologists dedicated to protecting and restoring your vision.
+      </p>
     </div>
+
+    <!--
+      DECORATIVE SHAPES:
+      These <div>s have no content — they only exist for visual decoration.
+      The CSS gives them colors, sizes, and positions.
+      They make the hero background look more interesting.
+    -->
+    <div class="page-hero-shape shape-1"></div>
+    <div class="page-hero-shape shape-2"></div>
   </section>
+  <!-- ===================== END PAGE HERO ===================== -->
+
 
 
   <!-- ===================== DOCTORS LIST ===================== -->
