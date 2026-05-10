@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Doctors - Basira Eye Center</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/manage-doctors.css">
+</head>
+
+<body>
+
+  <main class="manage-doctors-page">
+
+    <section class="page-header">
+      <div>
+        <h1>Manage Doctors</h1>
+        <p>Manage doctor profiles, specialties, schedules, and availability.</p>
+      </div>
+
+      <button class="add-doctor-btn">+ Add Doctor</button>
+    </section>
+
+    <section class="doctor-stats">
+      <div class="stat-card">
+        <h3>Total Doctors</h3>
+        <p>12</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Available Today</h3>
+        <p>8</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>On Leave</h3>
+        <p>2</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Specialties</h3>
+        <p>6</p>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <input type="text" class="search-input" placeholder="Search doctors...">
+
+      <select class="specialty-filter">
+        <option>All Specialties</option>
+        <option>Retina</option>
+        <option>Cornea</option>
+        <option>Glaucoma</option>
+        <option>Pediatric Ophthalmology</option>
+        <option>LASIK</option>
+      </select>
+    </section>
+
+    <section class="doctors-table-section">
+
+      <table class="doctors-table">
+        <thead>
+          <tr>
+            <th>Doctor</th>
+            <th>Email</th>
+            <th>Specialty</th>
+            <th>Schedule</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Dr. Sarah Hassan</td>
+            <td>sarah@example.com</td>
+            <td>Retina</td>
+            <td>Sat - Wed, 9 AM - 3 PM</td>
+            <td><span class="status available">Available</span></td>
+            <td class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="leave-btn">Set Leave</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Dr. Omar Khaled</td>
+            <td>omar@example.com</td>
+            <td>Glaucoma</td>
+            <td>Mon - Thu, 10 AM - 4 PM</td>
+            <td><span class="status available">Available</span></td>
+            <td class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="leave-btn">Set Leave</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Dr. Mona Adel</td>
+            <td>mona@example.com</td>
+            <td>Cornea</td>
+            <td>Sun - Tue, 11 AM - 5 PM</td>
+            <td><span class="status leave">On Leave</span></td>
+            <td class="actions">
+              <button class="edit-btn">Edit</button>
+              <button class="leave-btn">Set Available</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section class="back-section">
+      <a href="admin-dashboard.html" class="back-btn">Back to Dashboard</a>
+    </section>
+
+        <section class="doctor-modal" id="doctorModal">
+
+        <div class="modal-box">
+
+            <h2 id="modalTitle">Add Doctor</h2>
+
+            <form id="doctorForm">
+
+            <div class="form-group">
+                <label>Doctor Name</label>
+                <input type="text" id="doctorName" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="doctorEmail" required>
+            </div>
+
+            <div class="form-group">
+                <label>Specialty</label>
+                <select id="doctorSpecialty" required>
+                <option value="">Select Specialty</option>
+                <option>Retina</option>
+                <option>Cornea</option>
+                <option>Glaucoma</option>
+                <option>Pediatric Ophthalmology</option>
+                <option>LASIK</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Schedule</label>
+                <input type="text" id="doctorSchedule" placeholder="Sat - Wed, 9 AM - 3 PM" required>
+            </div>
+
+            <div class="modal-actions">
+                <button type="submit" class="save-btn">Save</button>
+                <button type="button" class="close-modal-btn">Cancel</button>
+            </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/global.js"></script>
+  <script src="js/manage-doctors.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments - Basira Eye Center</title>
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/appointments.css">
+</head>
+
+<body>
+
+  <main class="appointments-page">
+
+    <section class="page-header">
+      <div>
+        <h1>Appointments</h1>
+        <p>View, approve, cancel, and manage patient appointments.</p>
+      </div>
+
+      <a href="admin-dashboard.html" class="back-btn">Back to Dashboard</a>
+    </section>
+
+    <section class="appointments-stats">
+      <div class="stat-card">
+        <h3>Total Appointments</h3>
+        <p>42</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Confirmed</h3>
+        <p>28</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Pending</h3>
+        <p>10</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Cancelled</h3>
+        <p>4</p>
+      </div>
+    </section>
+
+    <section class="filter-section">
+      <input type="text" class="search-input" placeholder="Search by patient or doctor...">
+
+      <select class="status-filter">
+        <option>All Status</option>
+        <option>Confirmed</option>
+        <option>Pending</option>
+        <option>Cancelled</option>
+      </select>
+    </section>
+
+    <section class="appointments-table-section">
+
+      <table class="appointments-table">
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Ahmed Ali</td>
+            <td>Dr. Sarah Hassan</td>
+            <td>2026-05-12</td>
+            <td>10:00 AM</td>
+            <td>Eye Exam</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+            <td class="actions">
+              <button class="approve-btn">Approve</button>
+              <button class="cancel-btn">Cancel</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Mariam Adel</td>
+            <td>Dr. Omar Khaled</td>
+            <td>2026-05-12</td>
+            <td>11:30 AM</td>
+            <td>Follow-up</td>
+            <td><span class="status pending">Pending</span></td>
+            <td class="actions">
+              <button class="approve-btn">Approve</button>
+              <button class="cancel-btn">Cancel</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Youssef Mohamed</td>
+            <td>Dr. Sarah Hassan</td>
+            <td>2026-05-13</td>
+            <td>01:00 PM</td>
+            <td>Glaucoma Check</td>
+            <td><span class="status cancelled">Cancelled</span></td>
+            <td class="actions">
+              <button class="approve-btn">Approve</button>
+              <button class="cancel-btn">Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+  </main>
+
+  <script src="js/global.js"></script>
+  <script src="js/appointments.js"></script>
+
+</body>
+</html>
