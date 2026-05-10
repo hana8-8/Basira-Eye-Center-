@@ -514,7 +514,7 @@
   flex-wrap: wrap;
 }
 
-/* Override btn-primary background for contrast on teal */
+/* Override btn-primary background for contrast on teal
 .cta-banner .btn-primary {
   background: white;
   color: var(--color-primary);
@@ -524,6 +524,23 @@
 .cta-banner .btn-primary:hover {
   background: var(--color-primary-light);
   border-color: var(--color-primary-light);
+} */
+.btn-primary{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 13px 30px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.btn-primary:hover{
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
 }
 
 .cta-call-btn {
