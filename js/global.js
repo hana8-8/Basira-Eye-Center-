@@ -30,6 +30,11 @@
    box-shadow, so scrolling adds a shadow automatically.
 ====================================================== */
 
+/* Detect whether this page lives inside the pages/ subfolder */
+const _inPages = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
+const _p = name => _inPages ? name : 'pages/' + name;   /* link to a page */
+const _root = () => _inPages ? '../index.html' : 'index.html'; /* link to home */
+
 const navbar = document.getElementById('navbar');
 
 /*
@@ -223,12 +228,12 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     if (guestDiv)  guestDiv.style.display  = 'none';
     if (userDiv)   userDiv.style.display   = 'flex';
     if (greeting) greeting.style.display   = 'none';
-    if (bookBtn)   bookBtn.href             = 'booking.html';
+    if (bookBtn)   bookBtn.href             = _p('booking.html');
 
     if (logoutBtn) {
       logoutBtn.addEventListener('click', function () {
         localStorage.removeItem('basiraUser');
-        window.location.href = 'index.html';
+        window.location.href = _root();
       });
     }
 
@@ -237,11 +242,11 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
       const navLinksEl = document.getElementById('navLinks');
       if (navLinksEl) {
         navLinksEl.innerHTML = `
-          <li><a href="index.html"><span class="link-text">Home</span><span class="eye-dot"></span></a></li>
-          <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
-          <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
-          <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
-          <li><a href="doctor-dashboard.html"><span class="link-text">Doctor Dashboard</span><span class="eye-dot"></span></a></li>
+          <li><a href="${_root()}"><span class="link-text">Home</span><span class="eye-dot"></span></a></li>
+          <li><a href="${_p('about.html')}"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+          <li><a href="${_p('services.html')}"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+          <li><a href="${_p('contact.html')}"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+          <li><a href="${_p('doctor-dashboard.html')}"><span class="link-text">Doctor Dashboard</span><span class="eye-dot"></span></a></li>
         `;
 
         /* Re-inject eye SVGs for the newly created nav items */
@@ -297,7 +302,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
       bookBtn.addEventListener('click', function (e) {
         e.preventDefault();
         localStorage.setItem('basiraRedirect', 'booking.html');
-        window.location.href = 'login.html';
+        window.location.href = _p('login.html');
       });
     }
   }

@@ -1,20 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Basira Eye Center</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/doctor-dashboard.css">
+
+    <!-- Google Fonts — same as the rest of the site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Tabler Icons — the icon library used across the site -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/global.css">
+    
 </head>
 
 <body>
 
-    <nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar">
 
     <!-- LOGO -->
-    <a href="index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
       <div class="logo-img-wrap">
         <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
@@ -32,11 +41,20 @@
 
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html"><span class="link-text">Home</span><span class="eye-dot"></span></a></li>
       <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
       <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
+      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
+      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
+      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
+      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
       <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
-      <li><a href="doctor-dashboard.html"><span class="link-text">Doctor Dashboard</span><span class="eye-dot"></span></a></li>
+      <li id="nav-portal-li" style="display:none;">
+        <a href="patient-portal.html">
+          <span class="link-text">Patient Portal</span>
+          <span class="eye-dot"></span>
+        </a>
+      </li>
     </ul>
 
     <!-- CTA BUTTONS -->
@@ -58,119 +76,53 @@
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
+
     </div>
 
-  </nav>
+</nav>
 
-<main class="doctor-dashboard">
+    <section class="page-hero">
+      <div class="page-hero-content">
 
-  <section class="doctor-header">
-    <div>
-      <h1>Doctor Dashboard</h1>
-      <p>View appointments, patient records, prescriptions, and schedule updates.</p>
-    </div>
-  </section>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="ti ti-chevron-right"></i>
+          <span>About Us</span>
+        </nav>
 
-  <section class="doctor-stats">
-    <div class="stat-card">
-      <h3>Today’s Appointments</h3>
-      <p>8</p>
-    </div>
+        <h1 class="page-hero-title">About Us</h1>
+        <p class="page-hero-sub">
+          Learn about our mission, our team, and our commitment
+          to delivering world-class eye care in Cairo.
+        </p>
 
-    <div class="stat-card">
-      <h3>Pending Reports</h3>
-      <p>3</p>
-    </div>
-
-    <div class="stat-card">
-      <h3>Follow-ups</h3>
-      <p>5</p>
-    </div>
-
-    <div class="stat-card">
-      <h3>Available Slots</h3>
-      <p>6</p>
-    </div>
-  </section>
-
-  <section class="doctor-grid">
-
-    <div class="dashboard-section">
-      <h2>Patient Appointments</h2>
-
-      <table class="appointments-table">
-        <thead>
-          <tr>
-            <th>Patient</th>
-            <th>Time</th>
-            <th>Reason</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>10:00 AM</td>
-            <td>Eye Exam</td>
-            <td><span class="status confirmed">Confirmed</span></td>
-          </tr>
-
-          <tr>
-            <td>Jane Smith</td>
-            <td>11:30 AM</td>
-            <td>Follow-up</td>
-            <td><span class="status pending">Pending</span></td>
-          </tr>
-
-          <tr>
-            <td>Omar Ali</td>
-            <td>01:00 PM</td>
-            <td>Glaucoma Check</td>
-            <td><span class="status confirmed">Confirmed</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="dashboard-section">
-      <h2>Quick Actions</h2>
-
-      <div class="action-list">
-        <a href="patient-records.html">View Patient Records</a>
-        <a href="prescriptions.html">Write Prescription</a>
-        <a href="medical-reports.html">Upload Medical Report</a>
-        <a href="doctor-schedule.html">Update Availability</a>
       </div>
-    </div>
+      <div class="page-hero-shape shape-1"></div>
+      <div class="page-hero-shape shape-2"></div>
+    </section>
 
-    <div class="dashboard-section">
-      <h2>Recent Patient Notes</h2>
+    <main>
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>At Basira Eye Center, our mission is to provide comprehensive eye care services with compassion and excellence. We are dedicated to improving the vision and quality of life for our patients through advanced technology and personalized care.</p>
+        </section>
 
-      <div class="note-card">
-        <h3>John Doe</h3>
-        <p>Needs follow-up after vision correction consultation.</p>
-      </div>
+        <section class="about-section">
+            <h2>Our Team</h2>
+            <p>Our team of experienced ophthalmologists, optometrists, and support staff are committed to delivering the highest standard of eye care. We work together to ensure that every patient receives the attention and treatment they deserve.</p>
+        </section>
 
-      <div class="note-card">
-        <h3>Jane Smith</h3>
-        <p>Review previous eye pressure measurements before appointment.</p>
-      </div>
-    </div>
+        <section class="about-section">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of eye care services, including comprehensive eye exams, cataract surgery, glaucoma treatment, and vision correction procedures. Our state-of-the-art facilities and cutting-edge technology allow us to provide the best possible care for our patients.</p>
+        </section>
 
-    <div class="dashboard-section">
-      <h2>Schedule Overview</h2>
+        <section class="about-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to schedule an appointment, please don't hesitate to contact us. We look forward to serving you and your family at Basira Eye Center.</p>
+        </section>
+    </main>
 
-      <ul class="schedule-list">
-        <li><span>Saturday</span> 09:00 AM - 03:00 PM</li>
-        <li><span>Monday</span> 10:00 AM - 04:00 PM</li>
-        <li><span>Wednesday</span> 09:00 AM - 02:00 PM</li>
-      </ul>
-    </div>
-
-  </section>
-
-</main>
 <footer class="footer">
 
    
@@ -186,17 +138,17 @@
             <div class="partner-slot">
               <!--
                 Replace this div with:
-                <img src="assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
+                <img src="../assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
               -->
-              <img src="assets/images/axa.png" alt="Axa" />
+              <img src="../assets/images/axa.png" alt="Axa" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/metlife.jpg" alt="MetLife" />
+              <img src="../assets/images/metlife.jpg" alt="MetLife" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/globemed.jpg" alt="Global Med" />
+              <img src="../assets/images/globemed.jpg" alt="Global Med" />
             </div>
 
           </div>
@@ -210,11 +162,11 @@
           <div class="partner-logos">
 
             <div class="partner-slot">
-              <img src="assets/images/rayban.png" alt="Ray-Ban" />
+              <img src="../assets/images/rayban.png" alt="Ray-Ban" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/maghrabi.jpg" alt="Maghrabi" />
+              <img src="../assets/images/maghrabi.jpg" alt="Maghrabi" />
             </div>
 
           </div>
@@ -350,17 +302,7 @@
     <!-- END BOTTOM BAR -->
 
   </footer>
-
-<script src="js/global.js"></script>
-<script src="js/doctor-dashboard.js"></script> 
-
-<script>
-  function confirmLogout() {
-    return confirm("Are you sure you want to logout?");
-  }
-</script>
-
-</body>
-
-
+    <script src="../js/global.js"></script>
+    <script src="../js/about.js"></script>
+    </body> 
 </html>

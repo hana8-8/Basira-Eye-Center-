@@ -1,28 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Admin Dashboard</title>
 
-  <!-- Google Fonts — same as the rest of the site -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Tabler Icons — the icon library used across the site -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-
-  <link rel="stylesheet" href="css/contact.css">
-  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
 
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
 
     <!-- LOGO -->
-    <a href="index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
       <div class="logo-img-wrap">
         <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
@@ -39,7 +31,7 @@
     </a>
 
 
-    <ul class="nav-links" id="navLinks">
+    <!-- <ul class="nav-links" id="navLinks">
       <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
       <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
       <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
@@ -48,13 +40,8 @@
       <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
       <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
       <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
-      <li id="nav-portal-li" style="display:none;">
-        <a href="patient-portal.html">
-          <span class="link-text">Patient Portal</span>
-          <span class="eye-dot"></span>
-        </a>
-      </li>
-    </ul>
+      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+    </ul> -->
 
     <!-- CTA BUTTONS -->
     <div class="nav-cta">
@@ -75,103 +62,74 @@
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-
     </div>
 
-</nav>
+  </nav>
 
-  <!-- ===================== PAGE HERO ===================== -->
-  <!--
-    WHAT IS A PAGE HERO?
-    Unlike the home page hero which is huge and takes half the screen,
-    page heroes are smaller — they just introduce the page topic.
-    This one has a teal background and shows the page title + breadcrumb.
+  <main class="admin-dashboard">
 
-    WHAT IS A BREADCRUMB?
-    The little trail: Home > Our Services
-    It helps users know where they are on the site and go back easily.
-  -->
-  <section class="page-hero">
-    <div class="page-hero-content">
+    <section class="dashboard-header">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Manage users, appointments, doctors, and clinic updates.</p>
+      </div>
+    </section>
 
-      <!-- Breadcrumb navigation -->
-      <!--
-        The > symbol between links is called a "separator".
-        aria-label="Breadcrumb" tells screen readers what this list is for.
-        This is called ACCESSIBILITY — making the site usable for everyone.
-      -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="ti ti-chevron-right"></i>
-        <span>Contact Us</span>
-      </nav>
+    <section class="stats-grid">
 
-      <h1 class="page-hero-title">Contact Us</h1>
-      <p class="page-hero-sub">
-        We are here to help you reach Basira Eye Center easily.
-      </p>
-    </div>
-
-    <!--
-      DECORATIVE SHAPES:
-      These <div>s have no content — they only exist for visual decoration.
-      The CSS gives them colors, sizes, and positions.
-      They make the hero background look more interesting.
-    -->
-    <div class="page-hero-shape shape-1"></div>
-    <div class="page-hero-shape shape-2"></div>
-  </section>
-  <!-- ===================== END PAGE HERO ===================== -->
-
-<main class="contact-page">
-
-  <section class="contact-info fade-item">
-    <h2>Our Contact Information</h2>
-
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:info@basiraeyecenter.com">info@basiraeyecenter.com</a>
-    </p>
-
-    <p>
-      <strong>Phone:</strong>
-      +1 (555) 123-4567
-    </p>
-
-    <p>
-      <strong>Address:</strong>
-      Cairo, Egypt
-    </p>
-  </section>
-
-  <section class="contact-form-section fade-item">
-    <h2>Send Us a Message</h2>
-
-    <form id="contactForm">
-
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
+      <div class="stat-card">
+        <h3>Total Patients</h3>
+        <p>248</p>
       </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email">
+      <div class="stat-card">
+        <h3>Total Doctors</h3>
+        <p>12</p>
       </div>
 
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea>
+      <div class="stat-card">
+        <h3>Appointments Today</h3>
+        <p>36</p>
       </div>
 
-      <button type="button" onclick="sendContact()">Send Message</button>
+      <div class="stat-card">
+        <h3>Pending Complaints</h3>
+        <p>7</p>
+      </div>
 
-    </form>
-  </section>
+    </section>
 
-</main>
+    <section class="dashboard-grid">
 
-<footer class="footer">
+      <div class="dashboard-card">
+        <h2>Manage Users</h2>
+        <p>Add, edit, or remove patients, doctors, and admin accounts.</p>
+        <a href="manage-users.html">Open</a>
+      </div>
+
+      <div class="dashboard-card">
+        <h2>Appointments</h2>
+        <p>View, approve, cancel, or reschedule clinic appointments.</p>
+        <a href="appointments.html">Open</a>
+      </div>
+
+      <div class="dashboard-card">
+        <h2>Doctors</h2>
+        <p>Manage doctor profiles, specialties, schedules, and availability.</p>
+        <a href="manage-doctors.html">Open</a>
+      </div>
+
+      <div class="dashboard-card">
+        <h2>News & Devices</h2>
+        <p>Add or update news articles, medical devices, and announcements.</p>
+        <a href="news.html?admin=true">Open</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
 
    
     <div class="footer-partners">
@@ -186,17 +144,17 @@
             <div class="partner-slot">
               <!--
                 Replace this div with:
-                <img src="assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
+                <img src="../assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
               -->
-              <img src="assets/images/axa.png" alt="Axa" />
+              <img src="../assets/images/axa.png" alt="Axa" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/metlife.jpg" alt="MetLife" />
+              <img src="../assets/images/metlife.jpg" alt="MetLife" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/globemed.jpg" alt="Global Med" />
+              <img src="../assets/images/globemed.jpg" alt="Global Med" />
             </div>
 
           </div>
@@ -210,11 +168,11 @@
           <div class="partner-logos">
 
             <div class="partner-slot">
-              <img src="assets/images/rayban.png" alt="Ray-Ban" />
+              <img src="../assets/images/rayban.png" alt="Ray-Ban" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/maghrabi.jpg" alt="Maghrabi" />
+              <img src="../assets/images/maghrabi.jpg" alt="Maghrabi" />
             </div>
 
           </div>
@@ -262,9 +220,7 @@
           <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
           <li><a href="eye-diseases.html"><i class="ti ti-chevron-right"></i> Eye Diseases</a></li>
           <li><a href="shop.html"><i class="ti ti-chevron-right"></i> Shop Glasses</a></li>
-          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
           <li><a href="news.html"><i class="ti ti-chevron-right"></i> News &amp; Devices</a></li>
-          <li><a href="complaints.html"><i class="ti ti-chevron-right"></i> Complaints</a></li>
         </ul>
       </div>
 
@@ -351,7 +307,9 @@
 
   </footer>
 
-<script src="js/contact.js"></script>
-<script src="js/global.js"></script>
+  <script src="../js/global.js"></script>
+  <script src="../js/admin.js"></script>
+
+
 </body>
 </html>

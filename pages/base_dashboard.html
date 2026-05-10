@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Complaints - Basira Eye Center</title>
+﻿{% extends "base/base.html" %}
+{% load static %}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+{% block title %}Base Dashboard{% endblock %}
 
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/complaints.css">
-</head>
-<body>
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/global.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
 
+{% block content %}
+
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
 
-    <a href="index.html" class="nav-logo">
+    <!-- LOGO -->
+    <a href="../index.html" class="nav-logo">
       <div class="logo-img-wrap">
         <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
@@ -33,6 +30,29 @@
       </div>
     </a>
 
+    <!--
+      ══════════════════════════════════════════
+      WHEN YOUR LOGO IMAGE IS READY:
+      Replace the entire <svg ...> block above
+      with this single line:
+      <img src="../assets/images/logo.png" alt="Basira Eye Center" class="logo-img" />
+      ══════════════════════════════════════════
+    -->
+
+    <!-- NAVIGATION LINKS -->
+    <!--
+      Each <a> tag is a link. The href="#" is a placeholder — it means
+      "go nowhere for now". Your team will replace each # with the actual
+      page like href="about.html" or href="services.html"
+    -->
+    <!--
+      TEACHER NOTE — THE EYE INDICATOR:
+      Every <li> now has a wrapping structure.
+      The <span class="eye-dot"> is the little eye icon that appears
+      under the active link. JavaScript in global.js adds the class
+      "active" to the current page's <a> tag, and CSS makes the
+      eye-dot visible only when that happens.
+    -->
     <ul class="nav-links" id="navLinks">
       <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
       <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
@@ -51,193 +71,102 @@
     </ul>
 
     <div class="nav-cta">
+      <!-- Shown only when NOT logged in -->
       <div id="nav-auth-guest">
         <a href="login.html" class="btn-login">Login / Register</a>
       </div>
+
+      <!-- Shown only when logged in -->
       <div id="nav-auth-user" style="display:none;">
         <span id="nav-greeting" class="nav-greeting"></span>
         <button id="nav-logout-btn" class="btn-login">Logout</button>
       </div>
+
+      <!-- Always visible -->
       <a href="booking.html" class="btn-book" id="nav-book-btn">Book Appointment</a>
+
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
+
     </div>
 
   </nav>
 
-  <!-- ===================== PAGE HERO ===================== -->
-  <!--
-    WHAT IS A PAGE HERO?
-    Unlike the home page hero which is huge and takes half the screen,
-    page heroes are smaller — they just introduce the page topic.
-    This one has a teal background and shows the page title + breadcrumb.
+  <!-- THIS IS WHERE contact.html CONTENT WILL APPEAR -->
+  {% block dashboard_content %}
+  {% endblock %}
 
-    WHAT IS A BREADCRUMB?
-    The little trail: Home > Our Services
-    It helps users know where they are on the site and go back easily.
-  -->
-  <section class="page-hero">
-    <div class="page-hero-content">
+  <!-- FOOTER -->
+ <footer class="footer">
 
-      <!-- Breadcrumb navigation -->
-      <!--
-        The > symbol between links is called a "separator".
-        aria-label="Breadcrumb" tells screen readers what this list is for.
-        This is called ACCESSIBILITY — making the site usable for everyone.
-      -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="ti ti-chevron-right"></i>
-        <span>Complaints &amp; Feedback</span>
-      </nav>
-
-      <h1 class="page-hero-title">Complaints &amp; Feedback</h1>
-      <p class="page-hero-sub">
-        Your feedback helps us improve our services and patient experience.
-      </p>
-    </div>
-
+    <!-- ROW 1: PARTNERS STRIP -->
     <!--
-      DECORATIVE SHAPES:
-      These <div>s have no content — they only exist for visual decoration.
-      The CSS gives them colors, sizes, and positions.
-      They make the hero background look more interesting.
+      HOW TO ADD PARTNER LOGOS:
+      Each .partner-slot holds one logo image.
+      Replace the placeholder <div> inside each slot with:
+      <img src="../assets/images/partners/partner-name.png" alt="Partner Name" />
+
+      Logos have different widths — that is fine and expected.
+      The CSS uses object-fit: contain so each logo scales
+      to fit its slot without being stretched or cropped.
+      If a logo looks too small, increase its slot's max-width below.
     -->
-    <div class="page-hero-shape shape-1"></div>
-    <div class="page-hero-shape shape-2"></div>
-  </section>
-  <!-- ===================== END PAGE HERO ===================== -->
-
-  <main class="complaints-page">
-
-    <section class="complaints-container">
-
-      <div class="complaints-info">
-        <h2>Submit a Complaint</h2>
-        <p>
-          If you experienced any issue during your visit, appointment,
-          or treatment, please let us know.
-        </p>
-        <ul class="complaints-list">
-          <li>Appointment delays</li>
-          <li>Doctor or staff behavior</li>
-          <li>Billing or insurance issues</li>
-          <li>Technical website issues</li>
-          <li>General service feedback</li>
-        </ul>
-      </div>
-
-      <form class="complaint-form">
-
-        <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" placeholder="Enter your full name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="Enter your phone number">
-        </div>
-
-        <div class="form-group">
-          <label for="complaintType">Complaint Type</label>
-          <select id="complaintType" required>
-            <option value="">Select complaint type</option>
-            <option>Appointment Issue</option>
-            <option>Doctor Complaint</option>
-            <option>Insurance Issue</option>
-            <option>Billing Problem</option>
-            <option>Technical Problem</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Complaint Details</label>
-          <textarea id="message" rows="7" placeholder="Write your complaint here..." required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Submit Complaint</button>
-
-      </form>
-
-    </section>
-
-
-    <section class="faq-section">
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-grid">
-
-        <div class="faq-card">
-          <h3>How long does a response take?</h3>
-          <p>Our support team usually responds within 24–48 hours.</p>
-        </div>
-
-        <div class="faq-card">
-          <h3>Can I update my complaint later?</h3>
-          <p>Yes, our support team can help update complaint details.</p>
-        </div>
-
-        <div class="faq-card">
-          <h3>Is my complaint confidential?</h3>
-          <p>Yes. All submitted complaints are treated confidentially.</p>
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer class="footer">
-
     <div class="footer-partners">
       <p class="partners-label">Our Trusted Partners</p>
       <div class="partners-row">
 
+        <!-- INSURANCE COMPANIES -->
         <div class="partner-group">
           <span class="partner-group-title">Insurance</span>
           <div class="partner-logos">
+
             <div class="partner-slot">
-              <img src="assets/images/axa.png" alt="Axa" />
+              <!--
+                Replace this div with:
+                <img src="../assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
+              -->
+              <img src="../assets/images/axa.png" alt="Axa" />
             </div>
+
             <div class="partner-slot">
-              <img src="assets/images/metlife.jpg" alt="MetLife" />
+              <img src="../assets/images/metlife.jpg" alt="MetLife" />
             </div>
+
             <div class="partner-slot">
-              <img src="assets/images/globemed.jpg" alt="Global Med" />
+              <img src="../assets/images/globemed.jpg" alt="Global Med" />
             </div>
+
           </div>
         </div>
 
         <div class="partner-divider"></div>
 
+        <!-- GLASSES & LENSES STORES -->
         <div class="partner-group">
           <span class="partner-group-title">Glasses &amp; Lenses</span>
           <div class="partner-logos">
+
             <div class="partner-slot">
-              <img src="assets/images/rayban.png" alt="Ray-Ban" />
+              <img src="../assets/images/rayban.png" alt="Ray-Ban" />
             </div>
+
             <div class="partner-slot">
-              <img src="assets/images/maghrabi.jpg" alt="Maghrabi" />
+              <img src="../assets/images/maghrabi.jpg" alt="Maghrabi" />
             </div>
+
           </div>
         </div>
 
       </div>
     </div>
+    <!-- END PARTNERS STRIP -->
 
+
+    <!-- ROW 2: MAIN FOOTER COLUMNS -->
     <div class="footer-main">
 
+      <!-- COLUMN 1: Brand -->
       <div class="footer-col footer-brand">
         <div class="footer-logo">
           <svg width="36" height="36" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
@@ -262,6 +191,7 @@
         </div>
       </div>
 
+      <!-- COLUMN 2: Quick Links -->
       <div class="footer-col">
         <h4 class="footer-col-title">Quick Links</h4>
         <ul class="footer-links">
@@ -276,9 +206,16 @@
         </ul>
       </div>
 
+      <!-- COLUMN 3: Opening Hours -->
       <div class="footer-col">
-        <h4 class="footer-col-title"><i class="ti ti-clock"></i> Opening Hours</h4>
+        <h4 class="footer-col-title">
+          <i class="ti ti-clock"></i> Opening Hours
+        </h4>
         <ul class="footer-hours">
+          <!--
+            Update these days and times to match your real schedule.
+            To mark a day as closed, add class="closed" to the <li>.
+          -->
           <li>
             <span class="day">Sat – Wed</span>
             <span class="time">09:00 am – 06:00 pm</span>
@@ -298,11 +235,15 @@
         </div>
       </div>
 
+      <!-- COLUMN 4: Contact -->
       <div class="footer-col">
         <h4 class="footer-col-title">Contact Us</h4>
         <ul class="footer-contact">
           <li>
             <i class="ti ti-map-pin"></i>
+            <!--
+              Replace this with your real address
+            -->
             <span>123 Example Street,<br/>Giza, Egypt</span>
           </li>
           <li>
@@ -318,6 +259,7 @@
             <a href="https://wa.me/20XXXXXXXXXX">WhatsApp Us</a>
           </li>
         </ul>
+        <!-- Payment Methods -->
         <div class="footer-payment">
           <span class="payment-label">We Accept</span>
           <div class="payment-icons">
@@ -329,7 +271,10 @@
       </div>
 
     </div>
+    <!-- END MAIN FOOTER -->
 
+
+    <!-- ROW 3: BOTTOM BAR -->
     <div class="footer-bottom">
       <p>© 2026 Basira Eye Center · All rights reserved</p>
       <div class="footer-bottom-links">
@@ -340,11 +285,12 @@
         <a href="complaints.html">Complaints</a>
       </div>
     </div>
+    <!-- END BOTTOM BAR -->
 
   </footer>
+{% endblock %}
 
-  <script src="js/global.js"></script>
-  <script src="js/complaints.js"></script>
-
-</body>
-</html>
+{% block extra_js %}
+  <script src="{% static 'js/global.js' %}"></script>
+  <script src="{% static 'js/contact.js' %}"></script>
+{% endblock %}

@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
 
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/admin.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Basira Eye Center</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/doctor-dashboard.css">
 </head>
 
 <body>
 
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
 
     <!-- LOGO -->
-    <a href="index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
       <div class="logo-img-wrap">
         <svg class="logo-svg" width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
           <circle cx="23" cy="23" r="21" fill="none" stroke="#0D5C63" stroke-width="2"/>
@@ -31,17 +31,13 @@
     </a>
 
 
-    <!-- <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html"><span class="link-text">Home</span><span class="eye-dot"></span></a></li>
       <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
       <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
-      <li><a href="eye-diseases.html"><span class="link-text">Eye Diseases</span><span class="eye-dot"></span></a></li>
-      <li><a href="doctors.html"><span class="link-text">Our Doctors</span><span class="eye-dot"></span></a></li>
-      <li><a href="insurance.html"><span class="link-text">Insurance</span><span class="eye-dot"></span></a></li>
-      <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
-      <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
       <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
-      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
-    </ul> -->
+      <li><a href="doctor-dashboard.html"><span class="link-text">Doctor Dashboard</span><span class="eye-dot"></span></a></li>
+    </ul>
 
     <!-- CTA BUTTONS -->
     <div class="nav-cta">
@@ -66,70 +62,116 @@
 
   </nav>
 
-  <main class="admin-dashboard">
+<main class="doctor-dashboard">
 
-    <section class="dashboard-header">
-      <div>
-        <h1>Admin Dashboard</h1>
-        <p>Manage users, appointments, doctors, and clinic updates.</p>
+  <section class="doctor-header">
+    <div>
+      <h1>Doctor Dashboard</h1>
+      <p>View appointments, patient records, prescriptions, and schedule updates.</p>
+    </div>
+  </section>
+
+  <section class="doctor-stats">
+    <div class="stat-card">
+      <h3>Today’s Appointments</h3>
+      <p>8</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Pending Reports</h3>
+      <p>3</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Follow-ups</h3>
+      <p>5</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Available Slots</h3>
+      <p>6</p>
+    </div>
+  </section>
+
+  <section class="doctor-grid">
+
+    <div class="dashboard-section">
+      <h2>Patient Appointments</h2>
+
+      <table class="appointments-table">
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Time</th>
+            <th>Reason</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>10:00 AM</td>
+            <td>Eye Exam</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+
+          <tr>
+            <td>Jane Smith</td>
+            <td>11:30 AM</td>
+            <td>Follow-up</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+
+          <tr>
+            <td>Omar Ali</td>
+            <td>01:00 PM</td>
+            <td>Glaucoma Check</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dashboard-section">
+      <h2>Quick Actions</h2>
+
+      <div class="action-list">
+        <a href="patient-records.html">View Patient Records</a>
+        <a href="prescriptions.html">Write Prescription</a>
+        <a href="medical-reports.html">Upload Medical Report</a>
+        <a href="doctor-schedule.html">Update Availability</a>
       </div>
-    </section>
+    </div>
 
-    <section class="stats-grid">
+    <div class="dashboard-section">
+      <h2>Recent Patient Notes</h2>
 
-      <div class="stat-card">
-        <h3>Total Patients</h3>
-        <p>248</p>
+      <div class="note-card">
+        <h3>John Doe</h3>
+        <p>Needs follow-up after vision correction consultation.</p>
       </div>
 
-      <div class="stat-card">
-        <h3>Total Doctors</h3>
-        <p>12</p>
+      <div class="note-card">
+        <h3>Jane Smith</h3>
+        <p>Review previous eye pressure measurements before appointment.</p>
       </div>
+    </div>
 
-      <div class="stat-card">
-        <h3>Appointments Today</h3>
-        <p>36</p>
-      </div>
+    <div class="dashboard-section">
+      <h2>Schedule Overview</h2>
 
-      <div class="stat-card">
-        <h3>Pending Complaints</h3>
-        <p>7</p>
-      </div>
+      <ul class="schedule-list">
+        <li><span>Saturday</span> 09:00 AM - 03:00 PM</li>
+        <li><span>Monday</span> 10:00 AM - 04:00 PM</li>
+        <li><span>Wednesday</span> 09:00 AM - 02:00 PM</li>
+      </ul>
+    </div>
 
-    </section>
+  </section>
 
-    <section class="dashboard-grid">
-
-      <div class="dashboard-card">
-        <h2>Manage Users</h2>
-        <p>Add, edit, or remove patients, doctors, and admin accounts.</p>
-        <a href="manage-users.html">Open</a>
-      </div>
-
-      <div class="dashboard-card">
-        <h2>Appointments</h2>
-        <p>View, approve, cancel, or reschedule clinic appointments.</p>
-        <a href="appointments.html">Open</a>
-      </div>
-
-      <div class="dashboard-card">
-        <h2>Doctors</h2>
-        <p>Manage doctor profiles, specialties, schedules, and availability.</p>
-        <a href="manage-doctors.html">Open</a>
-      </div>
-
-      <div class="dashboard-card">
-        <h2>News & Devices</h2>
-        <p>Add or update news articles, medical devices, and announcements.</p>
-        <a href="news.html?admin=true">Open</a>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="footer">
+</main>
+<footer class="footer">
 
    
     <div class="footer-partners">
@@ -144,17 +186,17 @@
             <div class="partner-slot">
               <!--
                 Replace this div with:
-                <img src="assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
+                <img src="../assets/images/partners/insurance-1.png" alt="Insurance Company Name" />
               -->
-              <img src="assets/images/axa.png" alt="Axa" />
+              <img src="../assets/images/axa.png" alt="Axa" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/metlife.jpg" alt="MetLife" />
+              <img src="../assets/images/metlife.jpg" alt="MetLife" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/globemed.jpg" alt="Global Med" />
+              <img src="../assets/images/globemed.jpg" alt="Global Med" />
             </div>
 
           </div>
@@ -168,11 +210,11 @@
           <div class="partner-logos">
 
             <div class="partner-slot">
-              <img src="assets/images/rayban.png" alt="Ray-Ban" />
+              <img src="../assets/images/rayban.png" alt="Ray-Ban" />
             </div>
 
             <div class="partner-slot">
-              <img src="assets/images/maghrabi.jpg" alt="Maghrabi" />
+              <img src="../assets/images/maghrabi.jpg" alt="Maghrabi" />
             </div>
 
           </div>
@@ -220,7 +262,9 @@
           <li><a href="doctors.html"><i class="ti ti-chevron-right"></i> Our Doctors</a></li>
           <li><a href="eye-diseases.html"><i class="ti ti-chevron-right"></i> Eye Diseases</a></li>
           <li><a href="shop.html"><i class="ti ti-chevron-right"></i> Shop Glasses</a></li>
+          <li><a href="insurance.html"><i class="ti ti-chevron-right"></i> Insurance</a></li>
           <li><a href="news.html"><i class="ti ti-chevron-right"></i> News &amp; Devices</a></li>
+          <li><a href="complaints.html"><i class="ti ti-chevron-right"></i> Complaints</a></li>
         </ul>
       </div>
 
@@ -307,9 +351,16 @@
 
   </footer>
 
-  <script src="js/global.js"></script>
-  <script src="js/admin.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/doctor-dashboard.js"></script> 
 
+<script>
+  function confirmLogout() {
+    return confirm("Are you sure you want to logout?");
+  }
+</script>
 
 </body>
+
+
 </html>
