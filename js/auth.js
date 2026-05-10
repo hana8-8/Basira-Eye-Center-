@@ -2,12 +2,12 @@
    GET ELEMENTS
 ========================= */
 
-const loginTab = document.getElementById('loginTab');
-const registerTab = document.getElementById('registerTab');
+const loginTab      = document.getElementById('loginTab');
+const registerTab   = document.getElementById('registerTab');
 const adminLoginTab = document.getElementById('loginAdmin');
 
-const loginForm = document.getElementById('loginForm');
-const registerForm = document.getElementById('registerForm');
+const loginForm      = document.getElementById('loginForm');
+const registerForm   = document.getElementById('registerForm');
 const adminLoginForm = document.getElementById('adminLoginForm');
 
 
@@ -16,7 +16,6 @@ const adminLoginForm = document.getElementById('adminLoginForm');
 ========================= */
 
 function showForm(activeTab, activeForm) {
-
   loginTab.classList.remove('active');
   registerTab.classList.remove('active');
   adminLoginTab.classList.remove('active');
@@ -27,7 +26,6 @@ function showForm(activeTab, activeForm) {
 
   activeTab.classList.add('active');
   activeForm.classList.add('active');
-
 }
 
 
@@ -58,21 +56,38 @@ if (loginTab && registerTab && adminLoginTab && loginForm && registerForm && adm
 
 if (loginForm) {
 
-  loginForm.addEventListener('submit', function(event) {
-
+  loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const role = document.getElementById('loginRole').value;
 
     if (role === 'patient') {
-      window.location.href = 'patient-portal.html';
-    }
 
-    else if (role === 'doctor') {
+      /* Save dummy patient session */
+      localStorage.setItem('basiraUser', JSON.stringify({
+        name:  'Sara Ahmed',
+        email: 'sara@example.com',
+        id:    'PAT-001',
+        role:  'patient'
+      }));
+
+      /* Go to booking page if they came from Book Appointment, else portal */
+      const redirect = localStorage.getItem('basiraRedirect') || 'patient-portal.html';
+      localStorage.removeItem('basiraRedirect');
+      window.location.href = redirect;
+
+    } else if (role === 'doctor') {
+
+      localStorage.setItem('basiraUser', JSON.stringify({
+        name:  'Dr. Karim Hassan',
+        email: 'karim@basira.com',
+        id:    'DOC-001',
+        role:  'doctor'
+      }));
+
       window.location.href = 'doctor-dashboard.html';
-    }
 
-    else {
+    } else {
       alert('Please select a valid role.');
     }
 
@@ -87,21 +102,37 @@ if (loginForm) {
 
 if (registerForm) {
 
-  registerForm.addEventListener('submit', function(event) {
-
+  registerForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const role = document.getElementById('registerRole').value;
 
     if (role === 'patient') {
-      window.location.href = 'patient-portal.html';
-    }
 
-    else if (role === 'doctor') {
+      /* Save dummy patient session for new registrant */
+      localStorage.setItem('basiraUser', JSON.stringify({
+        name:  'New Patient',
+        email: 'newpatient@example.com',
+        id:    'PAT-NEW',
+        role:  'patient'
+      }));
+
+      const redirect = localStorage.getItem('basiraRedirect') || 'patient-portal.html';
+      localStorage.removeItem('basiraRedirect');
+      window.location.href = redirect;
+
+    } else if (role === 'doctor') {
+
+      localStorage.setItem('basiraUser', JSON.stringify({
+        name:  'New Doctor',
+        email: 'newdoctor@basira.com',
+        id:    'DOC-NEW',
+        role:  'doctor'
+      }));
+
       window.location.href = 'doctor-dashboard.html';
-    }
 
-    else {
+    } else {
       alert('Please select a valid role.');
     }
 
@@ -116,9 +147,15 @@ if (registerForm) {
 
 if (adminLoginForm) {
 
-  adminLoginForm.addEventListener('submit', function(event) {
-
+  adminLoginForm.addEventListener('submit', function (event) {
     event.preventDefault();
+
+    localStorage.setItem('basiraUser', JSON.stringify({
+      name:  'Admin',
+      email: 'admin@basira.com',
+      id:    'ADMIN-001',
+      role:  'admin'
+    }));
 
     window.location.href = 'admin-dashboard.html';
 

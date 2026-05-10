@@ -204,13 +204,101 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   });
 });
 
-
 /* ======================================================
-   TEACHER NOTE — What to build next in global.js:
-   ======================================================
-   When you add the backend later, this file is also
-   where you'll add:
-   - Check if user is logged in (read from localStorage)
-   - Show "Welcome, [Name]" in navbar if logged in
-   - Show/hide Patient Portal link based on login status
+   5. AUTH STATE — show/hide navbar buttons based on login
 ====================================================== */
+(function () {
+  const raw  = localStorage.getItem('basiraUser');
+  const user = raw ? JSON.parse(raw) : null;
+
+  const guestDiv  = document.getElementById('nav-auth-guest');
+  const userDiv   = document.getElementById('nav-auth-user');
+  const greeting  = document.getElementById('nav-greeting');
+  const logoutBtn = document.getElementById('nav-logout-btn');
+  const bookBtn   = document.getElementById('nav-book-btn');
+  const portalLi  = document.getElementById('nav-portal-li');
+
+  if (user) {
+    /* LOGGED IN */
+    if (guestDiv)  guestDiv.style.display  = 'none';
+    if (userDiv)   userDiv.style.display   = 'flex';
+    if (greeting) greeting.style.display   = 'none';
+    if (bookBtn)   bookBtn.href             = 'booking.html';
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function () {
+        localStorage.removeItem('basiraUser');
+        window.location.href = 'index.html';
+      });
+    }
+
+    if (user.role === 'doctor') {
+      /* DOCTOR — replace nav links with doctor-specific navigation */
+      const navLinksEl = document.getElementById('navLinks');
+      if (navLinksEl) {
+        navLinksEl.innerHTML = `
+          <li><a href="index.html"><span class="link-text">Home</span><span class="eye-dot"></span></a></li>
+          <li><a href="about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
+          <li><a href="services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
+          <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
+          <li><a href="doctor-dashboard.html"><span class="link-text">Doctor Dashboard</span><span class="eye-dot"></span></a></li>
+        `;
+
+        /* Re-inject eye SVGs for the newly created nav items */
+        navLinksEl.querySelectorAll('.eye-dot').forEach(function (dot) {
+          dot.innerHTML = `
+            <svg width="22" height="14" viewBox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+              <line x1="5"  y1="4.5" x2="3.5" y2="1.5"  stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+              <line x1="8"  y1="2.5" x2="7.5" y2="0"    stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+              <line x1="11" y1="2"   x2="11"  y2="0"    stroke="#0D5C63" stroke-width="1.1" stroke-linecap="round"/>
+              <line x1="14" y1="2.5" x2="14.5" y2="0"   stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+              <line x1="17" y1="4.5" x2="18.5" y2="1.5" stroke="#0D5C63" stroke-width="1"   stroke-linecap="round"/>
+              <path d="M1,7 Q5.5,2 11,2 Q16.5,2 21,7 Q16.5,12 11,12 Q5.5,12 1,7 Z" fill="white" stroke="#0D5C63" stroke-width="1.2" stroke-linejoin="round"/>
+              <circle cx="11" cy="7" r="3.2" fill="#0D5C63"/>
+              <circle cx="11" cy="7" r="1.6" fill="#07383d"/>
+              <circle cx="12.5" cy="5.8" r="0.9" fill="white" opacity="0.9"/>
+            </svg>
+          `;
+        });
+
+        /* Re-attach hamburger close-on-click for the new links */
+        navLinksEl.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            navLinksEl.classList.remove('open');
+            if (hamburger) hamburger.classList.remove('open');
+          });
+        });
+
+        /* Re-apply active page highlight for the new links */
+        const activePath = window.location.pathname.split('/').pop();
+        navLinksEl.querySelectorAll('a').forEach(function (link) {
+          const linkPath = link.getAttribute('href');
+          if (linkPath === activePath || (activePath === '' && linkPath === 'index.html')) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      /* Hide "Book Appointment" — not relevant for doctors */
+      if (bookBtn) bookBtn.style.display = 'none';
+
+    } else {
+      /* PATIENT — show the Patient Portal link */
+      if (portalLi) portalLi.style.display = 'list-item';
+    }
+
+  } else {
+    /* NOT LOGGED IN */
+    if (guestDiv)  guestDiv.style.display  = 'flex';
+    if (userDiv)   userDiv.style.display   = 'none';
+    if (portalLi)  portalLi.style.display  = 'none';
+
+    if (bookBtn) {
+      bookBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.setItem('basiraRedirect', 'booking.html');
+        window.location.href = 'login.html';
+      });
+    }
+  }
+})();

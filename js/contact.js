@@ -12,32 +12,16 @@ Handles:
    1. CONTACT FORM
 ========================= */
 
-const form = document.getElementById('contactForm');
+function sendContact() {
+  var nameVal  = document.getElementById('name').value;
+  var emailVal = document.getElementById('email').value;
 
-if (form) {
+  if (nameVal === '' || emailVal === '') {
+    showMessage('Please fill all fields');
+    return;
+  }
 
-  form.addEventListener('submit', function(event) {
-
-    // Prevent page refresh
-
-
-    // Get input values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-
-    // Simple validation
-    if (name === '' || email === '') {
-
-      showMessage('Please fill all fields');
-
-      return;
-    }
-
-    // Success
-    showMessage('Message sent successfully');
-
-  });
-
+  window.location.href = 'contact_success.html';
 }
 
 

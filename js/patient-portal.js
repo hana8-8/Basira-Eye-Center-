@@ -12,6 +12,15 @@
 =======================================================
 */
 
+/* Doctors should never land on the patient portal */
+(function () {
+  const raw  = localStorage.getItem('basiraUser');
+  const user = raw ? JSON.parse(raw) : null;
+  if (user && user.role === 'doctor') {
+    window.location.href = 'doctor-dashboard.html';
+  }
+})();
+
 
 /* ======================================================
    1. CANCEL APPOINTMENT BUTTONS

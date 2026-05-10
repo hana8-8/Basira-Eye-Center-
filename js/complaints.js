@@ -11,9 +11,7 @@ if (complaintForm) {
 
     event.preventDefault();
 
-    showSuccessMessage();
-
-    complaintForm.reset();
+    window.location.href = 'complaint_success.html';
 
   });
 
@@ -116,24 +114,6 @@ faqCards.forEach(function(card) {
     card.style.transform = 'translateY(0)';
 
   });
-
-});
-
-
-/* =========================
-   ACTIVE NAV LINK
-========================= */
-
-const navLinks =
-  document.querySelectorAll('.nav-links a');
-
-navLinks.forEach(function(link) {
-
-  if (link.href === window.location.href) {
-
-    link.classList.add('active');
-
-  }
 
 });
 

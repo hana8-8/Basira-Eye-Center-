@@ -12,25 +12,82 @@ body {
 
 
 /* =========================
-   HERO
+   PAGE HERO (matches services & insurance pages)
 ========================= */
 
-.complaints-hero {
-  background: linear-gradient(135deg, #0D5C63 0%, #16727a 100%);
+.page-hero {
+  background: linear-gradient(135deg, #0D5C63 0%, #3B9EA6 100%);
   color: white;
-  text-align: center;
-  padding: 80px 20px;
+  padding: 60px 64px 70px;
+  position: relative;
+  overflow: hidden;
 }
 
-.complaints-hero h1 {
-  margin: 0 0 15px;
-  font-size: 52px;
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
 }
 
-.complaints-hero p {
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.breadcrumb a:hover { color: white; }
+
+.breadcrumb i {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb span {
+  color: white;
+  font-weight: 600;
+}
+
+.page-hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 46px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+}
+
+.page-hero-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 520px;
   margin: 0;
-  font-size: 18px;
-  opacity: 0.9;
+}
+
+.page-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.shape-1 { width: 400px; height: 400px; top: -200px; right: -100px; }
+.shape-2 { width: 200px; height: 200px; bottom: -80px; right: 300px; }
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 48px 18px 56px;
+  }
+  .page-hero-title {
+    font-size: 32px;
+  }
 }
 
 

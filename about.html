@@ -5,13 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Basira Eye Center</title>
+
+    <!-- Google Fonts — same as the rest of the site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Tabler Icons — the icon library used across the site -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/global.css">
+    
 </head>
 
 <body>
 
-    <nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar">
 
     <!-- LOGO -->
     <a href="index.html" class="nav-logo">
@@ -40,27 +49,57 @@
       <li><a href="news.html"><span class="link-text">News &amp; Devices</span><span class="eye-dot"></span></a></li>
       <li><a href="complaints.html"><span class="link-text">Complaints</span><span class="eye-dot"></span></a></li>
       <li><a href="contact.html"><span class="link-text">Contact Us</span><span class="eye-dot"></span></a></li>
-      <li><a href="patient-portal.html"><span class="link-text">Patient Portal</span><span class="eye-dot"></span></a></li>
+      <li id="nav-portal-li" style="display:none;">
+        <a href="patient-portal.html">
+          <span class="link-text">Patient Portal</span>
+          <span class="eye-dot"></span>
+        </a>
+      </li>
     </ul>
 
     <!-- CTA BUTTONS -->
     <div class="nav-cta">
-      <a href="login.html" class="btn-login">Login / Register</a>
-      <a href="booking.html" class="btn-book">Book Appointment</a>
+      <!-- Shown only when NOT logged in -->
+      <div id="nav-auth-guest">
+        <a href="login.html" class="btn-login">Login / Register</a>
+      </div>
 
-      <!-- Hamburger for mobile — JavaScript will toggle this -->
+      <!-- Shown only when logged in -->
+      <div id="nav-auth-user" style="display:none;">
+        <span id="nav-greeting" class="nav-greeting"></span>
+        <button id="nav-logout-btn" class="btn-login">Logout</button>
+      </div>
+
+      <!-- Always visible -->
+      <a href="booking.html" class="btn-book" id="nav-book-btn">Book Appointment</a>
+
       <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
+
     </div>
 
-  </nav>
+</nav>
 
-    <header>
-        <h1>About Us</h1>
-    </header>
+    <section class="page-hero">
+      <div class="page-hero-content">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="ti ti-chevron-right"></i>
+          <span>About Us</span>
+        </nav>
+
+        <h1 class="page-hero-title">About Us</h1>
+        <p class="page-hero-sub">
+          Learn about our mission, our team, and our commitment
+          to delivering world-class eye care in Cairo.
+        </p>
+
+      </div>
+      <div class="page-hero-shape shape-1"></div>
+      <div class="page-hero-shape shape-2"></div>
+    </section>
 
     <main>
         <section class="about-section">
@@ -263,9 +302,7 @@
     <!-- END BOTTOM BAR -->
 
   </footer>
-
-    <script src="js/about.js"></script>
     <script src="js/global.js"></script>
-
+    <script src="js/about.js"></script>
     </body> 
 </html>

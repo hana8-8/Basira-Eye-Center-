@@ -955,3 +955,10 @@ button {
   .navbar { padding: 0 var(--space-sm); }
   .btn-login { display: none; }
 }
+
+.nav-greeting {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-right: 6px;
+}
