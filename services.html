@@ -747,6 +747,14 @@
         document.querySelectorAll('.service-book-btn, #nav-book-btn, a[href="booking.html"].btn-primary').forEach(function (el) {
           el.style.display = 'none';
         });
+      } else if (!user) {
+        document.querySelectorAll('.service-book-btn, a[href="booking.html"].btn-primary').forEach(function (el) {
+          el.addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.setItem('basiraRedirect', 'booking.html');
+            window.location.href = 'login.html';
+          });
+        });
       }
     })();
   </script>
