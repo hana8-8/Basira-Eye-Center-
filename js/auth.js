@@ -18,11 +18,11 @@ const registerForm   = document.getElementById('registerForm');
 function showForm(activeTab, activeForm) {
   loginTab.classList.remove('active');
   registerTab.classList.remove('active');
-  adminLoginTab.classList.remove('active');
+  // adminLoginTab.classList.remove('active');
 
   loginForm.classList.remove('active');
   registerForm.classList.remove('active');
-  adminLoginForm.classList.remove('active');
+  // adminLoginForm.classList.remove('active');
 
   activeTab.classList.add('active');
   activeForm.classList.add('active');
@@ -33,7 +33,7 @@ function showForm(activeTab, activeForm) {
    SWITCH BETWEEN FORMS
 ========================= */
 
-if (loginTab && registerTab && adminLoginTab && loginForm && registerForm && adminLoginForm) {
+if (loginTab && registerTab && loginForm && registerForm ) {
 
   loginTab.addEventListener('click', function () {
     showForm(loginTab, loginForm);
@@ -43,9 +43,9 @@ if (loginTab && registerTab && adminLoginTab && loginForm && registerForm && adm
     showForm(registerTab, registerForm);
   });
 
-  adminLoginTab.addEventListener('click', function () {
-    showForm(adminLoginTab, adminLoginForm);
-  });
+  // adminLoginTab.addEventListener('click', function () {
+  //   showForm(adminLoginTab, adminLoginForm);
+  // });
 
 }
 
@@ -105,36 +105,10 @@ if (registerForm) {
   registerForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const role = document.getElementById('registerRole').value;
-
-    if (role === 'patient') {
-
-      /* Save dummy patient session for new registrant */
-      localStorage.setItem('basiraUser', JSON.stringify({
-        name:  'New Patient',
-        email: 'newpatient@example.com',
-        id:    'PAT-NEW',
-        role:  'patient'
-      }));
 
       const redirect = localStorage.getItem('basiraRedirect') || 'patient-portal.html';
       localStorage.removeItem('basiraRedirect');
       window.location.href = redirect;
-
-    } else if (role === 'doctor') {
-
-      localStorage.setItem('basiraUser', JSON.stringify({
-        name:  'New Doctor',
-        email: 'newdoctor@basira.com',
-        id:    'DOC-NEW',
-        role:  'doctor'
-      }));
-
-      window.location.href = 'doctor-dashboard.html';
-
-    } else {
-      alert('Please select a valid role.');
-    }
 
   });
 
