@@ -1,14 +1,3 @@
-/* TODO: REMOVE */
-#step-1 {
-  display: none;
-}
-#step-2 {
-  display: none;
-}
-#step-3 {
-  display: block;
-}
-
 .breadcrumb {
   background: var(--color-primary);
   padding: 10px var(--space-lg);

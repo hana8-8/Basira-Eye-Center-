@@ -331,9 +331,7 @@ function closeModal() {
 }
 
 /* ======================================================
-   4. SCROLL ANIMATIONS
-   ======================================================
-   Same pattern used in services.js — cards fade in
+   4. SCROLL ANIMATIONS — cards fade in
    as they enter the viewport.
 ====================================================== */
 
@@ -341,7 +339,7 @@ const animatableElements = document.querySelectorAll(".disease-card");
 
 animatableElements.forEach(function (el, index) {
   el.classList.add("animate-hidden");
-  el.style.transitionDelay = index * 0.08 + "s";
+  el.style.transitionDelay = index * 0.08 + "s"; //fades in one after another
 });
 
 const scrollObserver = new IntersectionObserver(
