@@ -1,7 +1,4 @@
-/* ======================================================
-   PAGE HERO
-====================================================== */
-
+/*PAGE HERO*/
 .page-hero {
   background: linear-gradient(
     135deg,
@@ -22,7 +19,6 @@
 }
 
 /* --- BREADCRUMB --- */
-
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -51,7 +47,6 @@
 }
 
 /* --- HERO TEXT --- */
-
 .page-hero-title {
   font-family: var(--font-heading);
   font-size: 46px;
@@ -69,7 +64,6 @@
 }
 
 /* --- DECORATIVE SHAPES --- */
-
 .page-hero-shape {
   position: absolute;
   border-radius: 50%;
@@ -91,10 +85,7 @@
 }
 
 
-/* ======================================================
-   RESPONSIVE HERO
-====================================================== */
-
+/* RESPONSIVE HERO*/
 @media (max-width: 992px) {
 
   .page-hero-title {
@@ -121,9 +112,7 @@
   }
 }
 
-/* =========================
-   INTRO BENEFITS
-========================= */
+/* INTRO BENEFITS*/
 
 .insurance-intro {
   padding: 60px 20px;
@@ -159,10 +148,7 @@
   font-size: 24px;
 }
 
-/* =========================
-   INSURANCE SECTION
-========================= */
-
+/*INSURANCE SECTION */
 .insurance-section {
   padding: 80px 20px;
 }
@@ -294,9 +280,7 @@
   margin-inline: auto;
 }
 
-/* =========================
-   HOW TO SECTION
-========================= */
+/* HOW TO SECTION */
 
 .how-to-use-section {
   padding: 80px 20px;
@@ -332,9 +316,7 @@
   font-weight: bold;
 }
 
-/* =========================
-   COVERAGE CHECKER
-========================= */
+/*COVERAGE CHECKER */
 
 .coverage-checker-section {
   padding: 80px 20px;
@@ -408,9 +390,7 @@
   gap: 10px;
 }
 
-/* =========================
-   FAQ
-========================= */
+/* FAQ */
 
 .faq-section {
   padding: 80px 20px;
@@ -454,10 +434,8 @@
   transform: rotate(180deg);
 }
 
-/* =========================
-   CONTACT STRIP
-========================= */
 
+/*CONTACT STRIP*/
 .insurance-contact-strip {
   background: var(--color-primary);
   padding: 50px 20px;
@@ -505,9 +483,7 @@
   background: #25d366;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE*/
 
 @media (max-width: 992px) {
 

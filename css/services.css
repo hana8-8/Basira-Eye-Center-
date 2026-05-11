@@ -1,39 +1,5 @@
-/*
-=======================================================
-  services.css — Basira Eye Center Services Page
-=======================================================
-
-  TEACHER NOTE:
-  This file ONLY styles the services page.
-  It works TOGETHER with global.css.
-  global.css already defines:
-    - All the color variables (--color-primary, etc.)
-    - The navbar styles
-    - The footer styles
-    - Utility classes (.section-tag, .section-title, etc.)
-
-  So here we ONLY write what's unique to this page.
-  Never duplicate what global.css already does!
-=======================================================
-*/
-
-
-/* ======================================================
-   PAGE HERO
-   ======================================================
-   The banner at the top of the page under the navbar.
-   It has a teal gradient background and contains:
-   - A breadcrumb (Home > Our Services)
-   - The page title
-   - A subtitle
-====================================================== */
 .page-hero {
-  /*
-    background: linear-gradient(...) creates a smooth color transition.
-    We go from the darker --color-primary on the left
-    to the medium --color-primary-mid on the right.
-    135deg means the gradient runs diagonally.
-  */
+  /*color transition.*/
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
   color: white;
   padding: 60px var(--space-2xl) 70px;
@@ -48,14 +14,9 @@
 }
 
 /* --- BREADCRUMB --- */
-/*
-  TEACHER NOTE:
-  The breadcrumb shows the path: Home > Our Services
-  We use flexbox to put the items in a row with gaps between them.
-*/
 .breadcrumb {
-  display: flex;
-  align-items: center;
+  display: flex;                /*same row*/
+  align-items: center;         
   gap: 6px;
   margin-bottom: 20px;
   font-size: 13px;
@@ -63,7 +24,7 @@
 
 .breadcrumb a {
   color: rgba(255, 255, 255, 0.7);    /* slightly transparent white */
-  transition: color var(--transition);
+  transition: color var(--transition);  /*color change when hovering*/
 }
 
 .breadcrumb a:hover {
@@ -98,15 +59,6 @@
 }
 
 /* --- DECORATIVE BACKGROUND SHAPES --- */
-/*
-  TEACHER NOTE:
-  These shapes are <div>s with no content.
-  We give them a size, a semi-transparent background, and a border-radius
-  to make them circles. Then we position them with "absolute" positioning
-  so they float in specific corners of the hero.
-  The .page-hero has position: relative, which is required
-  for absolute children to be positioned relative to IT.
-*/
 .page-hero-shape {
   position: absolute;
   border-radius: 50%;
@@ -128,24 +80,13 @@
 }
 
 
-/* ======================================================
-   SERVICES INTRO SECTION
-   ======================================================
-   Two-column layout:
-   Left  = big statistics numbers
-   Right = descriptive text and CTA button
-====================================================== */
+/* SERVICES INTRO SECTION */
 .services-intro {
   padding: var(--space-2xl) var(--space-2xl);
   background: var(--color-bg-white);
   border-bottom: 1px solid var(--color-border);
 }
 
-/*
-  CSS GRID for 2 columns.
-  1fr means "1 fraction" — each column gets equal space.
-  gap: adds space BETWEEN the columns (not outside).
-*/
 .intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -188,21 +129,12 @@
 }
 
 
-/* ======================================================
-   SERVICES GRID SECTION
-   ======================================================
-   The main section with all the service cards.
-====================================================== */
+/*SERVICES GRID SECTION */
 .services-section {
   padding: var(--space-2xl) var(--space-2xl);
   background: var(--color-bg);
 }
 
-/*
-  3-COLUMN GRID:
-  repeat(3, 1fr) means: repeat 3 times, each 1 fraction wide.
-  This is shorthand for: grid-template-columns: 1fr 1fr 1fr;
-*/
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -212,19 +144,7 @@
 }
 
 
-/* ======================================================
-   SERVICE CARD
-   ======================================================
-   Each card has 3 stacked parts:
-   1. .service-icon    → colored circle with icon
-   2. .service-card-body → title, description, feature list
-   3. .service-card-footer → buttons at the bottom
-
-   KEY TRICK: display: flex + flex-direction: column on the card,
-   and margin-top: auto on the footer — this PUSHES the footer
-   to the bottom of the card no matter how tall the content is.
-   This makes all cards have their buttons aligned at the same level.
-====================================================== */
+/*SERVICE CARD */
 .service-card {
   background: var(--color-bg-white);
   border-radius: var(--radius-lg);
@@ -243,7 +163,7 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* FEATURED CARD — extra styling for the "Most Popular" card */
+/* FEATURED CARD*/
 .featured-card {
   border-color: var(--color-accent);
   border-width: 2px;
@@ -315,7 +235,7 @@
   margin-bottom: var(--space-sm);
 }
 
-/* FEATURE LIST — the checkmark list inside each card */
+/* FEATURE LIST */
 .service-features {
   display: flex;
   flex-direction: column;
@@ -336,9 +256,9 @@
   flex-shrink: 0;
 }
 
-/* CARD FOOTER — buttons at the bottom */
+/* CARD FOOTER */
 .service-card-footer {
-  margin-top: auto;         /* KEY: pushes footer to the very bottom */
+  margin-top: auto;         
   padding-top: var(--space-sm);
   border-top: 1px solid var(--color-border-light);
   display: flex;
@@ -365,16 +285,15 @@
   transform: translateY(-1px);
 }
 
-/* Orange variant of Book Now (for featured/orange cards) */
 .orange-btn {
   background: var(--color-accent);
 }
 
 .orange-btn:hover {
-  background: #d0731f;      /* slightly darker orange for hover */
+  background: #d0731f;      
 }
 
-/* "Learn more →" text link */
+/* "Learn more*/
 .service-learn-link {
   font-size: 13px;
   color: var(--color-primary-mid);
@@ -400,11 +319,7 @@
 }
 
 
-/* ======================================================
-   PROCESS SECTION (How It Works)
-   ======================================================
-   4 steps in a horizontal row with connecting lines between them.
-====================================================== */
+/* PROCESS SECTION (How It Works) */
 .process-section {
   padding: var(--space-2xl) var(--space-2xl);
   background: var(--color-bg-white);
@@ -413,7 +328,7 @@
 .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;                   /* no gap — the connecting line handles spacing visually */
+  gap: 0;                   
   max-width: 900px;
   margin: 0 auto;
 }
@@ -474,12 +389,7 @@
 }
 
 
-/* ======================================================
-   CTA BANNER
-   ======================================================
-   Full-width teal banner urging users to book.
-   Uses the same decorative shape trick as the hero.
-====================================================== */
+/* CTA BANNER */
 .cta-banner {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
   padding: var(--space-2xl) var(--space-2xl);
@@ -514,17 +424,6 @@
   flex-wrap: wrap;
 }
 
-/* Override btn-primary background for contrast on teal
-.cta-banner .btn-primary {
-  background: white;
-  color: var(--color-primary);
-  border-color: white;
-}
-
-.cta-banner .btn-primary:hover {
-  background: var(--color-primary-light);
-  border-color: var(--color-primary-light);
-} */
 .btn-primary{
   display: inline-flex;
   align-items: center;
@@ -583,13 +482,7 @@
 }
 
 
-/* ======================================================
-   SCROLL ANIMATIONS
-   ======================================================
-   These two classes are added/removed by JavaScript.
-   .animate-hidden = element starts invisible (before scrolling to it)
-   .animate-visible = element becomes visible (when it enters the screen)
-====================================================== */
+/* SCROLL ANIMATIONS */
 .animate-hidden {
   opacity: 0;
   transform: translateY(28px);
@@ -602,19 +495,7 @@
 }
 
 
-/* ======================================================
-   RESPONSIVE — Services Page
-   ======================================================
-   TEACHER NOTE:
-   @media (max-width: 992px) means: apply these styles
-   ONLY when the screen is 992 pixels wide or less.
-   This is for tablets.
-
-   @media (max-width: 600px) is for phones.
-
-   We reduce columns from 3 → 2 → 1 as the screen shrinks.
-   This is called "responsive design".
-====================================================== */
+/* RESPONSIVE */
 
 /* TABLET */
 @media (max-width: 992px) {

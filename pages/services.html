@@ -4,11 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!--
-    WHAT IS <title>?
-    This is what shows in the browser tab at the top.
-    Good practice: put the page name first, then the site name.
-  -->
   <title>Our Services — Basira Eye Center</title>
 
   <!-- Google Fonts — same as the rest of the site -->
@@ -19,26 +14,12 @@
   <!-- Tabler Icons — the icon library used across the site -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
-  <!--
-    CSS FILES — ORDER MATTERS!
-    1. global.css loads first → it has the colors, fonts, navbar, footer
-    2. services.css loads second → it adds styles only for THIS page
-    Think of global.css as the foundation, services.css as the decoration on top.
-  -->
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/services.css" />
 </head>
 
 <body>
 
-  <!-- ===================== NAVBAR ===================== -->
-  <!--
-    WHY COPY THE NAVBAR EXACTLY?
-    Every page needs the same navbar so the site feels consistent.
-    The global.js file will automatically highlight "Our Services"
-    in the nav because it reads the current page URL.
-    You don't need to do anything special — it's automatic!
-  -->
   <nav class="navbar" id="navbar">
 
     <a href="../index.html" class="nav-logo">
@@ -96,29 +77,12 @@
     </div>
 
   </nav>
-  <!-- ===================== END NAVBAR ===================== -->
-
 
   <!-- ===================== PAGE HERO ===================== -->
-  <!--
-    WHAT IS A PAGE HERO?
-    Unlike the home page hero which is huge and takes half the screen,
-    page heroes are smaller — they just introduce the page topic.
-    This one has a teal background and shows the page title + breadcrumb.
-
-    WHAT IS A BREADCRUMB?
-    The little trail: Home > Our Services
-    It helps users know where they are on the site and go back easily.
-  -->
   <section class="page-hero">
     <div class="page-hero-content">
 
       <!-- Breadcrumb navigation -->
-      <!--
-        The > symbol between links is called a "separator".
-        aria-label="Breadcrumb" tells screen readers what this list is for.
-        This is called ACCESSIBILITY — making the site usable for everyone.
-      -->
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <i class="ti ti-chevron-right"></i>
@@ -132,33 +96,15 @@
       </p>
     </div>
 
-    <!--
-      DECORATIVE SHAPES:
-      These <div>s have no content — they only exist for visual decoration.
-      The CSS gives them colors, sizes, and positions.
-      They make the hero background look more interesting.
-    -->
     <div class="page-hero-shape shape-1"></div>
     <div class="page-hero-shape shape-2"></div>
   </section>
-  <!-- ===================== END PAGE HERO ===================== -->
 
 
   <!-- ===================== SERVICES INTRO ===================== -->
-  <!--
-    WHY A SEPARATE INTRO SECTION?
-    Before listing all the services, we give a short overview paragraph.
-    This is good UX (User Experience) — don't throw everything at the
-    user at once. Give them context first.
-  -->
   <section class="services-intro">
     <div class="intro-grid">
 
-      <!-- Left: big number stats -->
-      <!--
-        These stats make the clinic look credible and trustworthy.
-        It's a common pattern on medical/professional websites.
-      -->
       <div class="intro-stats">
         <div class="intro-stat">
           <span class="big-num">12<sup>+</sup></span>
@@ -174,7 +120,6 @@
         </div>
       </div>
 
-      <!-- Right: descriptive text -->
       <div class="intro-text">
         <span class="section-tag teal">What We Offer</span>
         <h2 class="section-title">
@@ -192,27 +137,8 @@
 
     </div>
   </section>
-  <!-- ===================== END INTRO ===================== -->
-
 
   <!-- ===================== SERVICES GRID ===================== -->
-  <!--
-    THE MAIN CONTENT — the list of all services.
-
-    HOW IS THIS STRUCTURED?
-    We have a <section> wrapper, then inside a grid of cards.
-    Each .service-card follows the same pattern:
-      1. An icon at the top
-      2. A title
-      3. A short description
-      4. A list of what's included
-      5. A "Learn More" link
-
-    WHY USE THE SAME STRUCTURE FOR EACH CARD?
-    Consistency is a key design principle. When all cards look the same,
-    users know exactly where to look for information.
-    It also makes the CSS much simpler — style it once, applies to all.
-  -->
   <section class="services-section" id="services">
 
     <div class="section-header">
@@ -221,45 +147,22 @@
       <p class="section-sub">Click any service to learn more or book an appointment.</p>
     </div>
 
-    <!--
-      CSS GRID:
-      The .services-grid is styled in CSS to be a 3-column grid.
-      Each .service-card automatically fits into a cell.
-      On smaller screens, the CSS changes it to 2 columns, then 1.
-    -->
     <div class="services-grid">
 
       <!-- ── SERVICE CARD 1: Comprehensive Eye Exam ── -->
-      <!--
-        data-category is a custom HTML attribute.
-        We'll use JavaScript later to filter cards by category.
-        For now it doesn't do anything visible.
-      -->
       <div class="service-card" data-category="checkup">
-
-        <!--
-          THE ICON WRAPPER:
-          .service-icon is a colored circle (styled in CSS).
-          Inside is a Tabler icon — the class "ti ti-eye-check"
-          picks the icon. See all icons at: tabler.io/icons
-        -->
         <div class="service-icon teal-icon">
           <i class="ti ti-eye-check"></i>
         </div>
 
         <div class="service-card-body">
           <h3 class="service-card-title">Comprehensive Eye Exam</h3>
+
           <p class="service-card-desc">
             A full evaluation of your eye health and vision. We check
             for refractive errors, eye pressure, and early signs of disease.
           </p>
 
-          <!--
-            FEATURE LIST:
-            A simple <ul> (unordered list) with bullet-point items.
-            The CSS in services.css replaces the default bullet dot
-            with a small checkmark icon.
-          -->
           <ul class="service-features">
             <li><i class="ti ti-check"></i> Visual acuity testing</li>
             <li><i class="ti ti-check"></i> Eye pressure check (tonometry)</li>
@@ -268,30 +171,15 @@
           </ul>
         </div>
 
-        <!--
-          THE CARD FOOTER:
-          Sits at the bottom of the card.
-          Uses flexbox in CSS to push it to the very bottom.
-        -->
         <div class="service-card-footer">
           <a href="booking.html" class="service-book-btn">Book Now</a>
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
 
       </div>
-      <!-- ── END CARD 1 ── -->
-
 
       <!-- ── SERVICE CARD 2: LASIK Surgery ── -->
       <div class="service-card featured-card" data-category="surgery">
-        <!--
-          featured-card is an EXTRA class added on top of service-card.
-          In CSS, .featured-card adds a special border color and
-          a "Popular" badge. The base styles from .service-card still apply.
-          This is called "extending" a class.
-        -->
-
-        <!-- Popular badge — only on featured cards -->
         <div class="featured-badge">
           <i class="ti ti-star-filled"></i> Most Popular
         </div>
@@ -321,8 +209,6 @@
         </div>
 
       </div>
-      <!-- ── END CARD 2 ── -->
-
 
       <!-- ── SERVICE CARD 3: Cataract Surgery ── -->
       <div class="service-card" data-category="surgery">
@@ -347,7 +233,6 @@
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
-      <!-- ── END CARD 3 ── -->
 
 
       <!-- ── SERVICE CARD 4: Glaucoma Management ── -->
@@ -373,8 +258,6 @@
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
-      <!-- ── END CARD 4 ── -->
-
 
       <!-- ── SERVICE CARD 5: Diabetic Eye Care ── -->
       <div class="service-card" data-category="disease">
@@ -399,8 +282,6 @@
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
-      <!-- ── END CARD 5 ── -->
-
 
       <!-- ── SERVICE CARD 6: Pediatric Eye Care ── -->
       <div class="service-card" data-category="checkup">
@@ -425,8 +306,6 @@
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
-      <!-- ── END CARD 6 ── -->
-
 
       <!-- ── SERVICE CARD 7: Retina & Vitreous ── -->
       <div class="service-card" data-category="surgery">
@@ -451,8 +330,6 @@
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
-      <!-- ── END CARD 7 ── -->
-
 
       <!-- ── SERVICE CARD 8: Contact Lens Fitting ── -->
       <div class="service-card" data-category="checkup">
@@ -477,8 +354,6 @@
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
-      <!-- ── END CARD 8 ── -->
-
 
       <!-- ── SERVICE CARD 9: Oculoplastics ── -->
       <div class="service-card" data-category="surgery">
@@ -503,25 +378,12 @@
           <a href="#" class="service-learn-link">Learn more <i class="ti ti-arrow-right"></i></a>
         </div>
       </div>
-      <!-- ── END CARD 9 ── -->
 
     </div>
-    <!-- end .services-grid -->
 
   </section>
-  <!-- ===================== END SERVICES GRID ===================== -->
-
 
   <!-- ===================== PROCESS SECTION ===================== -->
-  <!--
-    WHAT IS A PROCESS SECTION?
-    It explains HOW things work — what steps the patient goes through.
-    This reduces anxiety and builds trust. Patients feel more comfortable
-    when they know what to expect.
-
-    DESIGN PATTERN:
-    We use numbered steps in a horizontal row. On mobile, they stack vertically.
-  -->
   <section class="process-section">
 
     <div class="section-header">
@@ -531,14 +393,6 @@
     </div>
 
     <div class="process-steps">
-
-      <!--
-        EACH STEP:
-        .step-number = the big circle with the number
-        .step-line   = the horizontal line connecting steps (hidden on last step)
-        .step-title  = what happens in this step
-        .step-desc   = brief explanation
-      -->
 
       <div class="process-step">
         <div class="step-top">
@@ -568,10 +422,6 @@
         <p class="step-desc">Meet your doctor, get examined, and discuss the best treatment plan for you.</p>
       </div>
 
-      <!--
-        LAST STEP — no .step-line inside because there's nothing to connect to.
-        The CSS hides .step-line on the last .process-step using :last-child.
-      -->
       <div class="process-step">
         <div class="step-top">
           <div class="step-number">4</div>
@@ -583,16 +433,9 @@
     </div>
 
   </section>
-  <!-- ===================== END PROCESS ===================== -->
 
 
   <!-- ===================== CTA BANNER ===================== -->
-  <!--
-    CTA = Call To Action.
-    This is a full-width banner that encourages the user to take the next step.
-    It's usually placed near the bottom of a page, after the user has read enough
-    to feel convinced. The goal: get them to click "Book an Appointment".
-  -->
   <section class="cta-banner">
     <div class="cta-content">
       <h2 class="cta-title">Ready to Take Care of Your Vision?</h2>
@@ -608,14 +451,7 @@
     <div class="cta-shape cta-shape-1"></div>
     <div class="cta-shape cta-shape-2"></div>
   </section>
-  <!-- ===================== END CTA BANNER ===================== -->
 
-
-  <!-- ===================== FOOTER ===================== -->
-  <!--
-    EXACT SAME FOOTER as index.html — copied without any changes.
-    Every page uses the same footer for consistency.
-  -->
   <footer class="footer">
 
     <div class="footer-partners">
@@ -729,14 +565,8 @@
     </div>
 
   </footer>
-  <!-- ===================== END FOOTER ===================== -->
 
 
-  <!--
-    JAVASCRIPT — always at the BOTTOM of the page.
-    global.js runs first (navbar, hamburger, eye indicator).
-    services.js runs second (page-specific animations).
-  -->
   <script src="../js/global.js"></script>
   <script src="../js/services.js"></script>
   <script>

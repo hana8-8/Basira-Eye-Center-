@@ -1,6 +1,4 @@
-/* =========================
-   COVERAGE CHECKER
-========================= */
+/*COVERAGE CHECKER*/
 
 const coverageForm = document.getElementById("coverageForm");
 const providerInput = document.getElementById("providerInput");
@@ -52,9 +50,7 @@ coverageForm.addEventListener("submit", function (e) {
 });
 
 
-/* =========================
-   FAQ ACCORDION
-========================= */
+/* FAQ ACCORDION */
 
 const faqItems = document.querySelectorAll(".faq-item");
 

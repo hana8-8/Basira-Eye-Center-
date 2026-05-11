@@ -67,8 +67,6 @@
 
     </div>
   </nav>
-  <!-- ===================== END NAVBAR ===================== -->
-
 
   <!-- ===================== PAGE HERO ===================== -->
   <section class="page-hero">
@@ -90,13 +88,6 @@
 
 
   <!-- ===================== INSURANCE INTRO ===================== -->
-  <!--
-    TEACHER NOTE:
-    This section gives the user confidence right away:
-    "Yes, your insurance is probably accepted here."
-    The 3 icons summarize the key benefits in seconds.
-    This is called "above the fold" content — visible without scrolling.
-  -->
   <section class="insurance-intro">
     <div class="intro-benefits">
 
@@ -135,20 +126,6 @@
 
 
   <!-- ===================== INSURANCE PARTNERS GRID ===================== -->
-  <!--
-    TEACHER NOTE:
-    This is the main section — cards for each insurance provider.
-    Each card shows:
-    1. The company logo (placeholder div for now, replace with <img>)
-    2. The company name
-    3. What type of coverage they provide
-    4. Which services are covered (bulleted list)
-    5. A "Check Coverage" button
-
-    TO ADD A REAL LOGO:
-    Replace the <div class="ins-logo-placeholder"> with:
-    <img src="../assets/images/[company-name].png" alt="[Company Name]" class="ins-logo-img" />
-  -->
   <section class="insurance-section" id="partners">
 
     <div class="section-header">
@@ -164,10 +141,6 @@
       <!-- CARD: AXA Egypt -->
       <div class="insurance-card">
         <div class="ins-logo-wrap">
-          <!--
-            Replace this div with your real logo image when ready:
-            <img src="../assets/images/axa.png" alt="AXA Egypt" class="ins-logo-img" />
-          -->
           <img src="../assets/images/axa.png" alt="AXA Egypt" class="ins-logo-img" />
         </div>
         <div class="ins-card-body">
@@ -234,7 +207,6 @@
       <!-- CARD: Allianz -->
       <div class="insurance-card">
         <div class="ins-logo-wrap">
-          <!-- TODO: replace with real logo -->
           <div class="ins-logo-placeholder">ALLIANZ</div>
         </div>
         <div class="ins-card-body">
@@ -300,7 +272,6 @@
 
     </div>
 
-    <!-- "Don't see your provider?" notice -->
     <div class="more-providers-note">
       <i class="ti ti-info-circle"></i>
       <span>We also work with <strong>Bupa, Cigna, HSBC Insurance, Orient Takaful</strong>, and more.
@@ -312,12 +283,6 @@
 
 
   <!-- ===================== HOW TO USE INSURANCE ===================== -->
-  <!--
-    TEACHER NOTE:
-    Patients are often confused about how to use insurance at a clinic.
-    This step-by-step section removes that confusion.
-    Clear steps = less anxiety = more bookings.
-  -->
   <section class="how-to-use-section">
 
     <div class="section-header">
@@ -366,21 +331,6 @@
 
 
   <!-- ===================== COVERAGE CHECKER ===================== -->
-  <!--
-    TEACHER NOTE — WHAT IS THIS FORM?
-    This is a simple HTML form where users type their insurance provider
-    and submit to check if it's accepted.
-
-    HOW A FORM WORKS:
-    - <form> wraps all the input fields
-    - <label> describes what an input is for (important for accessibility)
-    - <input> is where the user types
-    - <button type="submit"> submits the form
-
-    The JavaScript in insurance.js intercepts the form submission
-    and handles it without refreshing the page (using preventDefault).
-    TODO: BACKEND — on a real site, this would query a database.
-  -->
   <section class="coverage-checker-section" id="checker">
 
     <div class="checker-card">
@@ -396,13 +346,6 @@
       <form class="checker-form" id="coverageForm">
 
         <div class="form-group">
-          <!--
-            TEACHER NOTE — WHY <label>?
-            The <label> element links to the input via the "for" attribute.
-            The "for" value must match the input's "id".
-            This means clicking the label also focuses the input — useful on mobile!
-            It also helps screen readers understand the form.
-          -->
           <label for="providerInput">Your Insurance Provider</label>
           <input
             type="text"
@@ -423,21 +366,10 @@
           />
         </div>
 
-        <!--
-          type="submit" makes this button submit the form.
-          The JavaScript intercepts this and prevents page refresh.
-        -->
         <button type="submit" class="checker-submit-btn">
           <i class="ti ti-search"></i> Check Coverage
         </button>
 
-        <!-- Result box — hidden by default, shown by JavaScript -->
-        <!--
-          TEACHER NOTE:
-          The id="checkerResult" lets JavaScript find this element.
-          By default it's hidden (CSS: display: none).
-          JS will fill in the text and show it after the user submits.
-        -->
         <div class="checker-result" id="checkerResult" style="display: none;">
           <i class="ti ti-shield-check"></i>
           <span id="checkerResultText"></span>
@@ -450,17 +382,6 @@
 
 
   <!-- ===================== FAQ ===================== -->
-  <!--
-    TEACHER NOTE — ACCORDION / FAQ:
-    An accordion is a list of questions. Each question can be
-    clicked to expand and show the answer. Clicking again collapses it.
-    Only one answer is open at a time.
-
-    HOW IT WORKS:
-    - Each .faq-item has a .faq-question button and a .faq-answer div
-    - JavaScript toggles the class "faq-open" on the .faq-item
-    - CSS shows/hides the answer based on whether "faq-open" exists
-  -->
   <section class="faq-section">
 
     <div class="section-header">
