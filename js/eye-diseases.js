@@ -1,20 +1,5 @@
-/*
-=======================================================
-  eye-diseases.js — Basira Eye Center
-=======================================================
-  Handles 3 features:
-  1. Search — filter cards as user types
-  2. Category filter buttons — show/hide by category
-  3. Learn More modal — show detailed info popup
-  4. Scroll animations — fade in cards on scroll
-=======================================================
-*/
-
 /* ======================================================
    1. DISEASE DATA
-   ======================================================
-   Each disease has detailed info shown in the modal.
-   The key matches the data-disease attribute on each button.
 ====================================================== */
 const diseaseData = {
   myopia: {
@@ -203,12 +188,6 @@ const diseaseData = {
 let activeFilter = "all";
 let searchQuery = "";
 
-/*
-  filterDiseases() is the main function.
-  It runs whenever the user types in the search box
-  OR clicks a filter button.
-  It checks both conditions at once.
-*/
 function filterDiseases() {
   const cards = document.querySelectorAll(".disease-card");
   const noResults = document.getElementById("no-results");
@@ -270,13 +249,6 @@ const modalOverlay = document.getElementById("modal-overlay");
 const modalBody = document.getElementById("modal-body");
 const modalClose = document.getElementById("modal-close");
 
-/*
-  When "Learn More" is clicked, we:
-  1. Find the disease key from the button's data-disease attribute
-  2. Look up the disease data from our diseaseData object
-  3. Build the modal HTML and inject it
-  4. Show the modal
-*/
 document.querySelectorAll(".btn-learn").forEach(function (btn) {
   btn.addEventListener("click", function () {
     const key = this.getAttribute("data-disease");

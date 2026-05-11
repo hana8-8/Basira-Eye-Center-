@@ -1,140 +1,3 @@
-// // finding the elements and storing them
-
-// const step1 = document.getElementById("step-1");
-// const step2 = document.getElementById("step-2");
-// const step3 = document.getElementById("step-3");
-
-// const stepCircles = document.querySelectorAll(".step-circle");
-
-// const nextBtn1 = document.getElementById("next-btn-1");
-// const nextBtn2 = document.getElementById("next-btn-2");
-// const nextBtn3 = document.getElementById("next-btn-3");
-
-// const backBtn2 = document.getElementById("back-btn-2");
-// const backBtn3 = document.getElementById("back-btn-3");
-
-// const stepLines = document.querySelectorAll(".step-line");
-// const stepLabels = document.querySelectorAll(".step-label");
-
-// const patientBtns = document.querySelectorAll(".patient-btn");
-
-// const selects = document.querySelectorAll("select");
-
-// const monthLabel = document.getElementById("month-label");
-// const prevMonthBtn = document.getElementById("prev-month");
-// const nextMonthBtn = document.getElementById("next-month");
-
-// const calendarGrid = document.getElementById("calendar-grid");
-// const timeSlotsContainer = document.getElementById("time-slots");
-
-// let currentStep = 1;
-
-// let selectedDate = null;
-// let selectedTime = null;
-
-// // Functions
-
-// function goToStep(stepNumber) {
-//   step1.style.display = "none";
-//   step2.style.display = "none";
-//   step3.style.display = "none";
-
-//   if (stepNumber === 1) {
-//     step1.style.display = "block";
-//   } else if (stepNumber === 2) {
-//     step2.style.display = "block";
-//   } else if (stepNumber === 3) {
-//     step3.style.display = "block";
-//   }
-// }
-
-// nextBtn1.addEventListener("click", function () {
-//   currentStep = 2;
-//   goToStep(2);
-// });
-
-// nextBtn2.addEventListener("click", function () {
-//   currentStep = 3;
-//   goToStep(3);
-// });
-
-// backBtn2.addEventListener("click", function () {
-//   currentStep = 1;
-//   goToStep(1);
-// });
-
-// backBtn3.addEventListener("click", function () {
-//   currentStep = 2;
-//   goToStep(2);
-// });
-
-// patientBtns.forEach(function (btn) {
-//   btn.addEventListener("click", function () {
-//     patientBtns.forEach(function (b) {
-//       b.classList.remove("active");
-//       b.querySelector("i").className = "ti ti-circle";
-//     });
-
-//     this.classList.add("active");
-//     this.querySelector("i").className = "ti ti-circle-filled";
-//   });
-// });
-
-// const monthNames = [
-//   "January",
-//   "February",
-//   "March",
-//   "April",
-//   "May",
-//   "June",
-//   "July",
-//   "August",
-//   "September",
-//   "October",
-//   "November",
-//   "December",
-// ];
-
-// let calendarDate = new Date();
-
-// function buildCalendar() {
-//   const year = calendarDate.getFullYear();
-//   const month = calendarDate.getMonth();
-
-//   monthLabel.textContent = monthNames[month] + " " + year;
-
-//   const daysInMonth = new Date(year, month + 1, 0).getDate();
-//   const firstDay = new Date(year, month, 1).getDay();
-
-//   const today = new Date();
-//   calendarGrid.innerHTML = "";
-
-//   for (let i = 0; i < firstDay; i++) {
-//     const empty = document.createElement("div");
-//     empty.classList.add("day", "empty");
-//     calendarGrid.appendChild(empty);
-//   }
-
-//   for (let day = 1; day < daysInMonth; day++) {
-//     const dayEl = document.createElement("div");
-//     dayEl.classList.add("day");
-//     dayEl.textContent = day;
-
-//     calendarGrid.appendChild(dayEl);
-//   }
-// }
-
-/*
-=======================================================
-  booking.js — Basira Eye Center
-  Handles: multi-step form, calendar, time slots
-=======================================================
-*/
-
-/* ======================================================
-   1. FIND ALL THE ELEMENTS WE NEED
-====================================================== */
-
 // The 3 step containers
 const step1 = document.getElementById("step-1");
 const step2 = document.getElementById("step-2");
@@ -169,20 +32,13 @@ const nextMonthBtn = document.getElementById("next-month");
 const calendarGrid = document.getElementById("calendar-grid");
 const timeSlotsContainer = document.getElementById("time-slots");
 
-// State variables — these change as the user interacts
+// State variables
 let currentStep = 1;
 let selectedDate = null;
 let selectedTime = null;
 
-// Calendar state — track which month/year is showing
+// Calendar state
 let calendarDate = new Date(); // starts at today's month
-
-/* ======================================================
-   2. SHOW THE CORRECT STEP
-   ======================================================
-   Hides all steps then shows only the requested one.
-   Also updates the stepper circles and labels.
-====================================================== */
 
 function goToStep(stepNumber) {
   // Hide ALL steps
@@ -206,29 +62,18 @@ function goToStep(stepNumber) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-/* ======================================================
-   3. UPDATE THE STEPPER
-   ======================================================
-   Updates circles, lines, and labels to reflect
-   which step the user is currently on.
-====================================================== */
-
 function updateStepper(stepNumber) {
   // Update each circle
   stepCircles.forEach(function (circle, index) {
-    // index 0 = circle 1, index 1 = circle 2, index 2 = circle 3
     if (index < stepNumber) {
-      // This circle is on or before the current step → active (teal)
       circle.classList.add("active");
     } else {
-      // This circle is after the current step → inactive (grey)
       circle.classList.remove("active");
     }
   });
 
   // Update each line
   stepLines.forEach(function (line, index) {
-    // Line 0 = between circles 1&2, Line 1 = between circles 2&3
     if (index < stepNumber - 1) {
       line.classList.add("done");
     } else {
@@ -246,10 +91,6 @@ function updateStepper(stepNumber) {
   });
 }
 
-/* ======================================================
-   4. BUTTON CLICK LISTENERS
-====================================================== */
-
 // Step 1 → Step 2
 nextBtn1.addEventListener("click", function () {
   currentStep = 2;
@@ -260,7 +101,7 @@ nextBtn1.addEventListener("click", function () {
 nextBtn2.addEventListener("click", function () {
   currentStep = 3;
   goToStep(3);
-  updateSummary(); // fill in the summary before showing step 3
+  updateSummary();
 });
 
 // Step 2 ← Back to Step 1
@@ -280,13 +121,6 @@ nextBtn3.addEventListener("click", function () {
   handleSubmit();
 });
 
-/* ======================================================
-   5. PATIENT TYPE BUTTONS
-   ======================================================
-   When the user clicks "New Patient" or "Returning Patient",
-   remove active from all buttons and add it to the clicked one.
-====================================================== */
-
 patientBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     // Remove active from ALL buttons + reset icons
@@ -301,14 +135,7 @@ patientBtns.forEach(function (btn) {
   });
 });
 
-/* ======================================================
-   6. CALENDAR
-   ======================================================
-   Builds a monthly calendar grid dynamically using JS.
-   The user can navigate months and click a day to select it.
-====================================================== */
-
-// Month names array — index 0 = January, 11 = December
+// Month names
 const monthNames = [
   "January",
   "February",
@@ -324,7 +151,7 @@ const monthNames = [
   "December",
 ];
 
-// Time slots to show (hardcoded for frontend-only)
+// Time slots(hardcoded: frontend-only)
 const morningSlots = [
   "9:00 AM",
   "9:30 AM",
@@ -335,25 +162,20 @@ const morningSlots = [
 ];
 const afternoonSlots = ["1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
 
-// Slots that are "taken" (in a real app this comes from a backend)
+// Slots that are "taken" (should come from backend)
 const takenSlots = ["9:00 AM", "11:00 AM", "2:00 PM"];
 
-/*
-  buildCalendar() — draws the calendar grid for the current month.
-  Called once on page load and again when user navigates months.
-*/
+// building the calendar
 function buildCalendar() {
   // Get the year and month from our calendarDate variable
   const year = calendarDate.getFullYear();
-  const month = calendarDate.getMonth(); // 0-11
+  const month = calendarDate.getMonth();
 
-  // Update the month label text (e.g. "May 2026")
+  // Update the month label text
   monthLabel.textContent = monthNames[month] + " " + year;
 
-  // Figure out what day of the week the 1st falls on (0=Sun, 6=Sat)
   const firstDay = new Date(year, month, 1).getDay();
 
-  // Figure out how many days are in this month
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
   // Today's date for comparison
@@ -394,7 +216,7 @@ function buildCalendar() {
       dayEl.classList.add("today");
       addDayClickListener(dayEl, thisDate);
 
-      // Is this the selected date? → mark it
+      // mark selected date
     } else if (
       selectedDate &&
       thisDate.toDateString() === selectedDate.toDateString()
@@ -413,10 +235,6 @@ function buildCalendar() {
   buildTimeSlots();
 }
 
-/*
-  addDayClickListener() — makes a day cell clickable.
-  When clicked, it selects that date and rebuilds the calendar.
-*/
 function addDayClickListener(dayEl, date) {
   dayEl.addEventListener("click", function () {
     selectedDate = date;
@@ -425,9 +243,6 @@ function addDayClickListener(dayEl, date) {
   });
 }
 
-/*
-  buildTimeSlots() — draws the time slot buttons below the calendar.
-*/
 function buildTimeSlots() {
   // Clear existing slots
   timeSlotsContainer.innerHTML = "";
@@ -495,12 +310,6 @@ function createSlot(time) {
   return slot;
 }
 
-/* ======================================================
-   7. CALENDAR NAVIGATION
-   ======================================================
-   Prev/Next buttons change the month being displayed.
-====================================================== */
-
 prevMonthBtn.addEventListener("click", function () {
   // Go back one month
   calendarDate.setMonth(calendarDate.getMonth() - 1);
@@ -512,13 +321,6 @@ nextMonthBtn.addEventListener("click", function () {
   calendarDate.setMonth(calendarDate.getMonth() + 1);
   buildCalendar();
 });
-
-/* ======================================================
-   8. UPDATE SUMMARY (Step 3)
-   ======================================================
-   Before showing Step 3, fill in the summary card
-   with the user's selections from Steps 1 and 2.
-====================================================== */
 
 function updateSummary() {
   // Get selected patient type
@@ -563,13 +365,6 @@ editLinks.forEach(function (link) {
   });
 });
 
-/* ======================================================
-   9. HANDLE SUBMIT
-   ======================================================
-   Validates the form and shows a success message.
-   TODO: connect to backend when ready.
-====================================================== */
-
 function handleSubmit() {
   // Get the form fields
   const firstName = document
@@ -580,7 +375,7 @@ function handleSubmit() {
     .value.trim();
   const email = document.querySelector('input[type="email"]').value.trim();
 
-  // Simple validation — check required fields
+  //  check required fields
   if (!firstName || !lastName || !email) {
     showMessage(
       "Please fill in all required fields (First Name, Last Name, Email).",
@@ -604,7 +399,6 @@ function handleSubmit() {
     "success",
   );
 
-  // TODO: send data to backend here
   console.log("Appointment submitted:", {
     firstName,
     lastName,
@@ -616,9 +410,8 @@ function handleSubmit() {
   });
 }
 
-/*
-  showMessage() — shows a success or error message at the top of step 3.
-*/
+// shows a success or error message at the top of step 3.
+
 function showMessage(text, type) {
   // Remove any existing message first
   const existing = document.querySelector(".booking-message");
@@ -666,13 +459,7 @@ function showMessage(text, type) {
   }, 5000);
 }
 
-/* ======================================================
-   10. INITIALIZE — run when page loads
-   ======================================================
-   Set the initial state: show step 1, build calendar.
-====================================================== */
-
-// Remove the TODO temporary CSS overrides — show step 1 only
+// initialize show step 1 only
 goToStep(1);
 
 // Build the calendar for the current month

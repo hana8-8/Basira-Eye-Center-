@@ -1,35 +1,7 @@
-/*
-=======================================================
-  policies.js — Basira Eye Center
-=======================================================
-  Handles 2 features:
-  1. Active TOC highlight — highlights which section
-     the user is currently reading as they scroll
-  2. Scroll animations — sections fade in on scroll
-=======================================================
-*/
-
-/* ======================================================
-   1. ACTIVE TABLE OF CONTENTS HIGHLIGHT
-   ======================================================
-   As the user scrolls, we watch which policy section
-   is currently visible and highlight its TOC link.
-
-   HOW IT WORKS:
-   - We use IntersectionObserver to watch all sections
-   - When a section enters the viewport, we find its
-     matching TOC link and mark it as "active"
-   - We remove "active" from all other links first
-====================================================== */
-
 const sections = document.querySelectorAll(".policy-section");
 const tocLinks = document.querySelectorAll(".toc-link");
 
-/*
-  IntersectionObserver watches elements on the page.
-  When a section becomes visible (enters the viewport),
-  we update the active TOC link.
-*/
+// makes toc link 'active' for visible section
 const tocObserver = new IntersectionObserver(
   function (entries) {
     entries.forEach(function (entry) {
@@ -51,14 +23,6 @@ const tocObserver = new IntersectionObserver(
     });
   },
   {
-    /*
-      rootMargin shifts the trigger zone.
-      '-20% 0px -70% 0px' means:
-      - Top trigger: 20% down from top of viewport
-      - Bottom trigger: 70% up from bottom of viewport
-      So the section is "active" when it's in the
-      middle-ish zone of the screen.
-    */
     rootMargin: "-20% 0px -70% 0px",
     threshold: 0,
   },
@@ -69,13 +33,7 @@ sections.forEach(function (section) {
   tocObserver.observe(section);
 });
 
-/* ======================================================
-   2. SMOOTH SCROLL for TOC links
-   ======================================================
-   When clicking a TOC link, scroll smoothly to
-   that section with an offset for the sticky navbar.
-====================================================== */
-
+// scrolls to target toc link section
 tocLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -100,13 +58,7 @@ tocLinks.forEach(function (link) {
   });
 });
 
-/* ======================================================
-   3. SCROLL ANIMATIONS
-   ======================================================
-   Policy sections fade in as user scrolls to them.
-   Same IntersectionObserver pattern used in services.js.
-====================================================== */
-
+// scrolling animation
 const animatableElements = document.querySelectorAll(".policy-section");
 
 animatableElements.forEach(function (el, index) {
