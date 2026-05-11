@@ -99,16 +99,7 @@
 
 
 /* ---- DOCTOR CARD ---- */
-/*
-  TEACHER NOTE:
-  Each card has two states:
-  1. Collapsed — only .doctor-summary is visible
-  2. Expanded — .doctor-details also shows (max-height animates open)
 
-  JavaScript toggles the class "expanded" on the card.
-  CSS uses max-height transition to animate the reveal smoothly.
-  You can't animate height: auto in CSS, so max-height is the trick.
-*/
 .doctor-card {
   background: white;
   border-radius: var(--radius-lg);
@@ -311,15 +302,7 @@
 
 
 /* ---- EXPANDED DETAILS ---- */
-/*
-  TEACHER NOTE — max-height animation trick:
-  We can't animate "height: auto" in CSS.
-  The workaround: set max-height: 0 (collapsed) and
-  max-height: 2000px (expanded). The browser animates
-  between these two values smoothly.
-  The content clips at 0 when collapsed, and
-  has plenty of room at 2000px when open.
-*/
+
 .doctor-details {
   max-height: 0;
   overflow: hidden;

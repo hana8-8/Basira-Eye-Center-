@@ -21,12 +21,7 @@
 <body>
 
   <!-- ===================== NAVBAR ===================== -->
-  <!--
-    TEACHER NOTE:
-    The <nav> tag is a semantic HTML element — it tells the browser
-    and screen readers "this is navigation". Always use it for navbars.
-    Inside we have three parts: logo | links | buttons
-  -->
+
   <nav class="navbar" id="navbar">
 
     <!-- LOGO -->
@@ -46,29 +41,9 @@
       </div>
     </a>
 
-    <!--
-      ══════════════════════════════════════════
-      WHEN YOUR LOGO IMAGE IS READY:
-      Replace the entire <svg ...> block above
-      with this single line:
-      <img src="assets/images/logo.png" alt="Basira Eye Center" class="logo-img" />
-      ══════════════════════════════════════════
-    -->
+ 
 
-    <!-- NAVIGATION LINKS -->
-    <!--
-      Each <a> tag is a link. The href="#" is a placeholder — it means
-      "go nowhere for now". Your team will replace each # with the actual
-      page like href="pages/about.html" or href="pages/services.html"
-    -->
-    <!--
-      TEACHER NOTE — THE EYE INDICATOR:
-      Every <li> now has a wrapping structure.
-      The <span class="eye-dot"> is the little eye icon that appears
-      under the active link. JavaScript in global.js adds the class
-      "active" to the current page's <a> tag, and CSS makes the
-      eye-dot visible only when that happens.
-    -->
+
     <ul class="nav-links" id="navLinks">
       <li><a href="pages/about.html"><span class="link-text">About Us</span><span class="eye-dot"></span></a></li>
       <li><a href="pages/services.html"><span class="link-text">Our Services</span><span class="eye-dot"></span></a></li>
@@ -204,12 +179,7 @@
 
 
   <!-- ===================== EYE TEST SECTION ===================== -->
-  <!--
-    TEACHER NOTE:
-    The id="eye-test" on this section is what makes the
-    "Take Eye Test" button in the hero scroll down to here.
-    That's what href="#eye-test" does — it anchors to an id.
-  -->
+
   <section class="eye-test-section" id="eye-test">
 
     <div class="section-header">
@@ -303,27 +273,10 @@
 
 
   <!-- ===================== FOOTER ===================== -->
-  <!--
-    TEACHER NOTE:
-    The footer has 4 rows stacked on top of each other:
-    1. .footer-partners  — logos of insurance & glasses partners
-    2. .footer-main      — 4 columns: about / links / hours / contact
-    3. .footer-bottom    — copyright bar
-  -->
+
   <footer class="footer">
 
-    <!-- ROW 1: PARTNERS STRIP -->
-    <!--
-      HOW TO ADD PARTNER LOGOS:
-      Each .partner-slot holds one logo image.
-      Replace the placeholder <div> inside each slot with:
-      <img src="assets/images/partners/partner-name.png" alt="Partner Name" />
 
-      Logos have different widths — that is fine and expected.
-      The CSS uses object-fit: contain so each logo scales
-      to fit its slot without being stretched or cropped.
-      If a logo looks too small, increase its slot's max-width below.
-    -->
     <div class="footer-partners">
       <p class="partners-label">Our Trusted Partners</p>
       <div class="partners-row">
@@ -504,13 +457,7 @@
 
 
   <!-- JavaScript file — always load at the bottom of the page -->
-  <!--
-    TEACHER NOTE:
-    We put <script> at the BOTTOM of the body, not the top.
-    This is because HTML loads top to bottom — if JS runs before
-    the elements exist, it can't find them. Loading at the bottom
-    ensures everything is on the page before JS tries to touch it.
-  -->
+
   <script src="js/global.js"></script>
   <script src="js/home.js"></script>
 

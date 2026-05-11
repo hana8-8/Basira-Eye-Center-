@@ -1,27 +1,5 @@
-/*
-=======================================================
-  doctors.js — Basira Eye Center
-=======================================================
-  Handles:
-  1. Expanding / collapsing doctor cards on click
-  2. Time slot selection inside booking panels
-=======================================================
-*/
 
 
-/* ======================================================
-   1. TOGGLE DOCTOR CARD OPEN / CLOSED
-   ======================================================
-   TEACHER NOTE:
-   toggleDoctor() is called by onclick="toggleDoctor('doc1')"
-   in the HTML. It receives the card's id as a string.
-
-   It finds the card by id, then toggles the "expanded" class.
-   CSS does the actual animation — JS just adds/removes the class.
-
-   We also close any OTHER open card first so only one
-   is open at a time (like an accordion).
-====================================================== */
 function toggleDoctor(cardId) {
   const allCards = document.querySelectorAll('.doctor-card');
   const clickedCard = document.getElementById(cardId);
@@ -52,17 +30,7 @@ function toggleDoctor(cardId) {
 }
 
 
-/* ======================================================
-   2. TIME SLOT SELECTION
-   ======================================================
-   TEACHER NOTE:
-   When a user clicks a time slot button, we want to:
-   1. Remove "selected" from all other slots in that column
-   2. Add "selected" to the one they clicked
 
-   We use event delegation — one listener on the whole page
-   instead of one on every button. This is more efficient.
-====================================================== */
 document.addEventListener('click', function (e) {
   /*
     e.target is the element that was actually clicked.
@@ -91,12 +59,7 @@ document.addEventListener('click', function (e) {
 });
 
 
-/* ======================================================
-   3. BOOK BUTTON FEEDBACK
-   ======================================================
-   When BOOK is clicked, show a confirmation message.
-   Later this will connect to the backend booking API.
-====================================================== */
+
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('book-btn') && !e.target.disabled) {
 

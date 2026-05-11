@@ -3,17 +3,7 @@
   home.css — Basira Eye Center Homepage
 =======================================================
 
-  TEACHER NOTE:
-  This file only styles the HOME page.
-  Each page gets its own CSS file like this one.
-  It always works TOGETHER with global.css.
-  global.css = shared styles (navbar, footer, colors)
-  home.css   = styles specific to the home page only
 
-  The order in index.html matters:
-    1. global.css loads first (shared)
-    2. home.css loads second (page-specific)
-=======================================================
 */
 
 
@@ -60,12 +50,7 @@
   margin-bottom: var(--space-md);
 }
 
-/*
-  TEACHER NOTE:
-  .accent-text targets the <span> inside the h1.
-  This is how you color just ONE word in a heading
-  without coloring the whole thing.
-*/
+
 .accent-text {
   color: var(--color-accent);
   font-style: italic;
@@ -189,12 +174,7 @@
   z-index: 2;
 }
 
-/*
-  TEACHER NOTE:
-  We use CSS animations here. The @keyframes below define
-  what the animation looks like. The animation property
-  on each element says: use that animation, how long, repeat forever.
-*/
+
 .eye-ring {
   position: absolute;
   border-radius: 50%;

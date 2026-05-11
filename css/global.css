@@ -3,17 +3,6 @@
   global.css — Basira Eye Center
 =======================================================
 
-  TEACHER NOTE:
-  This file is the HEART of your design system.
-  Every page on your website links to this file.
-  If you change a color variable here, it changes
-  everywhere across the entire site automatically.
-
-  CSS Variables are defined inside :root {}
-  The colon before root just means "the top level".
-  Variables always start with two dashes: --variable-name
-  You use them like: color: var(--color-primary);
-=======================================================
 */
 
 /* ---- GOOGLE FONTS IMPORT ---- */
@@ -125,24 +114,7 @@ button {
 /* ======================================================
    NAVBAR — shared across ALL pages
    ======================================================
-   TEACHER NOTE:
-   The navbar has 4 design decisions made here:
-
-   1. BLENDING — instead of a harsh border-bottom, we use
-      a gradient fade at the bottom so the navbar melts
-      into the page content below it naturally.
-
-   2. LOGO IMAGE — .logo-img-wrap gives the logo a fixed
-      square container. Your image goes in assets/images/logo.png
-
-   3. LINK STYLE — links are now bolder, spaced better,
-      and have a smooth underline animation on hover instead
-      of a background block. Much more refined.
-
-   4. EYE INDICATOR — .eye-dot is the little eye SVG under
-      the active link. It's hidden by default (opacity: 0)
-      and appears only when the parent <a> has class "active".
-====================================================== */
+   */
 
 /* --- NAVBAR WRAPPER --- */
 .navbar {
@@ -156,13 +128,7 @@ button {
   top: 0;
   z-index: 1000;
   transition: box-shadow var(--transition), background var(--transition);
-  /*
-    BLENDING TRICK — two shadows at once (comma separates them):
-    First shadow: short, subtle, right below the bar
-    Second shadow: very tall, very blurred, nearly transparent —
-    this is the one that fades softly into the hero below.
-    The 98% white covers the sharp edge and creates a melt effect.
-  */
+
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -172,12 +138,7 @@ button {
 }
 
 /* --- LOGO --- */
-/*
-  TEACHER NOTE:
-  .nav-logo is now an <a> tag (link to home page).
-  We make it flex so the image and text sit side by side.
-  flex-shrink: 0 means it will never get squeezed smaller.
-*/
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -186,11 +147,7 @@ button {
   text-decoration: none;
 }
 
-/*
-  The logo image wrapper gives the image a fixed size box.
-  object-fit: contain means the image scales to fit without
-  being cropped or stretched — important for logos.
-*/
+
 .logo-img-wrap {
   width: 52px;
   height: 52px;
@@ -248,12 +205,7 @@ button {
   flex-wrap: nowrap;
 }
 
-/*
-  TEACHER NOTE — LINK STRUCTURE:
-  Each <a> is now position: relative so we can place the
-  eye dot below it using absolute positioning.
-  The link itself is flex so the text and dot stack vertically.
-*/
+
 .nav-links a {
   position: relative;
   display: flex;
@@ -298,15 +250,7 @@ button {
 }
 
 /* --- EYE INDICATOR --- */
-/*
-  TEACHER NOTE:
-  The eye shape is now drawn as an SVG injected by JavaScript.
-  CSS here just controls its visibility and animation.
-  The SVG is an almond/leaf shape (not a circle) with:
-  - pointed corners left and right (real eye shape)
-  - eyelash strokes radiating from the top lid
-  - an iris circle with a pupil and a highlight dot
-*/
+
 .eye-dot {
   display: block;
   width: 22px;
@@ -336,15 +280,7 @@ button {
 }
 
 /* --- CTA BUTTONS --- */
-/*
-  TEACHER NOTE — THE FADE EFFECT YOU LIKED:
-  Both buttons use the same trick:
-  - btn-login starts transparent, FILLS with teal on hover
-  - btn-book starts filled teal, EMPTIES to transparent on hover
-  The transition property is what makes it a smooth fade
-  instead of an instant jump. "all 0.25s ease" means
-  every property (color, background, border) fades over 0.25 seconds.
-*/
+
 .nav-cta {
   display: flex;
   align-items: center;
@@ -352,18 +288,7 @@ button {
   flex-shrink: 0;
 }
 
-/*
-  TEACHER NOTE — TWO DIFFERENT BUTTON STYLES:
 
-  btn-login  = "ghost" button — transparent background, teal border and text
-               On hover → fills with teal (fades IN)
-
-  btn-book   = "solid" button — filled teal background, white text
-               On hover → background lightens to medium teal (fades LIGHTER)
-
-  They look clearly different because one is empty and one is filled.
-  The transition: all makes the color change a smooth fade, not a jump.
-*/
 .btn-login {
   border: 1.5px solid var(--color-primary);
   color: var(--color-primary);
@@ -431,11 +356,7 @@ button {
 /* ======================================================
    SHARED UTILITY CLASSES
    ======================================================
-   TEACHER NOTE:
-   These are small helper classes you can add to any element.
-   For example: <div class="text-center mt-lg"> centers text
-   and adds a large top margin.
-====================================================== */
+   */
 
 .text-center { text-align: center; }
 .text-teal   { color: var(--color-primary); }
@@ -494,15 +415,7 @@ button {
 /* ======================================================
    FOOTER — shared across ALL pages
    ======================================================
-   TEACHER NOTE:
-   The footer is split into 3 stacked rows:
-   .footer-partners  → partner logos strip (light teal bg)
-   .footer-main      → 4 column grid (dark teal bg)
-   .footer-bottom    → copyright bar (darkest teal bg)
-
-   Each column inside .footer-main is a .footer-col.
-   They sit in a CSS Grid with 4 equal columns.
-====================================================== */
+    */
 
 .footer {
   background: var(--color-primary);
@@ -559,21 +472,7 @@ button {
   justify-content: center;
 }
 
-/*
-  TEACHER NOTE — PARTNER SLOTS:
-  Each .partner-slot is a fixed-height container.
-  The width is set to auto so it naturally fits the logo inside.
-  min-width: 80px prevents tiny logos from collapsing.
-  max-width: 140px prevents wide logos from dominating.
 
-  When you add a real logo image:
-  <img src="..." alt="..." />
-  The image fills the slot and object-fit: contain
-  scales it to fit without cropping or stretching.
-
-  If a specific logo needs more room, add an inline style:
-  <div class="partner-slot" style="max-width: 180px;">
-*/
 .partner-slot {
   height: 60px;
   min-width: 90px;
