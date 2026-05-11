@@ -4,11 +4,11 @@
 
 const loginTab      = document.getElementById('loginTab');
 const registerTab   = document.getElementById('registerTab');
-const adminLoginTab = document.getElementById('loginAdmin');
+// const adminLoginTab = document.getElementById('loginAdmin');
 
 const loginForm      = document.getElementById('loginForm');
 const registerForm   = document.getElementById('registerForm');
-const adminLoginForm = document.getElementById('adminLoginForm');
+// const adminLoginForm = document.getElementById('adminLoginForm');
 
 
 /* =========================
@@ -145,20 +145,20 @@ if (registerForm) {
    ADMIN LOGIN REDIRECTION
 ========================= */
 
-if (adminLoginForm) {
+// if (adminLoginForm) {
 
-  adminLoginForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+//   adminLoginForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
 
-    localStorage.setItem('basiraUser', JSON.stringify({
-      name:  'Admin',
-      email: 'admin@basira.com',
-      id:    'ADMIN-001',
-      role:  'admin'
-    }));
+//     localStorage.setItem('basiraUser', JSON.stringify({
+//       name:  'Admin',
+//       email: 'admin@basira.com',
+//       id:    'ADMIN-001',
+//       role:  'admin'
+//     }));
 
-    window.location.href = 'admin-dashboard.html';
+//     window.location.href = 'admin-dashboard.html';
 
-  });
+//   });
 
-}
+// }
