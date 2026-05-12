@@ -112,7 +112,6 @@
         <option>All Roles</option>
         <option>Patients</option>
         <option>Doctors</option>
-        <option>Admins</option>
       </select>
 
     </section>
@@ -171,7 +170,7 @@
           </tr>
 
 
-          <tr>
+          <!-- <tr>
             <td>Mohamed Adel</td>
             <td>mohamed@example.com</td>
             <td>Admin</td>
@@ -186,13 +185,59 @@
               <button class="edit-btn">Edit</button>
               <button class="delete-btn">Delete</button>
             </td>
-          </tr>
+          </tr> -->
 
         </tbody>
 
       </table>
 
     </section>
+
+    <section class="user-modal" id="userModal">
+
+  <div class="modal-box">
+
+    <h2 id="modalTitle">Add User</h2>
+
+    <form id="userForm">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="userName" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="userEmail" required>
+      </div>
+
+      <div class="form-group">
+        <label>Role</label>
+        <select id="userRole" required>
+          <option value="">Select Role</option>
+          <option>Patient</option>
+          <option>Doctor</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Status</label>
+        <select id="userStatus" required>
+          <option>Active</option>
+          <option>Inactive</option>
+        </select>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" class="save-btn">Save</button>
+        <button type="button" class="close-modal-btn">Cancel</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
 
   </main>
 
